@@ -1,0 +1,1 @@
+/home/noa/Desktop/catkin_ws/devel/.private/myworkcell_core/share/myworkcell_core/cmake/myworkcell_coreConfig.cmake

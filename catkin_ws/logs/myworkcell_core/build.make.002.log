@@ -1,0 +1,65 @@
+[  0%] Built target geometry_msgs_generate_messages_py
+[35m[1mScanning dependencies of target _myworkcell_core_generate_messages_check_deps_LocalizePart[0m
+[  0%] Built target _myworkcell_core_generate_messages_check_deps_LocalizePart
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target fake_ar_publisher_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target fake_ar_publisher_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target fake_ar_publisher_generate_messages_lisp
+[  0%] Built target fake_ar_publisher_generate_messages_nodejs
+[  0%] Built target fake_ar_publisher_generate_messages_py
+[  0%] Built target visualization_msgs_generate_messages_cpp
+[  0%] Built target visualization_msgs_generate_messages_eus
+[  0%] Built target visualization_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target visualization_msgs_generate_messages_nodejs
+[  0%] Built target visualization_msgs_generate_messages_py
+[35m[1mScanning dependencies of target myworkcell_core_generate_messages_py[0m
+[ 11%] [34m[1mGenerating Python code from SRV myworkcell_core/LocalizePart[0m
+[ 22%] [34m[1mGenerating Python srv __init__.py for myworkcell_core[0m
+[ 22%] Built target myworkcell_core_generate_messages_py
+[35m[1mScanning dependencies of target myworkcell_core_generate_messages_lisp[0m
+[ 33%] [34m[1mGenerating Lisp code from myworkcell_core/LocalizePart.srv[0m
+[ 33%] Built target myworkcell_core_generate_messages_lisp
+[35m[1mScanning dependencies of target myworkcell_core_generate_messages_eus[0m
+[ 44%] [34m[1mGenerating EusLisp code from myworkcell_core/LocalizePart.srv[0m
+[ 55%] [34m[1mGenerating EusLisp manifest code for myworkcell_core[0m
+[ 55%] Built target myworkcell_core_generate_messages_eus
+[35m[1mScanning dependencies of target myworkcell_core_generate_messages_cpp[0m
+[ 66%] [34m[1mGenerating C++ code from myworkcell_core/LocalizePart.srv[0m
+[ 66%] Built target myworkcell_core_generate_messages_cpp
+[35m[1mScanning dependencies of target myworkcell_core_generate_messages_nodejs[0m
+[ 77%] [34m[1mGenerating Javascript code from myworkcell_core/LocalizePart.srv[0m
+[ 77%] Built target myworkcell_core_generate_messages_nodejs
+[35m[1mScanning dependencies of target vision_node[0m
+[ 88%] [32mBuilding CXX object CMakeFiles/vision_node.dir/src/vision_node.cpp.o[0m
+[01m[K/home/noa/Desktop/catkin_ws/src/myworkcell_core/src/vision_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/noa/Desktop/catkin_ws/src/myworkcell_core/src/vision_node.cpp:16:3:[m[K [01;31m[Kerror: [m[K‘[01m[KLocalizer[m[K’ was not declared in this scope
+   [01;31m[KLocalizer[m[K localizer(nh);
+   [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/noa/Desktop/catkin_ws/src/myworkcell_core/src/vision_node.cpp:16:3:[m[K [01;36m[Knote: [m[Ksuggested alternative: ‘[01m[Klocaltime_r[m[K’
+   [01;36m[KLocalizer[m[K localizer(nh);
+   [01;36m[K^~~~~~~~~[m[K
+   [32m[Klocaltime_r[m[K
+CMakeFiles/vision_node.dir/build.make:62: recipe for target 'CMakeFiles/vision_node.dir/src/vision_node.cpp.o' failed
+make[2]: *** [CMakeFiles/vision_node.dir/src/vision_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/vision_node.dir/all] Error 2
+make: *** [all] Error 2
+CMakeFiles/Makefile2:101: recipe for target 'CMakeFiles/vision_node.dir/all' failed
+Makefile:140: recipe for target 'all' failed

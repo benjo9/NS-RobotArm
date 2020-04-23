@@ -1,0 +1,6 @@
+devel_space: /home/noa/Desktop/catkin_ws/devel
+install: false
+install_space: /home/noa/Desktop/catkin_ws/install
+profile: default
+source_space: /home/noa/Desktop/catkin_ws/src
+workspace: /home/noa/Desktop/catkin_ws

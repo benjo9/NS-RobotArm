@@ -1,0 +1,1 @@
+/home/noa/Desktop/catkin_ws/devel/.private/myworkcell_core/share/roseus/ros/myworkcell_core/srv/LocalizePart.l
