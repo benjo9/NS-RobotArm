@@ -9,3 +9,7 @@ git clone https://github.com/Noothless/NS-RobotArm.git
 cd ~/NS-RobotArm
 
 ./install.sh
+
+launch:
+
+roslaunch myworkcell_moveit_config demo.launch
