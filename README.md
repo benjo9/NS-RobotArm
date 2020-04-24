@@ -30,9 +30,7 @@ sudo apt-get install python-catkin-tools
 
 git clone https://github.com/Noothless/NS-RobotArm.git
 
-cd NS-RobotArm
-
-cd robot_ws/src/
+cd NS-RobotArm/robot_ws/src/
 
 git clone https://github.com/jmeyer1292/fake_ar_publisher.git
 
