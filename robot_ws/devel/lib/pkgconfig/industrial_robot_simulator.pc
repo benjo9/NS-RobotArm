@@ -1,1 +1,0 @@
-/home/noa/Desktop/Robot_Repo/robot_ws/devel/.private/industrial_robot_simulator/lib/pkgconfig/industrial_robot_simulator.pc
