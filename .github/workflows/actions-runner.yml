@@ -23,5 +23,8 @@ jobs:
         ssh noa-jetson@192.168.1.192 mkdir NS-RobotArm
         scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/robot_ws noa-jetson@192.168.1.192:~/NS-RobotArm/
         scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/setup.sh noa-jetson@192.168.1.192:~/NS-RobotArm/
-        ssh noa-jetson@192.168.1.192 cd NS-RobotArm && ./setup.sh
+        ssh noa-jetson@192.168.1.192
+        cd NS-RobotArm
+        ./setup.sh
+        exit
 #ssh noa-jetson@192.168.1.192 if [ -d ~/deploy ]; then rm -Rf ~/deploy; fi
