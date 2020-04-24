@@ -1,6 +1,5 @@
 #! /bin/bash
 
-sudo apt-get install git
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt update
@@ -13,10 +12,10 @@ sudo rosdep init
 rosdep update
 sudo apt-get install ros-melodic-moveit
 sudo apt-get install python-catkin-tools
-git clone https://github.com/Noothless/NS-RobotArm.git
-cd NS-RobotArm/robot_ws/src/
+cd ~/NS-RobotArm/robot_ws/src/
 git clone https://github.com/jmeyer1292/fake_ar_publisher.git
 cd ..
 catkin init
 catkin build
 source devel/setup.bash
+roslaunch myworkcell_moveit_config demo.launch
