@@ -21,8 +21,9 @@ jobs:
     - name: Run a multi-line script
       run: |
         ssh noa-jetson@192.168.1.192
-        if [ -d ~/deploy ]; then rm -Rf ~/deploy; fi
+
         mkdir deploy
         exit
-        scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/robot_ws noa-jetson@192.168.1.192:~/deploy/
-        scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/setup.sh noa-jetson@192.168.1.192:~/deploy/
+#if [ -d ~/deploy ]; then rm -Rf ~/deploy; fi
+#scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/robot_ws noa-jetson@192.168.1.192:~/deploy/
+#scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/setup.sh noa-jetson@192.168.1.192:~/deploy/
