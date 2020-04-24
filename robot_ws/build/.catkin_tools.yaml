@@ -1,0 +1,6 @@
+devel_space: /home/noa/Desktop/Robot_Repo/robot_ws/devel
+install: false
+install_space: /home/noa/Desktop/Robot_Repo/robot_ws/install
+profile: default
+source_space: /home/noa/Desktop/Robot_Repo/robot_ws/src
+workspace: /home/noa/Desktop/Robot_Repo/robot_ws

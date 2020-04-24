@@ -1,0 +1,1 @@
+/home/noa/Desktop/Robot_Repo/robot_ws/devel/.private/myworkcell_core/lib/pkgconfig/myworkcell_core.pc
