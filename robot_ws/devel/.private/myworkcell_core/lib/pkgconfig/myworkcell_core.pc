@@ -1,8 +1,0 @@
-prefix=/home/noa/Desktop/Robot_Repo/robot_ws/devel/.private/myworkcell_core
-
-Name: myworkcell_core
-Description: Description of myworkcell_core
-Version: 0.0.0
-Cflags: -I/home/noa/Desktop/Robot_Repo/robot_ws/devel/.private/myworkcell_core/include
-Libs: -L${prefix}/lib 
-Requires: roscpp fake_ar_publisher message_runtime geometry_msgs moveit_ros_planning_interface

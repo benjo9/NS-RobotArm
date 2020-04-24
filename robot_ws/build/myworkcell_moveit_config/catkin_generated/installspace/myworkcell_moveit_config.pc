@@ -1,8 +1,0 @@
-prefix=/home/noa/Desktop/Robot_Repo/robot_ws/install
-
-Name: myworkcell_moveit_config
-Description: Description of myworkcell_moveit_config
-Version: 0.3.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

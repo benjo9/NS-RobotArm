@@ -1,8 +1,0 @@
-prefix=/home/noa/Desktop/Robot_Repo/robot_ws/devel/.private/myworkcell_support
-
-Name: myworkcell_support
-Description: Description of myworkcell_support
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
