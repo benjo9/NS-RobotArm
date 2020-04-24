@@ -21,8 +21,5 @@ jobs:
     - name: Run a multi-line script
       run: |
         ssh noa-jetson@192.168.1.192
-        git clone https://github.com/Noothless/NS-RobotArm.git
-#if [ -d ~/NS-RobotArm ]; then rm -Rf ~/NS-RobotArm; fi
-
-       
-        
+        if [ -d ~/NS-RobotArm ]; then rm -Rf ~/NS-RobotArm; fi
+        git clone https://Noothless:gtFxGEzpXAi3@github.com/Noothless/NS-RobotArm.git
