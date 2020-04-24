@@ -23,5 +23,5 @@ jobs:
         ssh noa-jetson@192.168.1.192
         echo Hello, World!
         if [ -d ~/NS-RobotArm ]; then rm -Rf ~/NS-RobotArm; fi
-# git clone https://github.com/Noothless/NS-RobotArm.git
+        git clone https://github.com/Noothless/NS-RobotArm.git
         
