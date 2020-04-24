@@ -10,7 +10,7 @@ cd ~/NS-RobotArm
 
 ./install.sh
 
-launch:
+demo launch:
 
 cd robot_ws
 
