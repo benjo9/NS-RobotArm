@@ -12,4 +12,8 @@ cd ~/NS-RobotArm
 
 launch:
 
+cd robot_ws
+
+source devel/setup.bash
+
 roslaunch myworkcell_moveit_config demo.launch
