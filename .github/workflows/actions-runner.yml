@@ -25,9 +25,6 @@ jobs:
       run: |
         scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/robot_ws noa-jetson@192.168.1.192:~/NS-RobotArm/
         scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/setup.sh noa-jetson@192.168.1.192:~/NS-RobotArm/
-    - name: Clone Repo
-      run: |
-        ssh noa-jetson@192.168.1.192 cd ~/NS-RobotArm/robot_ws/src/ && git clone https://github.com/jmeyer1292/fake_ar_publisher.git
     - name: Setup
       run: |
         ssh noa-jetson@192.168.1.192 cd NS-RobotArm && ./setup.sh
