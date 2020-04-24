@@ -24,4 +24,5 @@ jobs:
         rm -r NS-RobotArm
         git clone https://github.com/Noothless/NS-RobotArm.git
         cd ~/NS-RobotArm
+        ./setup.sh
         
