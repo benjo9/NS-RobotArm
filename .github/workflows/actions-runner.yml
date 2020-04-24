@@ -21,7 +21,6 @@ jobs:
     - name: Run a multi-line script
       run: |
         ssh noa-jetson@192.168.1.192
-
         mkdir deploy
         exit
 #if [ -d ~/deploy ]; then rm -Rf ~/deploy; fi
