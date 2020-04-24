@@ -1,5 +1,0 @@
-industrial_robot_simulator
-/home/noa/Desktop/Robot_Repo/robot_ws/devel/.private/industrial_robot_simulator/cmake.lock /home/noa/Desktop/Robot_Repo/robot_ws/devel/./cmake.lock
-/home/noa/Desktop/Robot_Repo/robot_ws/devel/.private/industrial_robot_simulator/lib/pkgconfig/industrial_robot_simulator.pc /home/noa/Desktop/Robot_Repo/robot_ws/devel/lib/pkgconfig/industrial_robot_simulator.pc
-/home/noa/Desktop/Robot_Repo/robot_ws/devel/.private/industrial_robot_simulator/share/industrial_robot_simulator/cmake/industrial_robot_simulatorConfig-version.cmake /home/noa/Desktop/Robot_Repo/robot_ws/devel/share/industrial_robot_simulator/cmake/industrial_robot_simulatorConfig-version.cmake
-/home/noa/Desktop/Robot_Repo/robot_ws/devel/.private/industrial_robot_simulator/share/industrial_robot_simulator/cmake/industrial_robot_simulatorConfig.cmake /home/noa/Desktop/Robot_Repo/robot_ws/devel/share/industrial_robot_simulator/cmake/industrial_robot_simulatorConfig.cmake
