@@ -1,1 +1,0 @@
-/home/noa/Desktop/catkin_ws/devel/.private/myworkcell_core/lib/python2.7/dist-packages/myworkcell_core/__init__.py

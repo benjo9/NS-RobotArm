@@ -1,6 +1,0 @@
-Not searching for unused variables given on the command line.
-[31m[1mCMake Error[0m at /home/noa/Desktop/catkin_ws/src/myworkcell_core/CMakeLists.txt:205:
-  Parse error.  Function missing ending ")".  End of file reached.
-
-
-[36m--[0m Configuring incomplete, errors occurred!
