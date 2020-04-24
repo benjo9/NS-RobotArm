@@ -30,12 +30,18 @@ sudo apt-get install python-catkin-tools
 
 git clone https://github.com/Noothless/NS-RobotArm.git
 
-cd Robot_Repo
+cd NS-RobotArm
 
-cd robot_ws
+cd robot_ws/src/
 
-source devel/setup.bash
+git clone https://github.com/jmeyer1292/fake_ar_publisher.git
+
+cd ..
+
+catkin init
 
 catkin build
+
+source devel/setup.bash
 
 roslaunch myworkcell_moveit_config demo.launch
