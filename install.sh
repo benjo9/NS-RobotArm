@@ -18,3 +18,4 @@ cd ..
 catkin init
 catkin build
 source devel/setup.bash
+roslaunch myworkcell_moveit_config demo.launch
