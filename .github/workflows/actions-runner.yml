@@ -11,20 +11,25 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  deploy:
     # The type of runner that the job will run on
     runs-on: self-hosted
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    - name: mkdir
       run: |
         ssh noa-jetson@192.168.1.192 mkdir NS-RobotArm
+    - name: Copy Files
+      run: |
         scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/robot_ws noa-jetson@192.168.1.192:~/NS-RobotArm/
         scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/setup.sh noa-jetson@192.168.1.192:~/NS-RobotArm/
-        ssh noa-jetson@192.168.1.192
-        cd NS-RobotArm
-        ./setup.sh
-        exit
+    - name: Clone Repo
+      run: |
+        ssh noa-jetson@192.168.1.192 cd ~/NS-RobotArm/robot_ws/src/ && git clone https://github.com/jmeyer1292/fake_ar_publisher.git
+    - name: Setup
+      run: |
+        ssh noa-jetson@192.168.1.192 cd NS-RobotArm && ./setup.sh
+
 #ssh noa-jetson@192.168.1.192 
