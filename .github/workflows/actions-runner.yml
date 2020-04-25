@@ -20,12 +20,10 @@ jobs:
       - name: mkdir
         run: |
           ssh jetson@192.168.1.192 'if [ -d ~/NS-RobotArm ]; then sudo rm -Rf ~/NS-RobotArm; fi'
-          ssh jetson@192.168.1.192 mkdir NS-RobotArm
     
-      - name: Copy Files
+      - name: Git clone
         run: |
-          scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/robot_ws jetson@192.168.1.192:~/NS-RobotArm/
-          scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/setup.sh jetson@192.168.1.192:~/NS-RobotArm/
+          ssh ssh jetson@192.168.1.192 git clone https://github.com/Noothless/NS-RobotArm.git
         
       - name: Setup
         run: |
