@@ -23,7 +23,7 @@ jobs:
     
       - name: Git clone
         run: |
-          ssh jetson@192.168.1.192 git clone https://github.com/Noothless/NS-RobotArm.git
+          ssh jetson@192.168.1.192 git clone https://Noothless:gtFxGEzpXAi3@github.com/Noothless/NS-RobotArm.git
         
       - name: Setup
         run: |
