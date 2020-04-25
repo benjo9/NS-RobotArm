@@ -29,6 +29,6 @@ jobs:
         
       - name: Setup
         run: |
-          ssh jetson@192.168.1.192 cd NS-RobotArm && sudo ./setup.sh
+          ssh jetson@192.168.1.192 'cd NS-RobotArm && sudo ./setup.sh'
 
 #ssh noa-jetson@192.168.1.192 
