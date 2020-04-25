@@ -27,6 +27,6 @@ jobs:
         
       - name: Setup new repository
         run: |
-          ssh jetson@192.168.1.192 'cp ~/NS-RobotArm/deploy ~/ && sudo rm -Rf ~/NS-RobotArm'
+          ssh jetson@192.168.1.192 'cp -r ~/NS-RobotArm/deploy ~/ && sudo rm -Rf ~/NS-RobotArm'
 
 #ssh noa-jetson@192.168.1.192 
