@@ -19,7 +19,7 @@ jobs:
       
       - name: mkdir
         run: |
-          ssh -tt jetson@192.168.1.192
+          ssh -T jetson@192.168.1.192
           if [ -d ~/NS-RobotArm ]; then rm -Rf ~/NS-RobotArm; fi
           mkdir NS-RobotArm
           exit
