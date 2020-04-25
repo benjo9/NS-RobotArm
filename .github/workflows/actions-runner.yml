@@ -19,15 +19,18 @@ jobs:
       
       - name: mkdir
         run: |
-          
+          ssh jetson@192.168.1.192
+          if [ -d ~/NS-RobotArm ]; then sudo rm -Rf ~/NS-RobotArm; fi
+          mkdir NS-RobotArm
+          exit
     
       - name: Copy Files
         run: |
-          scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/robot_ws noa-jetson@192.168.1.192:~/NS-RobotArm/
-          scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/setup.sh noa-jetson@192.168.1.192:~/NS-RobotArm/
+          scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/robot_ws jetson@192.168.1.192:~/NS-RobotArm/
+          scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/setup.sh jetson@192.168.1.192:~/NS-RobotArm/
         
       - name: Setup
         run: |
-          ssh noa-jetson@192.168.1.192 cd NS-RobotArm && sudo ./setup.sh
+          ssh jetson@192.168.1.192 cd NS-RobotArm && sudo ./setup.sh
 
 #ssh noa-jetson@192.168.1.192 
