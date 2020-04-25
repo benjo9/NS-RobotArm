@@ -1,5 +1,6 @@
 #! /bin/bash
 
+cd ..
 if [ -d ~/NS-RobotArm/deploy/install ]; then rm -Rf ~/NS-RobotArm/deploy/install; fi
 cp -r ~/NS-RobotArm/robot_ws/install/ ~/NS-RobotArm/deploy/
 cp -r ~/NS-RobotArm/arduino/ ~/NS-RobotArm/deploy/

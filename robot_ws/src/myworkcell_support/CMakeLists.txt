@@ -177,11 +177,9 @@ include_directories(
 # )
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(DIRECTORY urdf/
+   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
+)
 
 #############
 ## Testing ##
