@@ -19,14 +19,14 @@ jobs:
       
       - name: Remove old repository
         run: |
-          ssh jetson@192.168.1.192 'if [ -d ~/NS-RobotArm ]; then sudo rm -Rf ~/NS-RobotArm; fi'
+          ssh jetson@192.168.1.192 'if [ -d ~/deploy ]; then sudo rm -Rf ~/deploy; fi'
     
       - name: Git clone
         run: |
           ssh jetson@192.168.1.192 git clone https://Noothless:gtFxGEzpXAi3@github.com/Noothless/NS-RobotArm.git
         
-      - name: Build new repository
+      - name: Setup new repository
         run: |
-          ssh jetson@192.168.1.192 'cd NS-RobotArm && sudo ./setup.sh'
+          ssh jetson@192.168.1.192 'cp ~/NS-RobotArm/deploy ~/ && sudo rm -Rf ~/NS-RobotArm'
 
 #ssh noa-jetson@192.168.1.192 
