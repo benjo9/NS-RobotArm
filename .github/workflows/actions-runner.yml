@@ -16,13 +16,18 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      
+      - name: mkdir
+        run: |
+          
     
-    - name: Clone
-      run: |
-        ssh noa-jetson@192.168.1.192 sudo ./setup.sh
+      - name: Copy Files
+        run: |
+          scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/robot_ws noa-jetson@192.168.1.192:~/NS-RobotArm/
+          scp -r ~/actions-runner/_work/NS-RobotArm/NS-RobotArm/NS-RobotArm/setup.sh noa-jetson@192.168.1.192:~/NS-RobotArm/
         
-    - name: Setup
-      run: |
-        ssh noa-jetson@192.168.1.192 cd NS-RobotArm && sudo ./setup.sh
+      - name: Setup
+        run: |
+          ssh noa-jetson@192.168.1.192 cd NS-RobotArm && sudo ./setup.sh
 
 #ssh noa-jetson@192.168.1.192 
