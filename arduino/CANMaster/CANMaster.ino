@@ -1,13 +1,89 @@
-// the setup function runs once when you press reset or power the board
-void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+/* 
+ * CAN Bus Interface for ROS
+ * Noa Sendlhofer, 23.02.2020
+ */
+
+#include <ros.h>
+#include <std_msgs/Empty.h>
+#include <mcp_can.h>
+#include <SPI.h>
+#include <std_msgs/Int32.h>
+
+//CAN --------------------
+
+MCP_CAN CAN0(10);
+
+unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+
+//-------------------------
+
+//ROS ---------------------
+
+ros::NodeHandle  nh;
+
+void Axis0Position( const std_msgs::Int32& msg){
+  sendCANmsg_int(0x03, 0x00C, 0, 8, msg.data);
 }
 
-// the loop function runs over and over again forever
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(100);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(100);                       // wait for a second
+void Axis0Velocity( const std_msgs::Int32& msg){
+  sendCANmsg_float(0x03, 0x00F, 0, 8, msg.data);
 }
+
+ros::Subscriber<std_msgs::Int32> A0P("Axis0Position", &Axis0Position );
+ros::Subscriber<std_msgs::Int32> A0V("Axis0Velocity", &Axis0Velocity );
+
+//-------------------------
+
+void setup()
+{ 
+  //CAN -------------------
+  
+  CAN0.begin(CAN_500KBPS) == CAN_OK;
+
+  //-----------------------
+
+  //ROS -------------------
+  
+  nh.initNode();
+  nh.subscribe(A0P);
+  nh.subscribe(A0V);
+
+  //-----------------------
+}
+
+void loop()
+{  
+  nh.spinOnce();
+  delay(1);
+}
+
+//CAN ---------------------
+
+void sendCANmsg_int(int ID, int CMD, int EXT, int DLC, uint32_t DATA)
+{
+  data[0] = (DATA & 0xFF);
+  data[1] = ((DATA >> 8) & 0xFF);
+  data[2] = ((DATA >> 16) & 0xFF);
+  data[3] = ((DATA >> 24) & 0xFF);
+  CAN0.sendMsgBuf( (ID << 5) + CMD, EXT, DLC, data);
+}
+
+void sendCANmsg_float(int ID, int CMD, int EXT, int DLC, float DATA)
+{
+  
+  byte *b = (byte *)&DATA;
+  
+  data[0] = b[0];
+  data[1] = b[1];
+  data[2] = b[2];
+  data[3] = b[3];
+  /*
+  byteArray[0] = (int)((longInt >> 24) & 0xFF) ;
+  byteArray[1] = (int)((longInt >> 16) & 0xFF) ;
+  byteArray[2] = (int)((longInt >> 8) & 0XFF);
+  byteArray[3] = (int)((longInt & 0XFF));
+  */
+  CAN0.sendMsgBuf( (ID << 5) + CMD, EXT, DLC, data);
+}
+
+//-----------------------
