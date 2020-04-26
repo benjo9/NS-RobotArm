@@ -11,7 +11,6 @@
 #include <controller_manager/controller_manager.h>
 #include <boost/scoped_ptr.hpp>
 #include <ros/ros.h>
-#include <RAcpp/RobotArm.h>
 #include <RA_hardware_interface/RA_hardware.h>
 
 using namespace hardware_interface;
@@ -37,7 +36,6 @@ namespace RA_hardware_interface
             void write(ros::Duration elapsed_time);
 
         protected:
-            RAcpp::RobotArm RobotArm;
             ros::NodeHandle nh_;
             ros::Timer non_realtime_loop_;
             ros::Duration control_period_;

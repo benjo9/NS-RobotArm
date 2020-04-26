@@ -10,12 +10,11 @@
 #include <joint_limits_interface/joint_limits_urdf.h>
 #include <controller_manager/controller_manager.h>
 #include <boost/scoped_ptr.hpp>
-#include <ros/ros.h>
 
 namespace RA_hardware_interface
 {
     /// \brief Hardware interface for a robot
-    class Hardware : public hardware_interface::RobotHW 
+    class Hardware : public hardware_interface::RobotHW
     {
         protected:
             // Interfaces
