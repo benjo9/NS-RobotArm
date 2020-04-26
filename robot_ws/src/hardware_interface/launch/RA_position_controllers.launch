@@ -1,0 +1,16 @@
+<launch>
+    <rosparam file="$(find RA_hardware_interface)/config/hardware.yaml" command="load"/>
+    <rosparam file="$(find RA_hardware_interface)/config/controllers.yaml" command="load"/>
+    <rosparam file="$(find RA_hardware_interface)/config/joint_limits.yaml" command="load"/>
+    <node name="RA_hardware_interface" pkg="RA_hardware_interface" type="RA_hardware_interface_node" output="screen"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
+        args="
+            /RobotArm/controller/state
+            /RobotArm/controller/position/Rev1
+            /RobotArm/controller/position/Rev2
+            /RobotArm/controller/position/Rev3
+            /RobotArm/controller/position/Rev4
+            /RobotArm/controller/position/Rev5
+            /RobotArm/controller/position/Rev6
+        "/>
+</launch>
