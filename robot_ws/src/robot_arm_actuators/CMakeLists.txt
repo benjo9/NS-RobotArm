@@ -102,8 +102,8 @@ catkin_package(
     include
   CATKIN_DEPENDS
     roscpp
-  LIBRARIES
-    robot_arm_actuators
+#  LIBRARIES
+#    robot_arm_actuators
 )
 
 ###########
@@ -182,18 +182,18 @@ install(DIRECTORY include/${PROJECT_NAME}/
   PATTERN ".svn" EXCLUDE
 )
 
-add_library(tr1cpp
-	include/${PROJECT_NAME}/i2c.h
-	include/${PROJECT_NAME}/tr1.h
-	include/${PROJECT_NAME}/segment.h
-	include/${PROJECT_NAME}/joint.h
-	src/i2c.cpp
-	src/tr1.cpp
-	src/arm.cpp
-	src/joint.cpp
-)
+#add_library(tr1cpp
+#	include/${PROJECT_NAME}/i2c.h
+#	include/${PROJECT_NAME}/tr1.h
+#	include/${PROJECT_NAME}/segment.h
+#	include/${PROJECT_NAME}/joint.h
+#	src/i2c.cpp
+#	src/tr1.cpp
+#	src/arm.cpp
+#	src/joint.cpp
+#)
 
-target_link_libraries(robot_arm_actuators ${catkin_LIBRARIES})
+#target_link_libraries(robot_arm_actuators ${catkin_LIBRARIES})
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES

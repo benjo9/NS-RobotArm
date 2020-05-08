@@ -3,9 +3,12 @@ myworkcell_core
 /home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/include/myworkcell_core/LocalizePartResponse.h /home/noa/NS-RobotArm/robot_ws/devel/include/myworkcell_core/LocalizePartResponse.h
 /home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/include/myworkcell_core/LocalizePart.h /home/noa/NS-RobotArm/robot_ws/devel/include/myworkcell_core/LocalizePart.h
 /home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/include/myworkcell_core/LocalizePartRequest.h /home/noa/NS-RobotArm/robot_ws/devel/include/myworkcell_core/LocalizePartRequest.h
+/home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/lib/python2.7/dist-packages/myworkcell_core/__init__.pyc /home/noa/NS-RobotArm/robot_ws/devel/lib/python2.7/dist-packages/myworkcell_core/__init__.pyc
 /home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/lib/python2.7/dist-packages/myworkcell_core/__init__.py /home/noa/NS-RobotArm/robot_ws/devel/lib/python2.7/dist-packages/myworkcell_core/__init__.py
 /home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/lib/python2.7/dist-packages/myworkcell_core/srv/_LocalizePart.py /home/noa/NS-RobotArm/robot_ws/devel/lib/python2.7/dist-packages/myworkcell_core/srv/_LocalizePart.py
+/home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/lib/python2.7/dist-packages/myworkcell_core/srv/__init__.pyc /home/noa/NS-RobotArm/robot_ws/devel/lib/python2.7/dist-packages/myworkcell_core/srv/__init__.pyc
 /home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/lib/python2.7/dist-packages/myworkcell_core/srv/__init__.py /home/noa/NS-RobotArm/robot_ws/devel/lib/python2.7/dist-packages/myworkcell_core/srv/__init__.py
+/home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/lib/python2.7/dist-packages/myworkcell_core/srv/_LocalizePart.pyc /home/noa/NS-RobotArm/robot_ws/devel/lib/python2.7/dist-packages/myworkcell_core/srv/_LocalizePart.pyc
 /home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/lib/pkgconfig/myworkcell_core.pc /home/noa/NS-RobotArm/robot_ws/devel/lib/pkgconfig/myworkcell_core.pc
 /home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/lib/myworkcell_core/vision_node /home/noa/NS-RobotArm/robot_ws/devel/lib/myworkcell_core/vision_node
 /home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_core/lib/myworkcell_core/myworkcell_node /home/noa/NS-RobotArm/robot_ws/devel/lib/myworkcell_core/myworkcell_node
