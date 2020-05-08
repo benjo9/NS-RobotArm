@@ -1,4 +1,4 @@
-/* 
+/*
  * CAN Bus Interface for ROS
  * Noa Sendlhofer, 23.02.2020
  */
@@ -21,38 +21,38 @@ unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 ros::NodeHandle  nh;
 
-void Axis0Position( const std_msgs::Int32& msg){
-  sendCANmsg_int(0x03, 0x00C, 0, 8, msg.data);
+void Axis2Position( const std_msgs::Int32& msg){
+  sendCANmsg_int(0x002, 0x00C, 0, 8, msg.data);
 }
 
-void Axis0Velocity( const std_msgs::Int32& msg){
-  sendCANmsg_float(0x03, 0x00F, 0, 8, msg.data);
+void Axis2Velocity( const std_msgs::Int32& msg){
+  sendCANmsg_float(0x002, 0x00F, 0, 8, msg.data);
 }
 
-ros::Subscriber<std_msgs::Int32> A0P("Axis0Position", &Axis0Position );
-ros::Subscriber<std_msgs::Int32> A0V("Axis0Velocity", &Axis0Velocity );
+ros::Subscriber<std_msgs::Int32> A2P("Axis2Position", &Axis2Position );
+ros::Subscriber<std_msgs::Int32> A2V("Axis2Velocity", &Axis2Velocity );
 
 //-------------------------
 
 void setup()
-{ 
+{
   //CAN -------------------
-  
-  CAN0.begin(CAN_500KBPS) == CAN_OK;
+
+  CAN0.begin(CAN_1000KBPS) == CAN_OK;
 
   //-----------------------
 
   //ROS -------------------
-  
+
   nh.initNode();
-  nh.subscribe(A0P);
-  nh.subscribe(A0V);
+  nh.subscribe(A2P);
+  nh.subscribe(A2V);
 
   //-----------------------
 }
 
 void loop()
-{  
+{
   nh.spinOnce();
   delay(1);
 }
@@ -70,9 +70,9 @@ void sendCANmsg_int(int ID, int CMD, int EXT, int DLC, uint32_t DATA)
 
 void sendCANmsg_float(int ID, int CMD, int EXT, int DLC, float DATA)
 {
-  
+
   byte *b = (byte *)&DATA;
-  
+
   data[0] = b[0];
   data[1] = b[1];
   data[2] = b[2];
