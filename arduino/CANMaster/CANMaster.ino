@@ -23,7 +23,10 @@ unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 ros::NodeHandle  nh;
 
 void Axis2Position( const std_msgs::Int32& msg){
+  digitalWrite(LED_BUILLTIN, HIGH);
   sendCANmsg_int(0x002, 0x00C, 0, 8, msg.data);
+  delay(100);
+  digitalWrite(LED_BUILLTIN, LOW);
 }
 
 void Axis2Velocity( const std_msgs::Int32& msg){
