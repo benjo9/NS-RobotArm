@@ -1,6 +1,7 @@
 /*
  * CAN Bus Interface for ROS
  * Noa Sendlhofer, 23.02.2020
+ *
  */
 
 #include <ros.h>
