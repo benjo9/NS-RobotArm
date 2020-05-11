@@ -1,7 +1,6 @@
 /*
  * CAN Bus Interface for ROS
- * Noa Sendlhofer, 23.02.2020
- *
+ * Noothless, 23/02/2020
  */
 
 #include <ros.h>
@@ -22,35 +21,93 @@ unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 ros::NodeHandle  nh;
 
+void Axis1Position( const std_msgs::Int32& msg){
+  sendCANmsg_int(0x01, 0x00C, 0, 8, msg.data);
+}
+
+void Axis1Velocity( const std_msgs::Int32& msg){
+  sendCANmsg_float(0x01, 0x00F, 0, 8, msg.data);
+}
+
 void Axis2Position( const std_msgs::Int32& msg){
-  digitalWrite(LED_BUILLTIN, HIGH);
-  sendCANmsg_int(0x002, 0x00C, 0, 8, msg.data);
-  delay(100);
-  digitalWrite(LED_BUILLTIN, LOW);
+  sendCANmsg_int(0x02, 0x00C, 0, 8, msg.data);
 }
 
 void Axis2Velocity( const std_msgs::Int32& msg){
-  sendCANmsg_float(0x002, 0x00F, 0, 8, msg.data);
+  sendCANmsg_float(0x02, 0x00F, 0, 8, msg.data);
 }
 
-ros::Subscriber<std_msgs::Int32> A2P("Axis2Position", &Axis2Position );
-ros::Subscriber<std_msgs::Int32> A2V("Axis2Velocity", &Axis2Velocity );
+void Axis3Position( const std_msgs::Int32& msg){
+  sendCANmsg_int(0x03, 0x00C, 0, 8, msg.data);
+}
+
+void Axis3Velocity( const std_msgs::Int32& msg){
+  sendCANmsg_float(0x03, 0x00F, 0, 8, msg.data);
+}
+
+void Axis4Position( const std_msgs::Int32& msg){
+  sendCANmsg_int(0x04, 0x00C, 0, 8, msg.data);
+}
+
+void Axis4Velocity( const std_msgs::Int32& msg){
+  sendCANmsg_float(0x04, 0x00F, 0, 8, msg.data);
+}
+
+void Axis5Position( const std_msgs::Int32& msg){
+  sendCANmsg_int(0x05, 0x00C, 0, 8, msg.data);
+}
+
+void Axis5Velocity( const std_msgs::Int32& msg){
+  sendCANmsg_float(0x05, 0x00F, 0, 8, msg.data);
+}
+
+void Axis6Position( const std_msgs::Int32& msg){
+  sendCANmsg_int(0x06, 0x00C, 0, 8, msg.data);
+}
+
+void Axis6Velocity( const std_msgs::Int32& msg){
+  sendCANmsg_float(0x06, 0x00F, 0, 8, msg.data);
+}
+
+ros::Subscriber<std_msgs::Int32> A1P("RobotArm/Axis1/Position", &Axis1Position );
+ros::Subscriber<std_msgs::Int32> A1V("RobotArm/Axis1/Velocity", &Axis1Velocity );
+ros::Subscriber<std_msgs::Int32> A2P("RobotArm/Axis2/Position", &Axis2Position );
+ros::Subscriber<std_msgs::Int32> A2V("RobotArm/Axis2/Velocity", &Axis2Velocity );
+ros::Subscriber<std_msgs::Int32> A3P("RobotArm/Axis3/Position", &Axis3Position );
+ros::Subscriber<std_msgs::Int32> A3V("RobotArm/Axis3/Velocity", &Axis3Velocity );
+ros::Subscriber<std_msgs::Int32> A4P("RobotArm/Axis4/Position", &Axis4Position );
+ros::Subscriber<std_msgs::Int32> A4V("RobotArm/Axis4/Velocity", &Axis4Velocity );
+ros::Subscriber<std_msgs::Int32> A5P("RobotArm/Axis5/Position", &Axis5Position );
+ros::Subscriber<std_msgs::Int32> A5V("RobotArm/Axis5/Velocity", &Axis5Velocity );
+ros::Subscriber<std_msgs::Int32> A6P("RobotArm/Axis6/Position", &Axis6Position );
+ros::Subscriber<std_msgs::Int32> A6V("RobotArm/Axis6/Velocity", &Axis6Velocity );
 
 //-------------------------
 
 void setup()
 {
+  Serial.begin(115200);
   //CAN -------------------
 
-  CAN0.begin(CAN_1000KBPS) == CAN_OK;
+  CAN0.begin(CAN_500KBPS) == CAN_OK;
 
   //-----------------------
 
   //ROS -------------------
 
   nh.initNode();
+  nh.subscribe(A1P);
+  nh.subscribe(A1V);
   nh.subscribe(A2P);
   nh.subscribe(A2V);
+  nh.subscribe(A3P);
+  nh.subscribe(A3V);
+  nh.subscribe(A4P);
+  nh.subscribe(A4V);
+  nh.subscribe(A5P);
+  nh.subscribe(A5V);
+  nh.subscribe(A6P);
+  nh.subscribe(A6V);
 
   //-----------------------
 }
