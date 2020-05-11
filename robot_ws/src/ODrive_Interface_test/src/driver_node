@@ -1,1 +1,23 @@
-test
+#!/usr/bin/env python3
+
+import rospy
+from std_msgs.msg import String
+from __future__ import print_function
+import odrive
+from odrive.enums import *
+import time
+import math
+
+print("finding an odrive...")
+odrv0 = odrive.find_any(serial_number="206E3590524B")
+odrv1 = odrive.find_any(serial_number="20573882304E")
+odrv2 = odrive.find_any(serial_number="20843881304E")
+
+print("starting calibration...")
+odrv0.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
+while my_drive.axis0.current_state != AXIS_STATE_IDLE:
+    time.sleep(0.1)
+
+odrv0.axis0.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
+
+odrv0.axis0.controller.input_pos = 100000
