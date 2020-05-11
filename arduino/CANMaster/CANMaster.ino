@@ -1,5 +1,5 @@
 /*
- * CAN Bus Interface for ROS
+ * CAN Bus Interface for rosserial
  * Noothless, 23/02/2020
  */
 
