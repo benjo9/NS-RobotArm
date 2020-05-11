@@ -1,0 +1,8 @@
+prefix=/home/noa/NS-RobotArm/robot_ws/install
+
+Name: ODrive_Interface_test
+Description: Description of ODrive_Interface_test
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
