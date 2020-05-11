@@ -14,9 +14,27 @@ odrv0 = odrive.find_any(serial_number="206E3590524B")
 odrv1 = odrive.find_any(serial_number="20573882304E")
 odrv2 = odrive.find_any(serial_number="20843881304E")
 
+def Axis1_rq_Callback(commandMessage):
+    command = commandMessage.data
+    odrv1.axis0.requested_state = command
+
+
+
+
+
+rospy.init_node('driver')
+
+rospy.Subscriber('Axis1/requested_state', Int8, Axis1_rq_Callback)
+rospy.Subscriber('Axis1/input_pos', Int32, Axis1_rq_Callback)
+rospy.Subscriber('Axis1/velocity', Int32, Axis1_rq_Callback)
+
+rospy.spin()
+
+
+
 print("starting calibration...")
 odrv0.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
-while my_drive.axis0.current_state != AXIS_STATE_IDLE:
+while odrv0.axis0.current_state != AXIS_STATE_IDLE:
     time.sleep(0.1)
 
 odrv0.axis0.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL

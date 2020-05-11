@@ -45,7 +45,7 @@ namespace RA_hardware_interface
 
              // Create joint state interface
             JointStateHandle jointStateHandle(joint.name, &joint_position_[i], &joint_velocity_[i], &joint_effort_[i]);
-             joint_state_interface_.registerHandle(jointStateHandle);
+            joint_state_interface_.registerHandle(jointStateHandle);
 
             // Create position joint interface
             JointHandle jointPositionHandle(jointStateHandle, &joint_position_command_[i]);
