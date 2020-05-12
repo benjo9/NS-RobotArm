@@ -20,6 +20,24 @@ odrv2 = odrive.find_any(serial_number="20843881304E")
 print("Connected to ODrive 2")
 
 def drive_axis(req):
+    print("Change velocity")
+
+    if req.axis == 1:
+        odrv1.axis0.controller.config.vel_limit = req.value
+    if req.axis == 2:
+        odrv0.axis0.controller.config.vel_limit = req.value
+    if req.axis == 3:
+        odrv0.axis1.controller.config.vel_limit = req.value
+    if req.axis == 4:
+        odrv2.axis0.controller.config.vel_limit = req.value
+    if req.axis == 5:
+        odrv2.axis1.controller.config.vel_limit = req.value
+    if req.axis == 6:
+        odrv1.axis1.controller.config.vel_limit = req.value
+
+    return driverResponse(True)
+
+def axis_velocity(req):
     print("Driving Axis")
 
     if req.axis == 1:
@@ -111,6 +129,7 @@ def axis_requested_state(req):
 rospy.init_node('driver')
 
 driver = rospy.Service('drive_axis', driver, drive_axis)
+velocity = rospy.Service('axis_velocity', driver, axis_velocity)
 feedback = rospy.Service('axis_position', feedback, axis_position)
 requested_state = rospy.Service('axis_requested_state', requested_state, axis_requested_state)
 
