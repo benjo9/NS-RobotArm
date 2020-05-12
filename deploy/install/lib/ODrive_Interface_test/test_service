@@ -30,7 +30,7 @@ while True:
     setpoint = 100000.0 * math.sin((time.monotonic() - t0)*2)
     print("goto " + str(int(setpoint)))
     resp2 = drive_axis.call(driverRequest(5, setpoint))
-    time.sleep(0.01)
+    time.sleep(0.02)
 """
 resp1 = axis_position.call(feedbackRequest(6))
 print(resp1)
