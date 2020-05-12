@@ -12,11 +12,11 @@ import math
 from ODrive_Interface_test.srv import *
 
 print("Connecting...")
-#odrv0 = odrive.find_any(serial_number="206E3590524B")
+odrv0 = odrive.find_any(serial_number="206E3590524B")
 print("Connected to ODrive 0")
 odrv1 = odrive.find_any(serial_number="20573882304E")
 print("Connected to ODrive 1")
-#odrv2 = odrive.find_any(serial_number="20843881304E")
+odrv2 = odrive.find_any(serial_number="20843881304E")
 print("Connected to ODrive 2")
 
 def drive_axis(req):
@@ -104,6 +104,7 @@ def axis_requested_state(req):
             odrv1.axis1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
         else:
             odrv1.axis1.requested_state = req.requested_state
+
     return requested_stateResponse(True)
 
 
