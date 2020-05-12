@@ -30,7 +30,7 @@ t0 = time.monotonic()
 while True:
     setpoint = 10000.0 * math.sin((time.monotonic() - t0)*2)
     print("goto " + str(int(setpoint)))
-    odrive1.axis1.controller.input_pos = setpoint
+    odrv1.axis1.controller.input_pos = setpoint
     time.sleep(0.01)
 
 
