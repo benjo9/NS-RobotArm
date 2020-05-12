@@ -11,7 +11,6 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   message_generation
-  hardware_interface
   controller_manager
   control_msgs
   trajectory_msgs
@@ -115,7 +114,6 @@ catkin_package(
   CATKIN_DEPENDS
     message_runtime
     std_msgs
-    hardware_interface
     controller_manager
     roscpp
     control_msgs
