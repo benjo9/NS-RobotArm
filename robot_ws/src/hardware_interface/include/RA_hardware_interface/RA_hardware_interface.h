@@ -1,5 +1,5 @@
-#ifndef ROS_CONTROL__RA_HARDWARE_INTERFACE_H
-#define ROS_CONTROL__RA_HARDWARE_INTERFACE_H
+#ifndef ROS_CONTROL__ROBOT_HARDWARE_INTERFACE_H
+#define ROS_CONTROL__ROBOT_HARDWARE_INTERFACE_H
 
 #include <hardware_interface/joint_state_interface.h>
 #include <hardware_interface/joint_command_interface.h>
@@ -45,6 +45,10 @@ namespace RA_hardware_interface
             double loop_hz_;
             boost::shared_ptr<controller_manager::ControllerManager> controller_manager_;
             double p_error_, v_error_, e_error_;
+            ros::ServiceClient drive_axis;
+            ros::ServiceClient axis_position;
+            hardware_interface::driver driver;
+            hardware_interface::feedback feedback;
     };
 
 }

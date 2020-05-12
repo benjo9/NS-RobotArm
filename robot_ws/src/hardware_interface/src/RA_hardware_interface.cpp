@@ -5,7 +5,6 @@
 #include <joint_limits_interface/joint_limits_urdf.h>
 #include <joint_limits_interface/joint_limits_rosparam.h>
 
-
 using namespace hardware_interface;
 using joint_limits_interface::JointLimits;
 using joint_limits_interface::SoftJointLimits;
@@ -17,9 +16,11 @@ namespace RA_hardware_interface
     RAHardwareInterface::RAHardwareInterface(ros::NodeHandle& nh) : nh_(nh) {
         init();
         controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
-        nh_.param("/RA/hardware_interface/loop_hz", loop_hz_, 0.1);
+        nh_.param("/ROBOT/hardware_interface/loop_hz", loop_hz_, 0.1);
         ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
-        non_realtime_loop_ = nh_.createTimer(update_freq, &RobotArmHardwareInterface::update, this);
+        non_realtime_loop_ = nh_.createTimer(update_freq, &TR1HardwareInterface::update, this);
+        drive_axis = nh_.serviceClient<hardware_interface::driver>("drive_axis", true);
+        axis_position = nh_.serviceClient<hardware_interface::feedback>("axis_position", true);
     }
 
     RAHardwareInterface::~RAHardwareInterface() {
@@ -39,19 +40,19 @@ namespace RA_hardware_interface
         joint_velocity_command_.resize(num_joints_);
         joint_effort_command_.resize(num_joints_);
 
+        jn = ["Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"]
+
         // Initialize Controller
         for (int i = 0; i < num_joints_; ++i) {
-            RAcpp::Joint joint = RA.getJoint(joint_names_[i]);
-
              // Create joint state interface
-            JointStateHandle jointStateHandle(joint.name, &joint_position_[i], &joint_velocity_[i], &joint_effort_[i]);
+            JointStateHandle jointStateHandle(jn[i], &joint_position_[i], &joint_velocity_[i], &joint_effort_[i]);
             joint_state_interface_.registerHandle(jointStateHandle);
 
             // Create position joint interface
             JointHandle jointPositionHandle(jointStateHandle, &joint_position_command_[i]);
             JointLimits limits;
                 SoftJointLimits softLimits;
-            getJointLimits(joint.name, nh_, limits)
+            getJointLimits(jn[i], nh_, limits)
             PositionJointSoftLimitsHandle jointLimitsHandle(jointPositionHandle, limits, softLimits);
             positionJointSoftLimitsInterface.registerHandle(jointLimitsHandle);
             position_joint_interface_.registerHandle(jointPositionHandle);
@@ -76,14 +77,17 @@ namespace RA_hardware_interface
 
     void ROBOTHardwareInterface::read() {
         for (int i = 0; i < num_joints_; i++) {
-            joint_position_[i] = ROBOT.getJoint(joint_names_[i]).read();
+            feedback.request.axis = i + 1;
+            joint_position_[i] = axis_position.call(feedback);
         }
     }
 
     void ROBOTHardwareInterface::write(ros::Duration elapsed_time) {
         positionJointSoftLimitsInterface.enforceLimits(elapsed_time);
         for (int i = 0; i < num_joints_; i++) {
-            ROBOT.getJoint(joint_names_[i]).actuate(joint_effort_command_[i]);
+            driver.request.axis = i + 1;
+            driver.request.value = joint_position_command_[i];
+            drive_axis.call(driver);
         }
     }
 }

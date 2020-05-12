@@ -1,4 +1,4 @@
-RobotArm:
+RA:
   controller:
     state:
       type: joint_state_controller/JointStateController

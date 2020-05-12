@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+
+import rospy
+from std_msgs.msg import String
+import time
+import math
+
+positions = [0, 0, 0, 0, 0, 0]
+
+def drive_axis(req):
+    print("Driving Axis")
+    positions[req.axis - 1] = req.value
+    return driverResponse(True)
+
+def axis_position(req):
+    print("Axis Postition")
+    return feedbackResponse(int(positions[req.axis - 1]))
+
+
+rospy.init_node('driver')
+
+driver = rospy.Service('drive_axis', driver, drive_axis)
+velocity = rospy.Service('axis_velocity', velocity, axis_velocity)
+feedback = rospy.Service('axis_position', feedback, axis_position)
+requested_state = rospy.Service('axis_requested_state', requested_state, axis_requested_state)
+
+rospy.spin()

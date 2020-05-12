@@ -1,5 +1,5 @@
-#ifndef ROS_CONTROL__RA_HARDWARE_H
-#define ROS_CONTROL__RA_HARDWARE_H
+#ifndef ROS_CONTROL__ROBOT_HARDWARE_H
+#define ROS_CONTROL__ROBOT_HARDWARE_H
 
 #include <hardware_interface/joint_state_interface.h>
 #include <hardware_interface/joint_command_interface.h>
@@ -10,11 +10,12 @@
 #include <joint_limits_interface/joint_limits_urdf.h>
 #include <controller_manager/controller_manager.h>
 #include <boost/scoped_ptr.hpp>
+#include <ros/ros.h>
 
 namespace RA_hardware_interface
 {
     /// \brief Hardware interface for a robot
-    class Hardware : public hardware_interface::RobotHW
+    class RAHardware : public hardware_interface::RobotHW
     {
         protected:
             // Interfaces
