@@ -60,7 +60,7 @@ def axis_position(req):
         return driverResponse(int(odrv2.axis1.encoder.pos_estimate))
     """
     if req.axis == 6:
-        pos = int(round(odrv1.axis1.encoder.pos_estimate)
+        pos = int(round(odrv1.axis1.encoder.pos_estimate))
         print(pos)
         return driverResponse(pos)
 
