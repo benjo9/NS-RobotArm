@@ -35,7 +35,7 @@ struct driverRequest_
 
 
 
-   typedef int8_t _axis_type;
+   typedef int16_t _axis_type;
   _axis_type axis;
 
    typedef int32_t _value_type;
@@ -128,12 +128,12 @@ struct MD5Sum< ::ODrive_Interface_test::driverRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b08cb64ad11b61cf309c7d9d18d33ba8";
+    return "678e13c1fe4ebe3f4b3a3a1a5aee7968";
   }
 
   static const char* value(const ::ODrive_Interface_test::driverRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb08cb64ad11b61cfULL;
-  static const uint64_t static_value2 = 0x309c7d9d18d33ba8ULL;
+  static const uint64_t static_value1 = 0x678e13c1fe4ebe3fULL;
+  static const uint64_t static_value2 = 0x4b3a3a1a5aee7968ULL;
 };
 
 template<class ContainerAllocator>
@@ -153,7 +153,7 @@ struct Definition< ::ODrive_Interface_test::driverRequest_<ContainerAllocator> >
   static const char* value()
   {
     return "\n"
-"int8 axis\n"
+"int16 axis\n"
 "int32 value\n"
 ;
   }
@@ -194,7 +194,7 @@ struct Printer< ::ODrive_Interface_test::driverRequest_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::ODrive_Interface_test::driverRequest_<ContainerAllocator>& v)
   {
     s << indent << "axis: ";
-    Printer<int8_t>::stream(s, indent + "  ", v.axis);
+    Printer<int16_t>::stream(s, indent + "  ", v.axis);
     s << indent << "value: ";
     Printer<int32_t>::stream(s, indent + "  ", v.value);
   }
