@@ -1,10 +1,10 @@
 
 "use strict";
 
+let feedback = require('./feedback.js')
 let driver = require('./driver.js')
-let closed_loop = require('./closed_loop.js')
 
 module.exports = {
+  feedback: feedback,
   driver: driver,
-  closed_loop: closed_loop,
 };
