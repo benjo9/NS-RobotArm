@@ -14,8 +14,8 @@ rospy.wait_for_service('axis_position')
 drive_axis = rospy.ServiceProxy('drive_axis', driver)
 axis_position = rospy.ServiceProxy('axis_position', feedback)
 
-resp1 = axis_position.call(feedbackRequest(6))
-print(resp1)
+#resp1 = axis_position.call(feedbackRequest(6))
+#print(resp1)
 
 resp2 = drive_axis.call(driverRequest(6, 100000))
 print(resp2)
