@@ -28,12 +28,14 @@ odrv1.axis1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
 
 def drive_axis(req):
     print("Driving Axis")
-    odrv1.axis0.controller.input_pos = req.value if int(req.axis) == 1
-    odrv0.axis0.controller.input_pos = req.value if int(req.axis) == 2
-    odrv0.axis1.controller.input_pos = req.value if int(req.axis) == 3
-    odrv2.axis0.controller.input_pos = req.value if int(req.axis) == 4
-    odrv2.axis1.controller.input_pos = req.value if int(req.axis) == 5
-    odrv1.axis1.controller.input_pos = req.value if int(req.axis) == 6
+
+    if req.axis == 1:
+        odrv1.axis0.controller.input_pos = req.value
+    #odrv0.axis0.controller.input_pos = req.value if int(req.axis) == 2
+    #odrv0.axis1.controller.input_pos = req.value if int(req.axis) == 3
+    #odrv2.axis0.controller.input_pos = req.value if int(req.axis) == 4
+    #odrv2.axis1.controller.input_pos = req.value if int(req.axis) == 5
+    #odrv1.axis1.controller.input_pos = req.value if int(req.axis) == 6
     return driverResponse(True)
 
 
