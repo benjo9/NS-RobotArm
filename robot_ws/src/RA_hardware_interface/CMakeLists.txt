@@ -137,10 +137,8 @@ catkin_package(
 ## Your package locations should be listed before other locations
 include_directories(
   include/
-  srv/
   ${catkin_INCLUDE_DIRS}
 )
-link_directories(${catkin_LIBRARY_DIRS})
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/hardware_interface.cpp
@@ -151,11 +149,6 @@ link_directories(${catkin_LIBRARY_DIRS})
 ## either from message generation or dynamic reconfigure
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 install(DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.h"
-  PATTERN ".svn" EXCLUDE)
-
-install(DIRECTORY srv/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   FILES_MATCHING PATTERN "*.h"
   PATTERN ".svn" EXCLUDE)
@@ -218,11 +211,7 @@ target_link_libraries(RA_hardware_interface_node RA_hardware_interface ${catkin_
 ## Mark cpp header files for installation
 
 
-install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-install(DIRECTORY include DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-install(DIRECTORY src DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-install(DIRECTORY srv DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 install(FILES
   driver.h
