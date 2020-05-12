@@ -175,7 +175,7 @@ add_dependencies(RA_hardware_interface_node RA_hardware_interface)
 
 ## Specify libraries to link a library or executable target against
 
-target_link_libraries(RA_hardware_interface_node ${catkin_LIBRARIES})
+target_link_libraries(RA_hardware_interface_node RA_hardware_interface ${catkin_LIBRARIES})
 
 
 
