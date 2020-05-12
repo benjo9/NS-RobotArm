@@ -163,7 +163,6 @@ add_library(RA_hardware_interface src/RA_hardware_interface.cpp)
 ## same as for the library above
 add_dependencies(RA_hardware_interface_node RA_hardware_interface)
 
-rosbuild_add_executable(RA_hardware_interface RA_hardware_interface.cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(RA_hardware_interface ${catkin_LIBRARIES})
