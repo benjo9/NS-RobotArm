@@ -8,6 +8,7 @@ project(hardware_interface)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  hardware_interface
   roscpp
   std_msgs
   message_generation
@@ -112,6 +113,7 @@ catkin_package(
   INCLUDE_DIRS
     include
   CATKIN_DEPENDS
+    hardware_interface
     message_runtime
     std_msgs
     controller_manager
