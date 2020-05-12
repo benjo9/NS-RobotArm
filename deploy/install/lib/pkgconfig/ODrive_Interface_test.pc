@@ -3,6 +3,6 @@ prefix=/home/noa/NS-RobotArm/robot_ws/install
 Name: ODrive_Interface_test
 Description: Description of ODrive_Interface_test
 Version: 0.0.0
-Cflags: 
+Cflags: -I${prefix}/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: message_runtime std_msgs
