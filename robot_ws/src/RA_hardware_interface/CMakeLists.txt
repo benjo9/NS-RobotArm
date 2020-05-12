@@ -113,7 +113,6 @@ catkin_package(
   INCLUDE_DIRS
     include
   CATKIN_DEPENDS
-    roslib
     hardware_interface
     message_runtime
     std_msgs
