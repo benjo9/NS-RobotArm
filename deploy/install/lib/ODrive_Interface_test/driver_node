@@ -47,6 +47,7 @@ def drive_axis(req):
 def axis_position(req):
     print("Axis Postition")
 
+    """
     if req.axis == 1:
         return driverResponse(int(odrv1.axis0.encoder.pos_estimate))
     if req.axis == 2:
@@ -57,9 +58,10 @@ def axis_position(req):
         return driverResponse(int(odrv2.axis0.encoder.pos_estimate))
     if req.axis == 5:
         return driverResponse(int(odrv2.axis1.encoder.pos_estimate))
+    """
     if req.axis == 6:
-        return driverResponse(int(odrv1.axis1.encoder.pos_estimate))
-
+        print(odrv1.axis1.encoder.pos_estimate)
+    return driverResponse(1)
 
 rospy.init_node('driver')
 
