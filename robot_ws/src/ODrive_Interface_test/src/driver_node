@@ -19,7 +19,7 @@ print("Connected to ODrive 1")
 odrv2 = odrive.find_any(serial_number="20843881304E")
 print("Connected to ODrive 2")
 
-def drive_axis(req):
+def axis_velocity(req):
     print("Change velocity")
 
     if req.axis == 1:
@@ -37,7 +37,7 @@ def drive_axis(req):
 
     return driverResponse(True)
 
-def axis_velocity(req):
+def drive_axis(req):
     print("Driving Axis")
 
     if req.axis == 1:
