@@ -6,6 +6,7 @@ import rospy
 from std_msgs.msg import String
 import time
 import math
+from ODrive_Interface_test.srv import *
 
 positions = [0, 0, 0, 0, 0, 0]
 
