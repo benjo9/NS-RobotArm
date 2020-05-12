@@ -9,7 +9,7 @@ from odrive.enums import *
 import time
 import math
 
-from rospy_tutorials.srv import *
+from ODrive_Interface_test.srv import *
 
 print("Connecting...")
 #odrv0 = odrive.find_any(serial_number="206E3590524B")

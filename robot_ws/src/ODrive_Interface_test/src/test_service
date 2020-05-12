@@ -7,7 +7,7 @@ from std_msgs.msg import String
 import time
 import math
 
-from rospy_tutorials.srv import *
+from ODrive_Interface_test.srv import *
 
 rospy.wait_for_service('drive_axis')
 drive_axis = rospy.ServiceProxy('drive_axis', driver)
