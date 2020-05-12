@@ -69,10 +69,20 @@
   <build_depend>control_toolbox</build_depend>
   <build_depend>joint_limits_interface</build_depend>
 
+  <build_export_depend>hardware_interface</build_export_depend>
+  <build_export_depend>controller_manager</build_export_depend>
+  <build_export_depend>control_msgs</build_export_depend>
+  <build_export_depend>trajectory_msgs</build_export_depend>
+  <build_export_depend>actionlib</build_export_depend>
+  <build_export_depend>pluginlib</build_export_depend>
+  <build_export_depend>transmission_interface</build_export_depend>
+  <build_export_depend>urdf</build_export_depend>
+  <build_export_depend>control_toolbox</build_export_depend>
+  <build_export_depend>joint_limits_interface</build_export_depend>
+
   <exec_depend>hardware_interface</exec_depend>
   <exec_depend>controller_manager</exec_depend>
   <exec_depend>ros_controllers</exec_depend>
-  <exec_depend>tr1_description</exec_depend>
   <exec_depend>control_msgs</exec_depend>
   <exec_depend>trajectory_msgs</exec_depend>
   <exec_depend>actionlib</exec_depend>
