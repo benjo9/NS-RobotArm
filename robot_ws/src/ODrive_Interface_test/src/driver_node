@@ -11,7 +11,7 @@ import math
 
 print("Connecting...")
 odrv0 = odrive.find_any(serial_number="206E3590524B")
-print("Connected to ODrive o")
+print("Connected to ODrive 0")
 odrv1 = odrive.find_any(serial_number="20573882304E")
 print("Connected to ODrive 1")
 odrv2 = odrive.find_any(serial_number="20843881304E")
