@@ -158,7 +158,7 @@ add_executable(RA_hardware_interface_node src/RA_hardware_interface_node.cpp)
 ## target back to the shorter version for ease of user use
 ## e.g. "rosrun someones_pkg node" instead of "rosrun someones_pkg someones_pkg_node"
 # set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX "")
-
+add_library(RA_hardware_interface src/RA_hardware_interface.cpp)
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(RA_hardware_interface_node RA_hardware_interface)
@@ -170,7 +170,7 @@ target_link_libraries(RA_hardware_interface ${catkin_LIBRARIES})
 target_link_libraries(RA_hardware_interface_node ${catkin_LIBRARIES})
 
 
-add_library(RA_hardware_interface src/RA_hardware_interface.cpp)
+
 
 
 #############
