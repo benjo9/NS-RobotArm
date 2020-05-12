@@ -14,21 +14,26 @@ from ODrive_Interface_test.srv import *
 print("Connecting...")
 #odrv0 = odrive.find_any(serial_number="206E3590524B")
 print("Connected to ODrive 0")
-#odrv1 = odrive.find_any(serial_number="20573882304E")
+odrv1 = odrive.find_any(serial_number="20573882304E")
 print("Connected to ODrive 1")
 #odrv2 = odrive.find_any(serial_number="20843881304E")
 print("Connected to ODrive 2")
 
+print("starting calibration...")
+odrv1.axis1.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
+while odrv1.axis1.current_state != AXIS_STATE_IDLE:
+    time.sleep(0.1)
+
+odrv1.axis1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
+
 def drive_axis(req):
     print("Driving Axis")
-    #if(req.axis == 1) odrv1.axis0.controller.input_pos = req.value
-    #if(req.axis == 2) odrv0.axis0.controller.input_pos = req.value
-    #if(req.axis == 3) odrv0.axis1.controller.input_pos = req.value
-    #if(req.axis == 4) odrv2.axis0.controller.input_pos = req.value
-    #if(req.axis == 5) odrv2.axis1.controller.input_pos = req.value
-    #if(req.axis == 6) odrv1.axis1.controller.input_pos = req.value
-    print(req.axis)
-    print(req.value)
+    if(req.axis == 1) odrv1.axis0.controller.input_pos = req.value
+    if(req.axis == 2) odrv0.axis0.controller.input_pos = req.value
+    if(req.axis == 3) odrv0.axis1.controller.input_pos = req.value
+    if(req.axis == 4) odrv2.axis0.controller.input_pos = req.value
+    if(req.axis == 5) odrv2.axis1.controller.input_pos = req.value
+    if(req.axis == 6) odrv1.axis1.controller.input_pos = req.value
     return driverResponse(True)
 
 
