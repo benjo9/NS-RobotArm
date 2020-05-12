@@ -11,6 +11,16 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   message_generation
+  hardware_interface
+  controller_manager
+  control_msgs
+  trajectory_msgs
+  actionlib
+  pluginlib
+  transmission_interface
+  urdf
+  control_toolbox
+  joint_limits_interface
 )
 
 ## System dependencies are found with CMake's conventions
@@ -100,10 +110,21 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES hardware_interface
-  CATKIN_DEPENDS message_runtime std_msgs
-#  DEPENDS system_lib
+  INCLUDE_DIRS
+    include
+  CATKIN_DEPENDS
+    message_runtime
+    std_msgs
+    hardware_interface
+    controller_manager
+    roscpp
+    control_msgs
+    trajectory_msgs
+    pluginlib
+    transmission_interface
+    urdf
+    control_toolbox
+    joint_limits_interface
 )
 
 ###########
@@ -176,11 +197,10 @@ include_directories(
 # )
 
 ## Mark cpp header files for installation
-# install(DIRECTORY include/${PROJECT_NAME}/
-#   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-#   FILES_MATCHING PATTERN "*.h"
-#   PATTERN ".svn" EXCLUDE
-# )
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE)
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES
