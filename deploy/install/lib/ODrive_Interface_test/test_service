@@ -11,6 +11,7 @@ import math
 
 from ODrive_Interface_test.srv import *
 
+print("Waiting for services")
 rospy.wait_for_service('drive_axis')
 rospy.wait_for_service('axis_position')
 rospy.wait_for_service('axis_requested_state')
@@ -21,11 +22,14 @@ axis_requested_state = rospy.ServiceProxy('axis_requested_state', requested_stat
 resp0 = axis_requested_state.call(requested_stateRequest(6, 0))
 print(resp0)
 
+resp0 = axis_requested_state.call(requested_stateRequest(5, 0))
+print(resp0)
+
 t0 = time.monotonic()
 while True:
     setpoint = 100000.0 * math.sin((time.monotonic() - t0)*2)
     print("goto " + str(int(setpoint)))
-    resp2 = drive_axis.call(driverRequest(6, setpoint))
+    resp2 = drive_axis.call(driverRequest(5, setpoint))
     time.sleep(0.01)
 """
 resp1 = axis_position.call(feedbackRequest(6))
