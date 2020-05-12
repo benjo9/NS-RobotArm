@@ -139,7 +139,7 @@ include_directories(
 
   ${catkin_INCLUDE_DIRS}
 )
-link_directories(${catkin_LIBRARY_DIRS})
+#link_directories(${catkin_LIBRARY_DIRS})
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/hardware_interface.cpp
