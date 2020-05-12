@@ -123,6 +123,8 @@ catkin_package(
     urdf
     control_toolbox
     joint_limits_interface
+  LIBRARIES
+    RA_hardware_interface
 )
 
 ###########
@@ -132,7 +134,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include/
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -150,7 +152,6 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(RA_hardware_interface_node src/RA_hardware_interface_node.cpp)
-add_executable(RA_hardware_interface src/RA_hardware_interface.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -160,12 +161,14 @@ add_executable(RA_hardware_interface src/RA_hardware_interface.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(RA_hardware_interface_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(RA_hardware_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(RA_hardware_interface_node RA_hardware_interface)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(RA_hardware_interface_node ${catkin_LIBRARIES})
-target_link_libraries(RA_hardware_interface ${catkin_LIBRARIES})
+target_link_libraries(RA_hardware_interface_node RA_hardware_interface ${catkin_LIBRARIES})
+
+add_library(RA_hardware_interface src/RA_hardware_interface.cpp)
+
+
 #############
 ## Install ##
 #############
@@ -210,6 +213,8 @@ install(DIRECTORY src DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 #  src/RA_hardware_interface.cpp
 #  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 #)
+
+
 
 #############
 ## Testing ##
