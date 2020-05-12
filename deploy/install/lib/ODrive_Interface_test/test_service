@@ -20,13 +20,15 @@ print(resp1)
 resp2 = drive_axis.call(driverRequest(6, 100000))
 print(resp2)
 
-time.sleep(2)
+time.sleep(5)
 
 resp1 = axis_position.call(feedbackRequest(6))
 print(resp1)
 
 resp2 = drive_axis.call(driverRequest(6, 0))
 print(resp2)
+
+time.sleep(5)
 
 resp1 = axis_position.call(feedbackRequest(6))
 print(resp1)
