@@ -1,7 +1,4 @@
 #include <RA_hardware_interface/RA_hardware_interface.h>
-#include "ros/ros.h"
-#include "hardware_interface/driver.h"
-#include "hardware_interface/feedback.h"
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "RA_hardware_interface");
