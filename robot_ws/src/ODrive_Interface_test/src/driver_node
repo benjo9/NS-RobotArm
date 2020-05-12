@@ -9,6 +9,8 @@ from odrive.enums import *
 import time
 import math
 
+from rospy_tutorials.srv import *
+
 print("Connecting...")
 #odrv0 = odrive.find_any(serial_number="206E3590524B")
 print("Connected to ODrive 0")
@@ -25,12 +27,12 @@ def drive_axis(req):
     #if(req.axis == 4) odrv2.axis0.controller.input_pos = req.value
     #if(req.axis == 5) odrv2.axis1.controller.input_pos = req.value
     #if(req.axis == 6) odrv1.axis1.controller.input_pos = req.value
-    return True
+    return driverResponse(True)
 
 
 rospy.init_node('driver')
 
-driver = rospy.Service('drive_axis', ODrive_Interface_test.srv.driver, drive_axis)
+driver = rospy.Service('drive_axis', driver, drive_axis)
 
 rospy.spin()
 

@@ -7,9 +7,10 @@ from std_msgs.msg import String
 import time
 import math
 
+from rospy_tutorials.srv import *
+
 rospy.wait_for_service('drive_axis')
 drive_axis = rospy.ServiceProxy('drive_axis', driver)
-drive_axis(int32(1), int32(2))
 
-req = rospy_tutorials.srv.driverRequest(6, 100000)
+resp = drive_axis.call(driverRequest(6, 100000))
 print(drive_axis(req))
