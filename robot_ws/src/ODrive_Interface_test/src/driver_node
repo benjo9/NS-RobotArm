@@ -115,22 +115,3 @@ feedback = rospy.Service('axis_position', feedback, axis_position)
 requested_state = rospy.Service('axis_requested_state', requested_state, axis_requested_state)
 
 rospy.spin()
-
-
-"""
-print("starting calibration...")
-odrv1.axis1.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
-while odrv1.axis1.current_state != AXIS_STATE_IDLE:
-    time.sleep(0.1)
-
-odrv1.axis1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
-
-t0 = time.monotonic()
-while True:
-    setpoint = 100000.0 * math.sin((time.monotonic() - t0)*2)
-    print("goto " + str(int(setpoint)))
-    odrv1.axis1.controller.input_pos = setpoint
-    time.sleep(0.01)
-
-
-"""
