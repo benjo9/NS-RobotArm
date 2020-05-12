@@ -28,8 +28,8 @@ jobs:
       - name: Setup new repository
         run: |
           ssh jetson@192.168.1.192 'cp -r ~/NS-RobotArm/deploy ~/ && sudo rm -Rf ~/NS-RobotArm'
-      - name: Upload to Arduino
-        run: |
-          ssh jetson@192.168.1.192 'cd ~/deploy/arduino/CANMaster && amake -u uno CANMaster.ino /dev/ttyUSB*'
+#      - name: Upload to Arduino
+#        run: |
+#          ssh jetson@192.168.1.192 'cd ~/deploy/arduino/CANMaster && amake -u uno CANMaster.ino /dev/ttyUSB*'
 
 #ssh noa-jetson@192.168.1.192 
