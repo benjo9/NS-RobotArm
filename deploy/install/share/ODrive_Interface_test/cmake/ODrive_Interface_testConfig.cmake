@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(ODrive_Interface_test_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "include " STREQUAL " ")
   set(ODrive_Interface_test_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(ODrive_Interface_test_EXPORTED_TARGETS "")
+set(ODrive_Interface_test_EXPORTED_TARGETS "ODrive_Interface_test_generate_messages_cpp;ODrive_Interface_test_generate_messages_eus;ODrive_Interface_test_generate_messages_lisp;ODrive_Interface_test_generate_messages_nodejs;ODrive_Interface_test_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${ODrive_Interface_test_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -185,7 +185,7 @@ foreach(t ${ODrive_Interface_test_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "")
+set(depends "message_runtime;std_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   list(APPEND ODrive_Interface_test_EXPORTED_TARGETS ${${ODrive_Interface_test_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "ODrive_Interface_test-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${ODrive_Interface_test_DIR}/${extra})
