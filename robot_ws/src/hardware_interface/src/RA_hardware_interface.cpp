@@ -77,6 +77,7 @@ namespace RA_hardware_interface
 
     void ROBOTHardwareInterface::read() {
         for (int i = 0; i < num_joints_; i++) {
+            hardware_interface::feedback feedback;
             feedback.request.axis = i + 1;
             joint_position_[i] = axis_position.call(feedback);
         }
@@ -85,6 +86,7 @@ namespace RA_hardware_interface
     void ROBOTHardwareInterface::write(ros::Duration elapsed_time) {
         positionJointSoftLimitsInterface.enforceLimits(elapsed_time);
         for (int i = 0; i < num_joints_; i++) {
+            hardware_interface::driver driver;
             driver.request.axis = i + 1;
             driver.request.value = joint_position_command_[i];
             drive_axis.call(driver);

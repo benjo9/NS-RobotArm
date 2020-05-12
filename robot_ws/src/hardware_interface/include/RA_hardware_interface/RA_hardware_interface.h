@@ -47,8 +47,6 @@ namespace RA_hardware_interface
             double p_error_, v_error_, e_error_;
             ros::ServiceClient drive_axis;
             ros::ServiceClient axis_position;
-            hardware_interface::driver driver;
-            hardware_interface::feedback feedback;
     };
 
 }
