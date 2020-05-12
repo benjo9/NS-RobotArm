@@ -35,7 +35,7 @@ def axis_velocity(req):
     if req.axis == 6:
         odrv1.axis1.controller.config.vel_limit = req.value
 
-    return driverResponse(True)
+    return velocityResponse(True)
 
 def drive_axis(req):
     print("Driving Axis")
