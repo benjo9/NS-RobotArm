@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>ra_hardware_interface</name>
+  <name>RA_hardware_interface</name>
   <version>0.0.0</version>
   <description>The hardware_interface package</description>
 
