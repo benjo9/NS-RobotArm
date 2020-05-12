@@ -149,8 +149,8 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(${PROJECT_NAME}_node src/RA_hardware_interface_node.cpp)
-add_executable(${PROJECT_NAME}_node src/RA_hardware_interface.cpp)
+#add_executable(${PROJECT_NAME}_node src/RA_hardware_interface_node.cpp)
+#add_executable(${PROJECT_NAME}_node src/RA_hardware_interface.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -206,11 +206,11 @@ install(DIRECTORY include DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-# install(FILES
-#   # myfile1
-#   # myfile2
-#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-# )
+install(FILES
+  src/RA_hardware_interface_node.cpp
+  src/RA_hardware_interface.cpp
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 #############
 ## Testing ##
