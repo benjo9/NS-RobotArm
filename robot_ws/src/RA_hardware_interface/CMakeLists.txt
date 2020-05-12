@@ -155,6 +155,11 @@ install(DIRECTORY include/${PROJECT_NAME}/
   FILES_MATCHING PATTERN "*.h"
   PATTERN ".svn" EXCLUDE)
 
+install(DIRECTORY srv/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE)
+
 add_library(RA_hardware_interface src/RA_hardware_interface.cpp)
 
 target_link_libraries(RA_hardware_interface ${catkin_LIBRARIES})
