@@ -183,9 +183,9 @@ include_directories(
 
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
-# install(TARGETS ${PROJECT_NAME}_node
-#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+install(TARGETS RA_hardware_interface_node.cpp RA_hardware_interface.cpp
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 ## Mark libraries for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_libraries.html
@@ -204,7 +204,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
 install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY include DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-
+install(DIRECTORY src DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 #install(FILES
 #  src/RA_hardware_interface_node.cpp
