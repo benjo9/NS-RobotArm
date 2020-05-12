@@ -4,6 +4,8 @@
 #include <joint_limits_interface/joint_limits.h>
 #include <joint_limits_interface/joint_limits_urdf.h>
 #include <joint_limits_interface/joint_limits_rosparam.h>
+#include "hardware_interface/driver.h"
+#include "hardware_interface/feedback.h"
 
 using namespace hardware_interface;
 using joint_limits_interface::JointLimits;
@@ -18,9 +20,9 @@ namespace RA_hardware_interface
         controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
         nh_.param("/ROBOT/hardware_interface/loop_hz", loop_hz_, 0.1);
         ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
-        non_realtime_loop_ = nh_.createTimer(update_freq, &TR1HardwareInterface::update, this);
-        drive_axis = nh_.serviceClient<hardware_interface::driver>("drive_axis", true);
-        axis_position = nh_.serviceClient<hardware_interface::feedback>("axis_position", true);
+        non_realtime_loop_ = nh_.createTimer(update_freq, &RAHardwareInterface::update, this);
+        drive_axis = nh_.serviceClient<hardware_interface::driver>("drive_axis");
+        axis_position = nh_.serviceClient<hardware_interface::feedback>("axis_position");
     }
 
     RAHardwareInterface::~RAHardwareInterface() {
@@ -68,14 +70,14 @@ namespace RA_hardware_interface
         registerInterface(&positionJointSoftLimitsInterface);
     }
 
-    void ROBOTHardwareInterface::update(const ros::TimerEvent& e) {
+    void RAHardwareInterface::update(const ros::TimerEvent& e) {
         elapsed_time_ = ros::Duration(e.current_real - e.last_real);
         read();
         controller_manager_->update(ros::Time::now(), elapsed_time_);
         write(elapsed_time_);
     }
 
-    void ROBOTHardwareInterface::read() {
+    void RAHardwareInterface::read() {
         for (int i = 0; i < num_joints_; i++) {
             hardware_interface::feedback feedback;
             feedback.request.axis = i + 1;
@@ -83,7 +85,7 @@ namespace RA_hardware_interface
         }
     }
 
-    void ROBOTHardwareInterface::write(ros::Duration elapsed_time) {
+    void RAHardwareInterface::write(ros::Duration elapsed_time) {
         positionJointSoftLimitsInterface.enforceLimits(elapsed_time);
         for (int i = 0; i < num_joints_; i++) {
             hardware_interface::driver driver;
