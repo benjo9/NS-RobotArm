@@ -23,8 +23,6 @@ def axis_position(req):
 rospy.init_node('driver')
 
 driver = rospy.Service('drive_axis', driver, drive_axis)
-velocity = rospy.Service('axis_velocity', velocity, axis_velocity)
 feedback = rospy.Service('axis_position', feedback, axis_position)
-requested_state = rospy.Service('axis_requested_state', requested_state, axis_requested_state)
 
 rospy.spin()
