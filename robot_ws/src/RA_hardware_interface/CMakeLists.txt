@@ -113,6 +113,7 @@ catkin_package(
   INCLUDE_DIRS
     include
   CATKIN_DEPENDS
+    roslib
     hardware_interface
     message_runtime
     std_msgs
@@ -136,10 +137,8 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-  include/
   ${catkin_INCLUDE_DIRS}
 )
-link_directories(${catkin_LIBRARY_DIRS})
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/hardware_interface.cpp
@@ -217,11 +216,6 @@ install(DIRECTORY include DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 install(DIRECTORY src DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-install(FILES
-  driver.h
-  feedback.h
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
 
 
 
