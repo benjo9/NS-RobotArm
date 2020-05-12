@@ -43,7 +43,7 @@ class driverRequest {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type driverRequest
     // Serialize message field [axis]
-    bufferOffset = _serializer.int8(obj.axis, buffer, bufferOffset);
+    bufferOffset = _serializer.int16(obj.axis, buffer, bufferOffset);
     // Serialize message field [value]
     bufferOffset = _serializer.int32(obj.value, buffer, bufferOffset);
     return bufferOffset;
@@ -54,14 +54,14 @@ class driverRequest {
     let len;
     let data = new driverRequest(null);
     // Deserialize message field [axis]
-    data.axis = _deserializer.int8(buffer, bufferOffset);
+    data.axis = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [value]
     data.value = _deserializer.int32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 5;
+    return 6;
   }
 
   static datatype() {
@@ -71,14 +71,14 @@ class driverRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'b08cb64ad11b61cf309c7d9d18d33ba8';
+    return '678e13c1fe4ebe3f4b3a3a1a5aee7968';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     
-    int8 axis
+    int16 axis
     int32 value
     
     `;
@@ -184,6 +184,6 @@ class driverResponse {
 module.exports = {
   Request: driverRequest,
   Response: driverResponse,
-  md5sum() { return '347021bed28fd1a72ae61bd0a2e98e9a'; },
+  md5sum() { return '6f5723450e3c67d0d72065dca6e91464'; },
   datatype() { return 'ODrive_Interface_test/driver'; }
 };

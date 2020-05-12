@@ -38,8 +38,9 @@
   (value m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <driver-request>) ostream)
   "Serializes a message object of type '<driver-request>"
-  (cl:let* ((signed (cl:slot-value msg 'axis)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
+  (cl:let* ((signed (cl:slot-value msg 'axis)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     )
   (cl:let* ((signed (cl:slot-value msg 'value)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
@@ -52,7 +53,8 @@
   "Deserializes a message object of type '<driver-request>"
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'axis) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:slot-value msg 'axis) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
@@ -69,19 +71,19 @@
   "ODrive_Interface_test/driverRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<driver-request>)))
   "Returns md5sum for a message object of type '<driver-request>"
-  "347021bed28fd1a72ae61bd0a2e98e9a")
+  "6f5723450e3c67d0d72065dca6e91464")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'driver-request)))
   "Returns md5sum for a message object of type 'driver-request"
-  "347021bed28fd1a72ae61bd0a2e98e9a")
+  "6f5723450e3c67d0d72065dca6e91464")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<driver-request>)))
   "Returns full string definition for message of type '<driver-request>"
-  (cl:format cl:nil "~%int8 axis~%int32 value~%~%~%"))
+  (cl:format cl:nil "~%int16 axis~%int32 value~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'driver-request)))
   "Returns full string definition for message of type 'driver-request"
-  (cl:format cl:nil "~%int8 axis~%int32 value~%~%~%"))
+  (cl:format cl:nil "~%int16 axis~%int32 value~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <driver-request>))
   (cl:+ 0
-     1
+     2
      4
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <driver-request>))
@@ -129,10 +131,10 @@
   "ODrive_Interface_test/driverResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<driver-response>)))
   "Returns md5sum for a message object of type '<driver-response>"
-  "347021bed28fd1a72ae61bd0a2e98e9a")
+  "6f5723450e3c67d0d72065dca6e91464")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'driver-response)))
   "Returns md5sum for a message object of type 'driver-response"
-  "347021bed28fd1a72ae61bd0a2e98e9a")
+  "6f5723450e3c67d0d72065dca6e91464")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<driver-response>)))
   "Returns full string definition for message of type '<driver-response>"
   (cl:format cl:nil "~%bool result~%~%~%~%"))
