@@ -9,10 +9,13 @@ from odrive.enums import *
 import time
 import math
 
-print("finding an odrive...")
+print("Connecting...")
 odrv0 = odrive.find_any(serial_number="206E3590524B")
+print("Connected to ODrive o")
 odrv1 = odrive.find_any(serial_number="20573882304E")
+print("Connected to ODrive 1")
 odrv2 = odrive.find_any(serial_number="20843881304E")
+print("Connected to ODrive 2")
 
 #
 #def Axis1_rq_Callback(commandMessage):
@@ -28,7 +31,7 @@ odrv1.axis1.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
 
 t0 = time.monotonic()
 while True:
-    setpoint = 10000.0 * math.sin((time.monotonic() - t0)*2)
+    setpoint = 100000.0 * math.sin((time.monotonic() - t0)*2)
     print("goto " + str(int(setpoint)))
     odrv1.axis1.controller.input_pos = setpoint
     time.sleep(0.01)
