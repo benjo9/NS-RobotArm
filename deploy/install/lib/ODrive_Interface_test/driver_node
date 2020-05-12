@@ -57,7 +57,7 @@ def axis_requested_state(req):
     print("Axis requested_state")
 
     if req.axis == 1:
-        if req.requested_state == 0
+        if req.requested_state == 0:
             odrv1.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
             while odrv1.axis0.current_state != AXIS_STATE_IDLE:
                 time.sleep(0.1)
@@ -65,7 +65,7 @@ def axis_requested_state(req):
         else:
             odrv1.axis0.requested_state = req.requested_state
     if req.axis == 2:
-        if req.requested_state == 0
+        if req.requested_state == 0:
             odrv0.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
             while odrv0.axis0.current_state != AXIS_STATE_IDLE:
                 time.sleep(0.1)
@@ -73,7 +73,7 @@ def axis_requested_state(req):
         else:
             odrv0.axis0.requested_state = req.requested_state
     if req.axis == 3:
-        if req.requested_state == 0
+        if req.requested_state == 0:
             odrv0.axis1.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
             while odrv0.axis1.current_state != AXIS_STATE_IDLE:
                 time.sleep(0.1)
@@ -81,7 +81,7 @@ def axis_requested_state(req):
         else:
             odrv0.axis1.requested_state = req.requested_state
     if req.axis == 4:
-        if req.requested_state == 0
+        if req.requested_state == 0:
             odrv2.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
             while odrv2.axis0.current_state != AXIS_STATE_IDLE:
                 time.sleep(0.1)
@@ -89,7 +89,7 @@ def axis_requested_state(req):
         else:
             odrv2.axis0.requested_state = req.requested_state
     if req.axis == 5:
-        if req.requested_state == 0
+        if req.requested_state == 0:
             odrv2.axis1.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
             while odrv2.axis1.current_state != AXIS_STATE_IDLE:
                 time.sleep(0.1)
@@ -97,7 +97,7 @@ def axis_requested_state(req):
         else:
             odrv2.axis1.requested_state = req.requested_state
     if req.axis == 6:
-        if req.requested_state == 0
+        if req.requested_state == 0:
             odrv1.axis1.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
             while odrv1.axis1.current_state != AXIS_STATE_IDLE:
                 time.sleep(0.1)
