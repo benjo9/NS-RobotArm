@@ -1,5 +1,0 @@
-myworkcell_support
-/home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_support/cmake.lock /home/noa/NS-RobotArm/robot_ws/devel/./cmake.lock
-/home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_support/lib/pkgconfig/myworkcell_support.pc /home/noa/NS-RobotArm/robot_ws/devel/lib/pkgconfig/myworkcell_support.pc
-/home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_support/share/myworkcell_support/cmake/myworkcell_supportConfig.cmake /home/noa/NS-RobotArm/robot_ws/devel/share/myworkcell_support/cmake/myworkcell_supportConfig.cmake
-/home/noa/NS-RobotArm/robot_ws/devel/.private/myworkcell_support/share/myworkcell_support/cmake/myworkcell_supportConfig-version.cmake /home/noa/NS-RobotArm/robot_ws/devel/share/myworkcell_support/cmake/myworkcell_supportConfig-version.cmake
