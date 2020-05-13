@@ -1,5 +1,5 @@
-#ifndef ROS_CONTROL__ROBOT_HARDWARE_INTERFACE_H
-#define ROS_CONTROL__ROBOT_HARDWARE_INTERFACE_H
+#ifndef ROS_CONTROL__RA_HARDWARE_INTERFACE_H
+#define ROS_CONTROL__RA_HARDWARE_INTERFACE_H
 
 #include <hardware_interface/joint_state_interface.h>
 #include <hardware_interface/joint_command_interface.h>

@@ -4,7 +4,7 @@
 #include <joint_limits_interface/joint_limits.h>
 #include <joint_limits_interface/joint_limits_urdf.h>
 #include <joint_limits_interface/joint_limits_rosparam.h>
-#include "ros/ros.h"
+//#include "ros/ros.h"
 //#include "RA_hardware_interface/driver.h"
 //#include "RA_hardware_interface/feedback.h"
 
@@ -17,13 +17,11 @@ using joint_limits_interface::PositionJointSoftLimitsInterface;
 
 namespace RA_hardware_interface
 {
-    RAHardwareInterface::RAHardwareInterface(ros::NodeHandle& nh) \
-        : nh_(nh)
-
+    RAHardwareInterface::RAHardwareInterface(ros::NodeHandle& nh) : nh_(nh)
     {
         init();
         controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
-        nh_.param("/ROBOT/hardware_interface/loop_hz", loop_hz_, 0.1);
+        nh_.param("/RA/hardware_interface/loop_hz", loop_hz_, 0.1);
         ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
         non_realtime_loop_ = nh_.createTimer(update_freq, &RAHardwareInterface::update, this);
         //drive_axis = nh_.serviceClient<hardware_interface::driver>("drive_axis");
@@ -34,8 +32,7 @@ namespace RA_hardware_interface
 
     }
 
-    void RAHardwareInterface::init()
-    {
+    void RAHardwareInterface::init() {
         const char *jn[6] = {"Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"};
         // Get joint names
         nh_.getParam("/RA/hardware_interface/joints", jn);
