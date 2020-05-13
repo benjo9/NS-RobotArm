@@ -18,8 +18,9 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_executable(go_to_position_node src/go_to_position_node.py)
 
-install(TARGETS go_to_position_node
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+install(PROGRAMS
+  src/go_to_position_node
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 install(DIRECTORY launch/
