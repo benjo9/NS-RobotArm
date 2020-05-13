@@ -35,8 +35,8 @@ namespace RA_hardware_interface
     void RAHardwareInterface::init() {
         const char *jn[6] = {"Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"};
         // Get joint names
-        nh_.getParam("/RA/hardware_interface/joints", jn);
-        num_joints_ = 6;
+        nh_.getParam("/RA/hardware_interface/joints", joint_names_);
+        num_joints_ = joint_names_.size();
 
         // Resize vectors
         joint_position_.resize(num_joints_);
