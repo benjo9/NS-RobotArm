@@ -36,7 +36,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
   FILES_MATCHING PATTERN "*.h"
   PATTERN ".svn" EXCLUDE)
 
-add_executable(test_node test_node.cpp)
+add_executable(test_node src/test_node.cpp)
 target_link_libraries(test_node ${catkin_LIBRARIES})
 
 ## System dependencies are found with CMake's conventions
