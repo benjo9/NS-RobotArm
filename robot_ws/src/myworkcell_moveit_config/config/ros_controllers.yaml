@@ -9,12 +9,12 @@ generic_hw_control_loop:
 # Settings for ros_control hardware interface
 hardware_interface:
   joints:
-    - Rev8
+    - Rev6
+    - Rev1
+    - Rev2
     - Rev3
     - Rev4
     - Rev5
-    - Rev6
-    - Rev7
   sim_control_mode: 1  # 0: position, 1: velocity
 # Publish all joint states
 # Creates the /joint_states topic necessary in ROS
