@@ -16,6 +16,16 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+add_executable(go_to_position_node src/go_to_position_node.py)
+
+install(TARGETS go_to_position_node
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+  PATTERN ".svn" EXCLUDE)
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
