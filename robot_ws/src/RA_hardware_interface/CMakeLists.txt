@@ -8,6 +8,7 @@ project(RA_hardware_interface)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  ODrive_Interface_test
   hardware_interface
   roscpp
   std_msgs
@@ -116,6 +117,7 @@ catkin_package(
   INCLUDE_DIRS
     include
   CATKIN_DEPENDS
+    ODrive_Interface_test
     hardware_interface
     message_runtime
     std_msgs
