@@ -3,7 +3,7 @@
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
   <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
-  <arg name="robot_name" default="tr1"/>
+  <arg name="robot_name" default="RA"/>
 
 	<!-- PARAMS + ROSPARAMS -->
   <rosparam file="$(find RA_hardware_interface)/config/hardware.yaml" command="load"/>

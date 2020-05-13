@@ -11,7 +11,6 @@
 #include <controller_manager/controller_manager.h>
 #include <boost/scoped_ptr.hpp>
 #include <ros/ros.h>
-#include <ros/console.h>
 
 namespace RA_hardware_interface
 {
