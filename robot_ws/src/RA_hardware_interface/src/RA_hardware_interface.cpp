@@ -7,6 +7,7 @@
 //#include "ros/ros.h"
 #include "ODrive_Interface_test/driver.h"
 #include "ODrive_Interface_test/feedback.h"
+#include <ros/console.h>
 
 
 using namespace hardware_interface;
@@ -19,6 +20,7 @@ namespace RA_hardware_interface
 {
     RAHardwareInterface::RAHardwareInterface(ros::NodeHandle& nh) : nh_(nh)
     {
+        ROS_DEBUG("ROS init");
         init();
         controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
         nh_.param("/RA/hardware_interface/loop_hz", loop_hz_, 0.1);
