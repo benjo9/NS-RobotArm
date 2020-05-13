@@ -3,4 +3,9 @@ controller_list:
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
-    joints: [Rev1, Rev2, Rev3, Rev4, Rev5, Rev6]
+    joints: - Rev1
+            - Rev2
+            - Rev3
+            - Rev4
+            - Rev5
+            - Rev6
