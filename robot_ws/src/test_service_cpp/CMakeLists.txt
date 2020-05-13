@@ -7,7 +7,40 @@ project(test_service_cpp)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  std_msgs
+  message_generation
+)
+
+add_service_files(DIRECTORY srv FILES driver.srv feedback.srv requested_state.srv velocity.srv)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs  # Or other packages containing msgs
+)
+
+catkin_package(
+  INCLUDE_DIRS
+    include
+  CATKIN_DEPENDS
+    message_runtime
+    std_msgs
+    roscpp
+)
+
+include_directories(
+  include/
+  ${catkin_INCLUDE_DIRS}
+)
+
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE)
+
+add_executable(test_node test_node.cpp)
+target_link_libraries(test_node ${catkin_LIBRARIES})
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
