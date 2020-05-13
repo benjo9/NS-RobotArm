@@ -6,7 +6,10 @@ int main(int argc, char** argv)
     ros::NodeHandle nh;
     RA_hardware_interface::RAHardwareInterface rhi(nh);
 
-    ros::MultiThreadedSpinner spinner(0);
-    spinner.spin(&ros_queue);
+    ros::AsyncSpinner spinner(1);
+    spinner.start();
+
+    ros::spin();
+
     return 0;
 }
