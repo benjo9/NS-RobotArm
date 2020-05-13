@@ -24,8 +24,8 @@ namespace RA_hardware_interface
         nh_.param("/RA/hardware_interface/loop_hz", loop_hz_, 0.1);
         ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
         non_realtime_loop_ = nh_.createTimer(update_freq, &RAHardwareInterface::update, this);
-        //drive_axis = nh_.serviceClient<hardware_interface::driver>("drive_axis");
-        //axis_position = nh_.serviceClient<hardware_interface::feedback>("axis_position");
+        drive_axis = nh_.serviceClient<hardware_interface::driver>("drive_axis");
+        axis_position = nh_.serviceClient<hardware_interface::feedback>("axis_position");
     }
 
     RAHardwareInterface::~RAHardwareInterface() {
@@ -81,19 +81,19 @@ namespace RA_hardware_interface
 
     void RAHardwareInterface::read() {
         for (int i = 0; i < num_joints_; i++) {
-            //hardware_interface::feedback feedback;
-            //feedback.request.axis = i + 1;
-            //joint_position_[i] = axis_position.call(feedback);
+            hardware_interface::feedback feedback;
+            feedback.request.axis = i + 1;
+            joint_position_[i] = axis_position.call(feedback);
         }
     }
 
     void RAHardwareInterface::write(ros::Duration elapsed_time) {
         positionJointSoftLimitsInterface.enforceLimits(elapsed_time);
         for (int i = 0; i < num_joints_; i++) {
-            //hardware_interface::driver driver;
-            //driver.request.axis = i + 1;
-            //driver.request.value = joint_position_command_[i];
-            //drive_axis.call(driver);
+            hardware_interface::driver driver;
+            driver.request.axis = i + 1;
+            driver.request.value = joint_position_command_[i];
+            drive_axis.call(driver);
         }
     }
 }

@@ -47,8 +47,8 @@ namespace RA_hardware_interface
             double loop_hz_;
             boost::shared_ptr<controller_manager::ControllerManager> controller_manager_;
             double p_error_, v_error_, e_error_;
-            //ros::ServiceClient drive_axis;
-            //ros::ServiceClient axis_position;
+            ros::ServiceClient drive_axis;
+            ros::ServiceClient axis_position;
     };
 
 }
