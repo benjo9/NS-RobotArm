@@ -1,6 +1,7 @@
 #include <sstream>
 #include "ros/ros.h"
 #include "test_service_cpp/driver.h"
+#include <cstdlib>
 
 
 int main(int argc, char **argv)
