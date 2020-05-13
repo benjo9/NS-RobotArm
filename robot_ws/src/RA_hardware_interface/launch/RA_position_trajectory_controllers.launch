@@ -1,0 +1,27 @@
+<launch>
+	<!-- ARGS -->
+  <arg name="debug" default="false" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+  <arg     if="$(arg debug)" name="launch_prefix" value="gdb --ex run --args" />
+  <arg name="robot_name" default="tr1"/>
+
+	<!-- PARAMS + ROSPARAMS -->
+  <rosparam file="$(find RA_hardware_interface)/config/hardware.yaml" command="load"/>
+  <rosparam file="$(find RA_hardware_interface)/config/controllers.yaml" command="load"/>
+  <rosparam file="$(find RA_hardware_interface)/config/joint_limits.yaml" command="load"/>
+
+	<param name="robot_description" command="xacro --inorder $(find myworkcell_support)/urdf/workcell.xacro" />
+
+	<!-- INCLUDES -->
+
+
+	<!-- NODES -->
+  <node name="RA_hardware_interface" pkg="RA_hardware_interface" type="RA_hardware_interface_node" output="screen" launch-prefix="$(arg launch_prefix)"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
+		args="
+			/RA/controller/state
+			/RA/controller/trajectory/Position
+		"/>
+
+</launch>
