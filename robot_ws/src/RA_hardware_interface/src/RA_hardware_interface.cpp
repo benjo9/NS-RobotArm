@@ -100,7 +100,14 @@ namespace RA_hardware_interface
             ODrive_Interface_test::driver driver;
             driver.request.axis = i + 1;
             driver.request.value = joint_position_command_[i];
-            ROS_INFO(drive_axis.call(driver));
+            if(drive_axis.call(driver))
+            {
+              ROS_INFO("true");
+            } else
+            {
+              ROS_INFO("false");
+            }
+
             ROS_INFO("write:2");
         }
     }
