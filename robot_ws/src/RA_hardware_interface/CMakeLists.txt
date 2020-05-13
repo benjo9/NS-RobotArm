@@ -65,10 +65,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 ## Generate services in the 'srv' folder
 
-install(DIRECTORY include/${PROJECT_NAME}/
-  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.h"
-  PATTERN ".svn" EXCLUDE)
+
 
 add_service_files(DIRECTORY srv FILES driver.srv feedback.srv requested_state.srv velocity.srv)
 
@@ -181,7 +178,10 @@ target_link_libraries(RA_hardware_interface_node RA_hardware_interface ${catkin_
 
 
 
-
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE)
 
 #############
 ## Install ##

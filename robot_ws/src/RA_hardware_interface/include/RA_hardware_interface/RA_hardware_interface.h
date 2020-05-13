@@ -12,8 +12,8 @@
 #include <boost/scoped_ptr.hpp>
 #include <ros/ros.h>
 #include <RA_hardware_interface/RA_hardware.h>
-#include "RA_hardware_interface/driver.h"
-#include "include/RA_hardware_interface/feedback.h"
+#include "ODrive_Interface_test/driver.h"
+#include "ODrive_Interface_test/feedback.h"
 
 using namespace hardware_interface;
 using joint_limits_interface::JointLimits;
