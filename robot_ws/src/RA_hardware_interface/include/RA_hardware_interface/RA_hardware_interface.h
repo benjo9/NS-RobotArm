@@ -15,7 +15,6 @@
 #include "ODrive_Interface_test/driver.h"
 #include "ODrive_Interface_test/feedback.h"
 #include <ros/console.h>
-#include <iostream>
 
 using namespace hardware_interface;
 using joint_limits_interface::JointLimits;

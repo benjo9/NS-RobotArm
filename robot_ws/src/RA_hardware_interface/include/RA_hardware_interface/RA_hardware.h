@@ -12,7 +12,6 @@
 #include <boost/scoped_ptr.hpp>
 #include <ros/ros.h>
 #include <ros/console.h>
-#include <iostream>
 
 namespace RA_hardware_interface
 {
