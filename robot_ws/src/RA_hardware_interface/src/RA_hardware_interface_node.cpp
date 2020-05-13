@@ -2,7 +2,6 @@
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "RA_hardware_interface");
-    ros::CallbackQueue ros_queue;
 
     ros::NodeHandle nh;
     nh.setCallbackQueue(&ros_queue);
