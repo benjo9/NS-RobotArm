@@ -201,7 +201,11 @@ install(DIRECTORY include/${PROJECT_NAME}/
 
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
-install(TARGETS RA_hardware_interface_node RA_hardware_interface
+install(TARGETS RA_hardware_interface_node
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(TARGETS RA_hardware_interface 
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
