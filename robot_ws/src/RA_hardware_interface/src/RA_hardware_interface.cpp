@@ -32,9 +32,10 @@ namespace RA_hardware_interface
     }
 
     void RAHardwareInterface::init() {
+        jn = ["Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"]
         // Get joint names
-        nh_.getParam("/RA/hardware_interface/joints", joint_names_);
-        num_joints_ = joint_names_.size();
+        nh_.getParam("/RA/hardware_interface/joints", jn);
+        num_joints_ = jn.size();
 
         // Resize vectors
         joint_position_.resize(num_joints_);
@@ -43,8 +44,6 @@ namespace RA_hardware_interface
         joint_position_command_.resize(num_joints_);
         joint_velocity_command_.resize(num_joints_);
         joint_effort_command_.resize(num_joints_);
-
-        jn = ["Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"]
 
         // Initialize Controller
         for (int i = 0; i < num_joints_; ++i) {
