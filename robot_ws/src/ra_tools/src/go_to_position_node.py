@@ -22,7 +22,7 @@ display_trajectory_publisher = rospy.Publisher('/move_group/display_planned_path
 
 robot = moveit_commander.RobotCommander()
 scene = moveit_commander.PlanningSceneInterface()
-group = moveit_commander.MoveGroupCommander("world")
+group = moveit_commander.MoveGroupCommander("manipulator")
 
 table = geometry_msgs.msg.PoseStamped()
 table.header.frame_id = robot.get_planning_frame()
