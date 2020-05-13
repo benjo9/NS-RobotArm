@@ -17,7 +17,10 @@ using joint_limits_interface::PositionJointSoftLimitsInterface;
 
 namespace RA_hardware_interface
 {
-    RAHardwareInterface::RAHardwareInterface(ros::NodeHandle& nh) : nh_(nh) {
+    RAHardwareInterface::RAHardwareInterface(ros::NodeHandle& nh) \
+        : nh_(nh)
+
+    {
         init();
         controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
         nh_.param("/ROBOT/hardware_interface/loop_hz", loop_hz_, 0.1);
@@ -31,7 +34,8 @@ namespace RA_hardware_interface
 
     }
 
-    void RAHardwareInterface::init() {
+    void RAHardwareInterface::init()
+    {
         const char *jn[6] = {"Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"};
         // Get joint names
         nh_.getParam("/RA/hardware_interface/joints", jn);
