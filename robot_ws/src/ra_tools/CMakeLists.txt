@@ -18,14 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_executable(go_to_position_node src/go_to_position_node.py)
 
-install(PROGRAMS
-  src/go_to_position_node.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
 
-install(DIRECTORY launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
-  PATTERN ".svn" EXCLUDE)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -167,6 +160,16 @@ include_directories(
 #############
 ## Install ##
 #############
+
+
+install(PROGRAMS
+  src/go_to_position_node.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+  PATTERN ".svn" EXCLUDE)
 
 # all install targets should use catkin DESTINATION variables
 # See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
