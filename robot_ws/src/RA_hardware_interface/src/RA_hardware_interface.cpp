@@ -32,7 +32,7 @@ namespace RA_hardware_interface
     }
 
     void RAHardwareInterface::init() {
-        String jn [6] = {"Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"};
+        string jn [6] = {"Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"};
         // Get joint names
         nh_.getParam("/RA/hardware_interface/joints", jn);
         num_joints_ = jn.size();
