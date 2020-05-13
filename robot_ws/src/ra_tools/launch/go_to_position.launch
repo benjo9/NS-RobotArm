@@ -4,7 +4,7 @@
   <arg name="db" default="false" />
   <arg name="db_path" default="$(find myworkcell_moveit_config)/default_warehouse_mongo_db" />
   <arg name="debug" default="false" />
-  <arg name="use_gui" default="false" />
+  <arg name="use_gui" default="true" />
 
 	<!-- PARAMS + ROSPARAMS -->
 
