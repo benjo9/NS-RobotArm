@@ -88,7 +88,7 @@ namespace RA_hardware_interface
             ODrive_Interface_test::feedback feedback;
             feedback.request.axis = i + 1;
             joint_position_[i] = axis_position.call(feedback);
-            ROS_INFO(joint_position_[i]);
+            //ROS_INFO(joint_position_[i]);
             ROS_INFO("read:2");
         }
     }
