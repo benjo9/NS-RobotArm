@@ -19,7 +19,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_executable(go_to_position_node src/go_to_position_node.py)
 
 install(PROGRAMS
-  src/go_to_position_node
+  src/go_to_position_node.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
