@@ -3,6 +3,39 @@ RA:
     state:
       type: joint_state_controller/JointStateController
       publish_rate: 50
+
+    trajectory:
+      Position:
+        type: position_controllers/JointTrajectoryController
+        joints:
+          - Rev1
+          - Rev2
+          - Rev3
+          - Rev4
+          - Rev5
+          - Rev6
+        gains:
+          Rev1: {p: 1.0, i: 1.0, d: 1.0, i_clamp: 1.0}
+          Rev2: {p: 1.0, i: 1.0, d: 1.0, i_clamp: 1.0}
+          Rev3: {p: 1.0, i: 1.0, d: 1.0, i_clamp: 1.0}
+          Rev4: {p: 1.0, i: 1.0, d: 1.0, i_clamp: 1.0}
+          Rev5: {p: 1.0, i: 1.0, d: 1.0, i_clamp: 1.0}
+          Rev6: {p: 1.0, i: 1.0, d: 1.0, i_clamp: 1.0}
+        constraints:
+          goal_time: 10.0
+          Rev1:
+            goal: 0.1
+          Rev2:
+            goal: 0.1
+          Rev3:
+            goal: 0.1
+          Rev4:
+            goal: 0.1
+          Rev5:
+            goal: 0.1
+          Rev6:
+            goal: 0.1
+
     position:
       Rev1:
         type: position_controllers/JointPositionController
