@@ -36,7 +36,7 @@ namespace RA_hardware_interface
         const char *jn[6] = {"Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"};
         // Get joint names
         nh_.getParam("/RA/hardware_interface/joints", jn);
-        num_joints_ = jn.size();
+        num_joints_ = 6;
 
         // Resize vectors
         joint_position_.resize(num_joints_);
@@ -56,7 +56,7 @@ namespace RA_hardware_interface
             JointHandle jointPositionHandle(jointStateHandle, &joint_position_command_[i]);
             JointLimits limits;
                 SoftJointLimits softLimits;
-            getJointLimits(jn[i], nh_, limits)
+            getJointLimits(jn[i], nh_, limits);
             PositionJointSoftLimitsHandle jointLimitsHandle(jointPositionHandle, limits, softLimits);
             positionJointSoftLimitsInterface.registerHandle(jointLimitsHandle);
             position_joint_interface_.registerHandle(jointPositionHandle);
