@@ -213,11 +213,11 @@ target_link_libraries(RA_hardware_interface_node RA_hardware_interface ${catkin_
 
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
-install(FILES
-  driver.h
-  feedback.h
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-)
+#install(FILES
+#  driver.h
+#  feedback.h
+#  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+#)
 
 
 
