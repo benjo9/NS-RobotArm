@@ -99,7 +99,7 @@ namespace RA_hardware_interface
             ROS_INFO("write:1");
             ODrive_Interface_test::driver driver;
             driver.request.axis = i + 1;
-            driver.request.value = joint_position_command_[i];
+            driver.request.value = joint_effort_command_[i];
             if(drive_axis.call(driver))
             {
               ROS_INFO("true");
