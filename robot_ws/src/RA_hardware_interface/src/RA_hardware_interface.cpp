@@ -34,11 +34,12 @@ namespace RA_hardware_interface
     }
 
     void RAHardwareInterface::init() {
+        ROS_INFO("init:1");
         const char *jn[6] = {"Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"};
         // Get joint names
         nh_.getParam("/RA/hardware_interface/joints", joint_names_);
         num_joints_ = joint_names_.size();
-
+        ROS_INFO("init:2");
         // Resize vectors
         joint_position_.resize(num_joints_);
         joint_velocity_.resize(num_joints_);
@@ -46,13 +47,13 @@ namespace RA_hardware_interface
         joint_position_command_.resize(num_joints_);
         joint_velocity_command_.resize(num_joints_);
         joint_effort_command_.resize(num_joints_);
-
+        ROS_INFO("init:3");
         // Initialize Controller
         for (int i = 0; i < num_joints_; ++i) {
              // Create joint state interface
             JointStateHandle jointStateHandle(jn[i], &joint_position_[i], &joint_velocity_[i], &joint_effort_[i]);
             joint_state_interface_.registerHandle(jointStateHandle);
-
+            ROS_INFO("init:4");
             // Create position joint interface
             JointHandle jointPositionHandle(jointStateHandle, &joint_position_command_[i]);
             JointLimits limits;
@@ -61,12 +62,12 @@ namespace RA_hardware_interface
             PositionJointSoftLimitsHandle jointLimitsHandle(jointPositionHandle, limits, softLimits);
             positionJointSoftLimitsInterface.registerHandle(jointLimitsHandle);
             position_joint_interface_.registerHandle(jointPositionHandle);
-
+            ROS_INFO("init:5");
             // Create effort joint interface
             JointHandle jointEffortHandle(jointStateHandle, &joint_effort_command_[i]);
             effort_joint_interface_.registerHandle(jointEffortHandle);
         }
-
+        ROS_INFO("init:6");
         registerInterface(&joint_state_interface_);
         registerInterface(&position_joint_interface_);
         registerInterface(&effort_joint_interface_);
