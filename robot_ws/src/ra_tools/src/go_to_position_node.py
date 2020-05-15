@@ -37,7 +37,7 @@ rospy.sleep(1)
 #group.allow_replanning(True)
 #group.set_planning_time(10)
 group.set_goal_orientation_tolerance(0.01)
-group.set_goal_position_tolerance(0.05);
+group.set_goal_position_tolerance(0.05)
 
 '''
 pose = group.get_current_pose().pose
