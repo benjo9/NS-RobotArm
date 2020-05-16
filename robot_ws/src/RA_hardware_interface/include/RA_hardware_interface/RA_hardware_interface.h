@@ -12,8 +12,9 @@
 #include <boost/scoped_ptr.hpp>
 #include <ros/ros.h>
 #include <RA_hardware_interface/RA_hardware.h>
-//#include "ODrive_Interface_test/driver.h"
-//#include "ODrive_Interface_test/feedback.h"
+#include "ODrive_Interface_test/driver.h"
+#include "ODrive_Interface_test/feedback.h"
+#include <tr2cpp/tr2.h>
 
 using namespace hardware_interface;
 using joint_limits_interface::JointLimits;
@@ -38,6 +39,7 @@ namespace RA_hardware_interface
             void write(ros::Duration elapsed_time);
 
         protected:
+	    tr2cpp::TR2 tr2;
             ros::NodeHandle nh_;
             ros::Timer non_realtime_loop_;
             ros::Duration control_period_;
@@ -47,8 +49,8 @@ namespace RA_hardware_interface
             double loop_hz_;
             boost::shared_ptr<controller_manager::ControllerManager> controller_manager_;
             double p_error_, v_error_, e_error_;
-            //ros::ServiceClient drive_axis;
-            //ros::ServiceClient axis_position;
+            ros::ServiceClient drive_axis;
+            ros::ServiceClient axis_position;
     };
 
 }
