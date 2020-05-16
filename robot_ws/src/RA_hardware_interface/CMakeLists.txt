@@ -22,7 +22,7 @@ find_package(catkin REQUIRED COMPONENTS
   urdf
   control_toolbox
   joint_limits_interface
-  tr1cpp
+  tr2cpp
 )
 
 ## System dependencies are found with CMake's conventions
@@ -131,10 +131,10 @@ catkin_package(
     urdf
     control_toolbox
     joint_limits_interface
-    tr1cpp
+    tr2cpp
   LIBRARIES
     RA_hardware_interface
-    tr1cpp
+    tr2cpp
 )
 
 ###########

@@ -14,7 +14,7 @@
 #include <RA_hardware_interface/RA_hardware.h>
 #include "ODrive_Interface_test/driver.h"
 #include "ODrive_Interface_test/feedback.h"
-#include <tr1cpp/tr1.h>
+#include <tr2cpp/tr2.h>
 
 using namespace hardware_interface;
 using joint_limits_interface::JointLimits;
@@ -39,7 +39,7 @@ namespace RA_hardware_interface
             void write(ros::Duration elapsed_time);
 
         protected:
-	        tr1cpp::TR1 tr1;
+	        tr2cpp::TR2 tr2;
             ros::NodeHandle nh_;
             ros::Timer non_realtime_loop_;
             ros::Duration control_period_;
