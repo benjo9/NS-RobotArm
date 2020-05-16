@@ -4,10 +4,8 @@
 #include <joint_limits_interface/joint_limits.h>
 #include <joint_limits_interface/joint_limits_urdf.h>
 #include <joint_limits_interface/joint_limits_rosparam.h>
-//#include "ros/ros.h"
 #include "ODrive_Interface_test/driver.h"
 #include "ODrive_Interface_test/feedback.h"
-#include <ros/console.h>
 
 using namespace hardware_interface;
 using joint_limits_interface::JointLimits;
@@ -22,6 +20,7 @@ namespace RA_hardware_interface
         ROS_INFO("ROS init");
         init();
         controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
+
         nh_.param("/RA/hardware_interface/loop_hz", loop_hz_, 0.1);
         ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
         non_realtime_loop_ = nh_.createTimer(update_freq, &RAHardwareInterface::update, this);
@@ -58,7 +57,9 @@ namespace RA_hardware_interface
             JointHandle jointPositionHandle(jointStateHandle, &joint_position_command_[i]);
             JointLimits limits;
                 SoftJointLimits softLimits;
-            getJointLimits(jn[i], nh_, limits);
+            if(getJointLimits(jn[i], nh_, limits) == false) {
+                ROS_INFO("Error!");
+            }
             PositionJointSoftLimitsHandle jointLimitsHandle(jointPositionHandle, limits, softLimits);
             positionJointSoftLimitsInterface.registerHandle(jointLimitsHandle);
             position_joint_interface_.registerHandle(jointPositionHandle);
