@@ -1,4 +1,13 @@
 <launch>
+
+  <remap from="/joint_states" to="/RA/state"/>
+  <remap from="/RA/controller/position/Rev1/command" to="/RA/position/Rev1"/>
+	<remap from="/RA/controller/position/Rev2/command" to="/RA/position/Rev2"/>
+	<remap from="/RA/controller/position/Rev3/command" to="/RA/position/Rev3"/>
+	<remap from="/RA/controller/position/Rev4/command" to="/RA/position/Rev4"/>
+	<remap from="/RA/controller/position/Rev5/command" to="/RA/position/Rev5"/>
+	<remap from="/RA/controller/position/Rev6/command" to="/RA/position/Rev6"/>
+
 	<!-- ARGS -->
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
@@ -20,7 +29,7 @@
 
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
 		args="
-			/RA/controller/state
+			/RA/state
 			/RA/controller/trajectory/Position
 		"/>
 
