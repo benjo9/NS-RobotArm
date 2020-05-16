@@ -39,7 +39,7 @@ namespace RA_hardware_interface
             void write(ros::Duration elapsed_time);
 
         protected:
-	        tr1cpp::TR2 tr1;
+	        tr1cpp::TR1 tr1;
             ros::NodeHandle nh_;
             ros::Timer non_realtime_loop_;
             ros::Duration control_period_;
