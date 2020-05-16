@@ -1,5 +1,5 @@
 controller_list:
-  - name: /RA/controller/trajectory/Position
+  - name: /RA/controller/trajectory
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
