@@ -4,8 +4,8 @@
 #include <joint_limits_interface/joint_limits.h>
 #include <joint_limits_interface/joint_limits_urdf.h>
 #include <joint_limits_interface/joint_limits_rosparam.h>
-//#include "ODrive_Interface_test/driver.h"
-//#include "ODrive_Interface_test/feedback.h"
+#include "ODrive_Interface_test/driver.h"
+#include "ODrive_Interface_test/feedback.h"
 
 using namespace hardware_interface;
 using joint_limits_interface::JointLimits;
@@ -24,8 +24,8 @@ namespace RA_hardware_interface
         nh_.param("/RA/hardware_interface/loop_hz", loop_hz_, 0.1);
         ros::Duration update_freq = ros::Duration(1.0/loop_hz_);
         non_realtime_loop_ = nh_.createTimer(update_freq, &RAHardwareInterface::update, this);
-        //drive_axis = nh_.serviceClient<ODrive_Interface_test::driver>("drive_axis");
-        //axis_position = nh_.serviceClient<ODrive_Interface_test::feedback>("axis_position");
+        drive_axis = nh_.serviceClient<ODrive_Interface_test::driver>("drive_axis");
+        axis_position = nh_.serviceClient<ODrive_Interface_test::feedback>("axis_position");
     }
 
     RAHardwareInterface::~RAHardwareInterface() {
@@ -87,12 +87,10 @@ namespace RA_hardware_interface
     void RAHardwareInterface::read() {
         for (int i = 0; i < num_joints_; i++) {
             ROS_INFO("read:1");
-            /*
             ODrive_Interface_test::feedback feedback;
             feedback.request.axis = i + 1;
             joint_position_[i] = axis_position.call(feedback);
             //ROS_INFO(joint_position_[i]);
-            */
             ROS_INFO("read:2");
         }
     }
@@ -101,7 +99,6 @@ namespace RA_hardware_interface
         positionJointSoftLimitsInterface.enforceLimits(elapsed_time);
         for (int i = 0; i < num_joints_; i++) {
             ROS_INFO("write:1");
-            /*
             ODrive_Interface_test::driver driver;
             driver.request.axis = i + 1;
             driver.request.value = joint_position_command_[i];
@@ -112,7 +109,6 @@ namespace RA_hardware_interface
             {
               ROS_INFO("false");
             }
-            */
             ROS_INFO("write:2");
         }
     }
