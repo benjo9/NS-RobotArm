@@ -7,13 +7,17 @@ int main(int argc, char** argv)
     ROS_INFO("main");
 
     ros::init(argc, argv, "RA_hardware_interface");
-    ros::CallbackQueue ros_queue;
 
     ros::NodeHandle nh;
-    nh.setCallbackQueue(&ros_queue);
+
+    ros::AsyncSpinner spinner(1);
+    spinner.start();
+
+
     RA_hardware_interface::RAHardwareInterface rhi(nh);
     ROS_INFO("RA_hardware_interface");
-    ros::MultiThreadedSpinner spinner(0);
-    spinner.spin(&ros_queue);
+
+    ros::spin();
+
     return 0;
 }
