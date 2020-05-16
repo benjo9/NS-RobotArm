@@ -34,7 +34,7 @@ namespace RA_hardware_interface
 
     void RAHardwareInterface::init() {
         ROS_INFO("init:1");
-        const char *jn[6] = {"Rev11", "Rev12", "Rev13", "Rev41", "Rev15", "Rev16"};
+        const char *jn[6] = {"Rev1", "Rev2", "Rev3", "Rev4", "Rev5", "Rev6"};
         // Get joint names
         nh_.getParam("/RA/hardware_interface/joints", joint_names_);
         num_joints_ = joint_names_.size();
