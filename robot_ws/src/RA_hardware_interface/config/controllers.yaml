@@ -5,7 +5,7 @@ RA:
       publish_rate: 50
     trajectory:
       Position:
-        type: effort_controllers/JointTrajectoryController
+        type: position_controllers/JointTrajectoryController
         joints:
           - Rev1
           - Rev2
