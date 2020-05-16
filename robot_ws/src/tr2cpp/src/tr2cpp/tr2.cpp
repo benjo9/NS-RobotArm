@@ -7,16 +7,12 @@ namespace tr2cpp
 {
 	TR2::TR2()
 	{
-		joints[0].name = "b0";
-		joints[1].name = "b1";
-		joints[2].name = "a0";
-		joints[3].name = "a1";
-		joints[4].name = "a2";
-		joints[5].name = "a3";
-		joints[6].name = "a4";
-		joints[7].name = "g0";
-		joints[8].name = "h0";
-		joints[9].name = "h1";
+		joints[0].name = "Rev1";
+		joints[1].name = "Rev2";
+		joints[2].name = "Rev3";
+		joints[3].name = "Rev4";
+		joints[4].name = "Rev5";
+		joints[5].name = "Rev6";
 
 		int numJoints = sizeof(joints) / sizeof(joints[0]);
 		for (int i = 0; i < numJoints; i++)
