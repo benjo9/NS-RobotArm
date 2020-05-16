@@ -1,6 +1,6 @@
 <launch>
 
-  <remap from="/joint_states" to="/RA/state"/>
+  <remap from="/RA/controller/state" to="/RA/state"/>
   <remap from="/RA/controller/position/Rev1/command" to="/RA/position/Rev1"/>
 	<remap from="/RA/controller/position/Rev2/command" to="/RA/position/Rev2"/>
 	<remap from="/RA/controller/position/Rev3/command" to="/RA/position/Rev3"/>
