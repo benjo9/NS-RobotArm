@@ -30,7 +30,7 @@
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
 		args="
 			/RA/controller/state
-			/RA/controller/trajectory/Position
+			/RA/controller/trajectory/follow_joint_trajectory
 		"/>
 
 </launch>
