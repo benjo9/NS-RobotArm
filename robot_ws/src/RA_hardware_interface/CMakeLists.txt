@@ -22,7 +22,7 @@ find_package(catkin REQUIRED COMPONENTS
   urdf
   control_toolbox
   joint_limits_interface
-  tr2cpp
+  tr1cpp
 )
 
 ## System dependencies are found with CMake's conventions
@@ -131,10 +131,10 @@ catkin_package(
     urdf
     control_toolbox
     joint_limits_interface
-    tr2cpp
+    tr1cpp
   LIBRARIES
     RA_hardware_interface
-    tr2cpp
+    tr1cpp
 )
 
 ###########
@@ -159,8 +159,8 @@ include_directories(
 
 
 add_library(RA_hardware_interface src/RA_hardware_interface.cpp)
-add_dependencies(RA_hardware_interface tr2cpp)
-target_link_libraries(RA_hardware_interface ${tr2cpp_LIBRARIES} ${catkin_LIBRARIES})
+add_dependencies(RA_hardware_interface tr1cpp)
+target_link_libraries(RA_hardware_interface ${tr1cpp_LIBRARIES} ${catkin_LIBRARIES})
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
