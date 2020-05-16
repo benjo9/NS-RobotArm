@@ -4,7 +4,7 @@ RA:
       type: joint_state_controller/JointStateController
       publish_rate: 50
     trajectory:
-      follow_joint_trajectory:
+      Position:
         type: position_controllers/JointTrajectoryController
         joints:
           - Rev1
