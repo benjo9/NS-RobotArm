@@ -5,6 +5,7 @@ project(ros_control_boilerplate)
 set(CMAKE_CXX_FLAGS "-std=c++11 -Wall ${CMAKE_CXX_FLAGS}")
 
 find_package(catkin REQUIRED COMPONENTS
+  ODrive_Interface_test
   cmake_modules
   hardware_interface
   controller_manager
@@ -19,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   sensor_msgs
   rosparam_shortcuts
+  message_generation
 )
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${PROJECT_SOURCE_DIR}/cmake)
@@ -31,6 +33,8 @@ catkin_package(
   INCLUDE_DIRS
     include
   CATKIN_DEPENDS
+    message_runtime
+    ODrive_Interface_test
     hardware_interface
     controller_manager
     roscpp

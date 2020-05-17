@@ -38,6 +38,8 @@
 */
 
 #include <rrbot_control/rrbot_hw_interface.h>
+#include "ODrive_Interface_test/driver.h"
+#include "ODrive_Interface_test/feedback.h"
 
 namespace rrbot_control
 {
@@ -46,44 +48,40 @@ RRBotHWInterface::RRBotHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
   : ros_control_boilerplate::GenericHWInterface(nh, urdf_model)
 {
   ROS_INFO_NAMED("rrbot_hw_interface", "RRBotHWInterface Ready.");
+  drive_axis = nh_.serviceClient<ODrive_Interface_test::driver>("drive_axis");
+  axis_position = nh_.serviceClient<ODrive_Interface_test::feedback>("axis_position");
 }
 
 void RRBotHWInterface::read(ros::Duration &elapsed_time)
 {
-  // ----------------------------------------------------
-  // ----------------------------------------------------
-  // ----------------------------------------------------
-  //
-  // FILL IN YOUR READ COMMAND FROM USB/ETHERNET/ETHERCAT/SERIAL ETC HERE
-  //
-  // ----------------------------------------------------
-  // ----------------------------------------------------
-  // ----------------------------------------------------
+  for (int i = 0; i < num_joints_; i++) {
+    ROS_INFO("read:1");
+    ODrive_Interface_test::feedback feedback;
+    feedback.request.axis = i + 1;
+    joint_position_[i] = axis_position.call(feedback);
+    //ROS_INFO(joint_position_[i]);
+    ROS_INFO("read:2");
+  }
 }
 
 void RRBotHWInterface::write(ros::Duration &elapsed_time)
 {
   // Safety
   enforceLimits(elapsed_time);
-
-  // ----------------------------------------------------
-  // ----------------------------------------------------
-  // ----------------------------------------------------
-  //
-  // FILL IN YOUR WRITE COMMAND TO USB/ETHERNET/ETHERCAT/SERIAL ETC HERE
-  //
-  // FOR A EASY SIMULATION EXAMPLE, OR FOR CODE TO CALCULATE
-  // VELOCITY FROM POSITION WITH SMOOTHING, SEE
-  // sim_hw_interface.cpp IN THIS PACKAGE
-  //
-  // DUMMY PASS-THROUGH CODE
-  for (std::size_t joint_id = 0; joint_id < num_joints_; ++joint_id)
-    joint_position_[joint_id] += joint_position_command_[joint_id];
-  // END DUMMY CODE
-  //
-  // ----------------------------------------------------
-  // ----------------------------------------------------
-  // ----------------------------------------------------
+  for (int i = 0; i < num_joints_; i++) {
+    ROS_INFO("write:1");
+    ODrive_Interface_test::driver driver;
+    driver.request.axis = i + 1;
+    driver.request.value = joint_position_command_[i];
+    if(drive_axis.call(driver))
+    {
+    ROS_INFO("true");
+    } else
+    {
+    ROS_INFO("false");
+    }
+    ROS_INFO("write:2");
+  }
 }
 
 void RRBotHWInterface::enforceLimits(ros::Duration &period)
