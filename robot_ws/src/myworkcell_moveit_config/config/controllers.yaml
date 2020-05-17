@@ -1,3 +1,4 @@
+ros_control_namespace: /ROS_CONTROL_NODE
 controller_list:
   - name: /RA/controller/trajectory/Position
     action_ns: follow_joint_trajectory
