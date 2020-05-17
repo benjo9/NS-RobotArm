@@ -46,14 +46,6 @@
     <arg name="debug" value="$(arg debug)"/>
   </include>
 
-  <launch>
-    <!-- Set the param that trajectory_execution_manager needs to find the controller plugin -->
-    <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
-    <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
-    <!-- load controller_list -->
-    <rosparam file="$(find myworkcell_moveit_config)/config/controllers.yaml"/>
-  </launch>
-
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
   <include file="$(find myworkcell_moveit_config)/launch/moveit_rviz.launch">
     <arg name="rviz_config" value="$(find myworkcell_moveit_config)/launch/moveit.rviz"/>
@@ -64,5 +56,7 @@
   <include file="$(find myworkcell_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">
     <arg name="moveit_warehouse_database_path" value="$(arg db_path)"/>
   </include>
+
+  <include file="$(find myworkcell_moveit_config)/launch/myworkcell_moveit_controller_manager.launch.xml"> />
 
 </launch>
