@@ -30,7 +30,7 @@
 #     ${Gflags_LIBRARIES}
 #   )
 ###############################################################################
-
+set(_gflags_ORIG_CMAKE_FIND_LIBRARY_SUFFIXES ${CMAKE_FIND_LIBRARY_SUFFIXES})
 
 find_path(Gflags_INCLUDE_PATH gflags/gflags.h)
 
