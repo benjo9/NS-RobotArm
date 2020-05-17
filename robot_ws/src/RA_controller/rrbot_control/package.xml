@@ -17,13 +17,9 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>ros_control_boilerplate</build_depend>
-  <build_depend>message_generation</build_depend>
-
-  <exec_depend>ros_control_boilerplate</exec_depend>
-  <exec_depend>message_runtime</exec_depend>
-
+  
   <run_depend>ros_control_boilerplate</run_depend>
-  <run_depend>message_runtime</run_depend>
+  
 
   <export>
   </export>
