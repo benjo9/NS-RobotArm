@@ -9,7 +9,7 @@
   <arg     if="$(arg config)" name="command_args" value="-d $(find moveit_sim_controller)/launch/ur5.rviz" />
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
-  <include file="$(find ur5_moveit_config)/launch/planning_context.launch">
+  <include file="$(find myworkcell_moveit_config)/launch/planning_context.launch">
     <arg name="load_robot_description" value="true"/>
     <arg name="limited" value="true"/>
   </include>
