@@ -43,15 +43,15 @@ def drive_axis(req):
     print("Driving Axis " + str(req.axis) + ": " + str(req.value))
     positions[req.axis - 1] = req.value
 
-    if req.axis == 1:
+    #if req.axis == 1:
         #odrv1.axis0.controller.input_pos = req.value
-    if req.axis == 2:
+    #if req.axis == 2:
         #odrv0.axis0.controller.input_pos = req.value
-    if req.axis == 3:
+    #if req.axis == 3:
         #odrv0.axis1.controller.input_pos = req.value
-    if req.axis == 4:
+    #if req.axis == 4:
         #odrv2.axis0.controller.input_pos = req.value
-    if req.axis == 5:
+    #if req.axis == 5:
         #odrv2.axis1.controller.input_pos = req.value
     if req.axis == 6:
         odrv1.axis1.controller.input_pos = req.value
