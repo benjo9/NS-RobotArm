@@ -1,6 +1,6 @@
 #request
 int16 axis
-double32 value
+float32 value
 ---
 #response
 bool result
