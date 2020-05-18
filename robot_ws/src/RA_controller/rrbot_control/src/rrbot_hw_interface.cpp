@@ -38,8 +38,8 @@
 */
 
 #include <rrbot_control/rrbot_hw_interface.h>
-#include "ODrive_Interface_test/driver.h"
-#include "ODrive_Interface_test/feedback.h"
+#include "ros_control_boilerplate/driver.h"
+#include "ros_control_boilerplate/feedback.h"
 
 namespace rrbot_control
 {
