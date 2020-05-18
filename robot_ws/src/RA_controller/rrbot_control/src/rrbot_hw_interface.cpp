@@ -60,7 +60,7 @@ void RRBotHWInterface::read(ros::Duration &elapsed_time)
     feedback.request.axis = i + 1;
     float p = axis_position.call(feedback);
     joint_position_[i] = p;
-    ROS_INFO(p);
+    ROS_INFO(std::to_string(p));
     //ROS_INFO("read:2");
   }
 }
