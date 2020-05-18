@@ -65,8 +65,7 @@ public:
 
   /** \breif Enforce limits for all values before writing */
   virtual void enforceLimits(ros::Duration &period);
-
-protected:
+  
   ros::ServiceClient drive_axis;
   ros::ServiceClient axis_position;
 
