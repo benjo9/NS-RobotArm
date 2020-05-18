@@ -1,0 +1,13 @@
+ros_control_namespace: /ROS_CONTROL_NODE
+controller_list:
+  - name: /rrbot/position_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - Rev1
+      - Rev2
+      - Rev3
+      - Rev4
+      - Rev5
+      - Rev6
