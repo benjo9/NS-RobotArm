@@ -26,11 +26,11 @@
   (:init
    (&key
     ((:axis __axis) 0)
-    ((:value __value) 0)
+    ((:value __value) 0.0)
     )
    (send-super :init)
    (setq _axis (round __axis))
-   (setq _value (round __value))
+   (setq _value (float __value))
    self)
   (:axis
    (&optional __axis)
@@ -43,7 +43,7 @@
    (+
     ;; int16 _axis
     2
-    ;; int32 _value
+    ;; float32 _value
     4
     ))
   (:serialize
@@ -52,16 +52,16 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; int16 _axis
        (write-word _axis s)
-     ;; int32 _value
-       (write-long _value s)
+     ;; float32 _value
+       (sys::poke _value (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
    ;; int16 _axis
      (setq _axis (sys::peek buf ptr- :short)) (incf ptr- 2)
-   ;; int32 _value
-     (setq _value (sys::peek buf ptr- :integer)) (incf ptr- 4)
+   ;; float32 _value
+     (setq _value (sys::peek buf ptr- :float)) (incf ptr- 4)
    ;;
    self)
   )
@@ -107,7 +107,7 @@
   :super ros::object
   :slots ())
 
-(setf (get ODrive_Interface_test::driver :md5sum-) "6f5723450e3c67d0d72065dca6e91464")
+(setf (get ODrive_Interface_test::driver :md5sum-) "6df2415227858f9be2d7131c3c0f5ed5")
 (setf (get ODrive_Interface_test::driver :datatype-) "ODrive_Interface_test/driver")
 (setf (get ODrive_Interface_test::driver :request) ODrive_Interface_test::driverRequest)
 (setf (get ODrive_Interface_test::driver :response) ODrive_Interface_test::driverResponse)
@@ -115,24 +115,24 @@
 (defmethod ODrive_Interface_test::driverRequest
   (:response () (instance ODrive_Interface_test::driverResponse :init)))
 
-(setf (get ODrive_Interface_test::driverRequest :md5sum-) "6f5723450e3c67d0d72065dca6e91464")
+(setf (get ODrive_Interface_test::driverRequest :md5sum-) "6df2415227858f9be2d7131c3c0f5ed5")
 (setf (get ODrive_Interface_test::driverRequest :datatype-) "ODrive_Interface_test/driverRequest")
 (setf (get ODrive_Interface_test::driverRequest :definition-)
       "
 int16 axis
-int32 value
+float32 value
 ---
 
 bool result
 
 ")
 
-(setf (get ODrive_Interface_test::driverResponse :md5sum-) "6f5723450e3c67d0d72065dca6e91464")
+(setf (get ODrive_Interface_test::driverResponse :md5sum-) "6df2415227858f9be2d7131c3c0f5ed5")
 (setf (get ODrive_Interface_test::driverResponse :datatype-) "ODrive_Interface_test/driverResponse")
 (setf (get ODrive_Interface_test::driverResponse :definition-)
       "
 int16 axis
-int32 value
+float32 value
 ---
 
 bool result
@@ -141,6 +141,6 @@ bool result
 
 
 
-(provide :ODrive_Interface_test/driver "6f5723450e3c67d0d72065dca6e91464")
+(provide :ODrive_Interface_test/driver "6df2415227858f9be2d7131c3c0f5ed5")
 
 

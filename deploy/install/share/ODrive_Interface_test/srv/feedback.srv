@@ -2,4 +2,4 @@
 int16 axis
 ---
 #response
-int32 position
+float32 position

@@ -49,10 +49,10 @@
   "ODrive_Interface_test/feedbackRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<feedback-request>)))
   "Returns md5sum for a message object of type '<feedback-request>"
-  "64b7d5a934e60038fcb2666a62ef99e5")
+  "7bdf82b185cf31283813583871cd5319")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'feedback-request)))
   "Returns md5sum for a message object of type 'feedback-request"
-  "64b7d5a934e60038fcb2666a62ef99e5")
+  "7bdf82b185cf31283813583871cd5319")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<feedback-request>)))
   "Returns full string definition for message of type '<feedback-request>"
   (cl:format cl:nil "~%int16 axis~%~%~%"))
@@ -74,8 +74,8 @@
   ((position
     :reader position
     :initarg :position
-    :type cl:integer
-    :initform 0))
+    :type cl:float
+    :initform 0.0))
 )
 
 (cl:defclass feedback-response (<feedback-response>)
@@ -92,21 +92,20 @@
   (position m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <feedback-response>) ostream)
   "Serializes a message object of type '<feedback-response>"
-  (cl:let* ((signed (cl:slot-value msg 'position)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
-    )
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'position))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <feedback-response>) istream)
   "Deserializes a message object of type '<feedback-response>"
-    (cl:let ((unsigned 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'position) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'position) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<feedback-response>)))
@@ -117,16 +116,16 @@
   "ODrive_Interface_test/feedbackResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<feedback-response>)))
   "Returns md5sum for a message object of type '<feedback-response>"
-  "64b7d5a934e60038fcb2666a62ef99e5")
+  "7bdf82b185cf31283813583871cd5319")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'feedback-response)))
   "Returns md5sum for a message object of type 'feedback-response"
-  "64b7d5a934e60038fcb2666a62ef99e5")
+  "7bdf82b185cf31283813583871cd5319")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<feedback-response>)))
   "Returns full string definition for message of type '<feedback-response>"
-  (cl:format cl:nil "~%int32 position~%~%~%~%"))
+  (cl:format cl:nil "~%float32 position~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'feedback-response)))
   "Returns full string definition for message of type 'feedback-response"
-  (cl:format cl:nil "~%int32 position~%~%~%~%"))
+  (cl:format cl:nil "~%float32 position~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <feedback-response>))
   (cl:+ 0
      4

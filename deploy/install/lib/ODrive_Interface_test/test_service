@@ -13,8 +13,11 @@ from ODrive_Interface_test.srv import *
 
 print("Waiting for services")
 rospy.wait_for_service('drive_axis')
+print("drive_axis")
 rospy.wait_for_service('axis_position')
+print("axis_position")
 rospy.wait_for_service('axis_requested_state')
+print("axis_requested_state")
 drive_axis = rospy.ServiceProxy('drive_axis', driver, persistent = True)
 axis_position = rospy.ServiceProxy('axis_position', feedback, persistent = True)
 axis_requested_state = rospy.ServiceProxy('axis_requested_state', requested_state, persistent = True)

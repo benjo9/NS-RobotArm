@@ -1,6 +1,0 @@
-tr1cpp
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr1cpp/cmake.lock /home/noa/NS-RobotArm/robot_ws/devel/./cmake.lock
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr1cpp/lib/libtr1cpp.so /home/noa/NS-RobotArm/robot_ws/devel/lib/libtr1cpp.so
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr1cpp/lib/pkgconfig/tr1cpp.pc /home/noa/NS-RobotArm/robot_ws/devel/lib/pkgconfig/tr1cpp.pc
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr1cpp/share/tr1cpp/cmake/tr1cppConfig.cmake /home/noa/NS-RobotArm/robot_ws/devel/share/tr1cpp/cmake/tr1cppConfig.cmake
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr1cpp/share/tr1cpp/cmake/tr1cppConfig-version.cmake /home/noa/NS-RobotArm/robot_ws/devel/share/tr1cpp/cmake/tr1cppConfig-version.cmake

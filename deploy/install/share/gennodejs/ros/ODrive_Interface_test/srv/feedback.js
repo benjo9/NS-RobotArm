@@ -100,7 +100,7 @@ class feedbackResponse {
         this.position = initObj.position
       }
       else {
-        this.position = 0;
+        this.position = 0.0;
       }
     }
   }
@@ -108,7 +108,7 @@ class feedbackResponse {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type feedbackResponse
     // Serialize message field [position]
-    bufferOffset = _serializer.int32(obj.position, buffer, bufferOffset);
+    bufferOffset = _serializer.float32(obj.position, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -117,7 +117,7 @@ class feedbackResponse {
     let len;
     let data = new feedbackResponse(null);
     // Deserialize message field [position]
-    data.position = _deserializer.int32(buffer, bufferOffset);
+    data.position = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
@@ -132,14 +132,14 @@ class feedbackResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'ada70156e12e6e31948c64c60d8bb212';
+    return 'e4e11b3af29ed247b2bd150d3f4540f9';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     
-    int32 position
+    float32 position
     
     
     `;
@@ -155,7 +155,7 @@ class feedbackResponse {
       resolved.position = msg.position;
     }
     else {
-      resolved.position = 0
+      resolved.position = 0.0
     }
 
     return resolved;
@@ -165,6 +165,6 @@ class feedbackResponse {
 module.exports = {
   Request: feedbackRequest,
   Response: feedbackResponse,
-  md5sum() { return '64b7d5a934e60038fcb2666a62ef99e5'; },
+  md5sum() { return '7bdf82b185cf31283813583871cd5319'; },
   datatype() { return 'ODrive_Interface_test/feedback'; }
 };

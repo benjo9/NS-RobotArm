@@ -25,11 +25,11 @@ struct driverRequest_
 
   driverRequest_()
     : axis(0)
-    , value(0)  {
+    , value(0.0)  {
     }
   driverRequest_(const ContainerAllocator& _alloc)
     : axis(0)
-    , value(0)  {
+    , value(0.0)  {
   (void)_alloc;
     }
 
@@ -38,7 +38,7 @@ struct driverRequest_
    typedef int16_t _axis_type;
   _axis_type axis;
 
-   typedef int32_t _value_type;
+   typedef float _value_type;
   _value_type value;
 
 
@@ -128,12 +128,12 @@ struct MD5Sum< ::ODrive_Interface_test::driverRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "678e13c1fe4ebe3f4b3a3a1a5aee7968";
+    return "8c0b010ef08d303da3ecaf8ce5941d08";
   }
 
   static const char* value(const ::ODrive_Interface_test::driverRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x678e13c1fe4ebe3fULL;
-  static const uint64_t static_value2 = 0x4b3a3a1a5aee7968ULL;
+  static const uint64_t static_value1 = 0x8c0b010ef08d303dULL;
+  static const uint64_t static_value2 = 0xa3ecaf8ce5941d08ULL;
 };
 
 template<class ContainerAllocator>
@@ -154,7 +154,7 @@ struct Definition< ::ODrive_Interface_test::driverRequest_<ContainerAllocator> >
   {
     return "\n"
 "int16 axis\n"
-"int32 value\n"
+"float32 value\n"
 ;
   }
 
@@ -196,7 +196,7 @@ struct Printer< ::ODrive_Interface_test::driverRequest_<ContainerAllocator> >
     s << indent << "axis: ";
     Printer<int16_t>::stream(s, indent + "  ", v.axis);
     s << indent << "value: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.value);
+    Printer<float>::stream(s, indent + "  ", v.value);
   }
 };
 

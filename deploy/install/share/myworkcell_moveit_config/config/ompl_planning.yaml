@@ -121,7 +121,7 @@ planner_configs:
     dense_delta_fraction: 0.001  # delta fraction for interface detection. default: 0.001
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
 manipulator:
-  default_planner_config: None
+  default_planner_config: kConfigDefault
   planner_configs:
     - SBL
     - EST
@@ -146,5 +146,5 @@ manipulator:
     - LazyPRMstar
     - SPARS
     - SPARStwo
-  projection_evaluator: joints(Rev8,Rev3)
+  projection_evaluator: joints(Rev6,Rev1)
   longest_valid_segment_fraction: 0.005

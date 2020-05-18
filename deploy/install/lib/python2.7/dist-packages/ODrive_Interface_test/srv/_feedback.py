@@ -114,15 +114,15 @@ import struct
 
 
 class feedbackResponse(genpy.Message):
-  _md5sum = "ada70156e12e6e31948c64c60d8bb212"
+  _md5sum = "e4e11b3af29ed247b2bd150d3f4540f9"
   _type = "ODrive_Interface_test/feedbackResponse"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """
-int32 position
+float32 position
 
 """
   __slots__ = ['position']
-  _slot_types = ['int32']
+  _slot_types = ['float32']
 
   def __init__(self, *args, **kwds):
     """
@@ -142,9 +142,9 @@ int32 position
       super(feedbackResponse, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.position is None:
-        self.position = 0
+        self.position = 0.
     else:
-      self.position = 0
+      self.position = 0.
 
   def _get_types(self):
     """
@@ -158,7 +158,7 @@ int32 position
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_get_struct_i().pack(self.position))
+      buff.write(_get_struct_f().pack(self.position))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -171,7 +171,7 @@ int32 position
       end = 0
       start = end
       end += 4
-      (self.position,) = _get_struct_i().unpack(str[start:end])
+      (self.position,) = _get_struct_f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -184,7 +184,7 @@ int32 position
     :param numpy: numpy python module
     """
     try:
-      buff.write(_get_struct_i().pack(self.position))
+      buff.write(_get_struct_f().pack(self.position))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -198,7 +198,7 @@ int32 position
       end = 0
       start = end
       end += 4
-      (self.position,) = _get_struct_i().unpack(str[start:end])
+      (self.position,) = _get_struct_f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -207,14 +207,14 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_i = None
-def _get_struct_i():
-    global _struct_i
-    if _struct_i is None:
-        _struct_i = struct.Struct("<i")
-    return _struct_i
+_struct_f = None
+def _get_struct_f():
+    global _struct_f
+    if _struct_f is None:
+        _struct_f = struct.Struct("<f")
+    return _struct_f
 class feedback(object):
   _type          = 'ODrive_Interface_test/feedback'
-  _md5sum = '64b7d5a934e60038fcb2666a62ef99e5'
+  _md5sum = '7bdf82b185cf31283813583871cd5319'
   _request_class  = feedbackRequest
   _response_class = feedbackResponse
