@@ -1,0 +1,8 @@
+prefix=/home/noa/NS-RobotArm/robot_ws/install
+
+Name: moveit_sim_controller
+Description: Description of moveit_sim_controller
+Version: 0.2.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lmoveit_sim_hw_interface
+Requires: moveit_core moveit_ros_planning ros_control_boilerplate rosparam_shortcuts roscpp

@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::ODrive_Interface_test::velocity > {
   static const char* value()
   {
-    return "6f5723450e3c67d0d72065dca6e91464";
+    return "6df2415227858f9be2d7131c3c0f5ed5";
   }
 
   static const char* value(const ::ODrive_Interface_test::velocity&) { return value(); }

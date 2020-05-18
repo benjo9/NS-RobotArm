@@ -35,7 +35,7 @@ class driverRequest {
         this.value = initObj.value
       }
       else {
-        this.value = 0;
+        this.value = 0.0;
       }
     }
   }
@@ -45,7 +45,7 @@ class driverRequest {
     // Serialize message field [axis]
     bufferOffset = _serializer.int16(obj.axis, buffer, bufferOffset);
     // Serialize message field [value]
-    bufferOffset = _serializer.int32(obj.value, buffer, bufferOffset);
+    bufferOffset = _serializer.float32(obj.value, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -56,7 +56,7 @@ class driverRequest {
     // Deserialize message field [axis]
     data.axis = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [value]
-    data.value = _deserializer.int32(buffer, bufferOffset);
+    data.value = _deserializer.float32(buffer, bufferOffset);
     return data;
   }
 
@@ -71,7 +71,7 @@ class driverRequest {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '678e13c1fe4ebe3f4b3a3a1a5aee7968';
+    return '8c0b010ef08d303da3ecaf8ce5941d08';
   }
 
   static messageDefinition() {
@@ -79,7 +79,7 @@ class driverRequest {
     return `
     
     int16 axis
-    int32 value
+    float32 value
     
     `;
   }
@@ -101,7 +101,7 @@ class driverRequest {
       resolved.value = msg.value;
     }
     else {
-      resolved.value = 0
+      resolved.value = 0.0
     }
 
     return resolved;
@@ -184,6 +184,6 @@ class driverResponse {
 module.exports = {
   Request: driverRequest,
   Response: driverResponse,
-  md5sum() { return '6f5723450e3c67d0d72065dca6e91464'; },
+  md5sum() { return '6df2415227858f9be2d7131c3c0f5ed5'; },
   datatype() { return 'ODrive_Interface_test/driver'; }
 };

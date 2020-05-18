@@ -1,0 +1,8 @@
+prefix=/home/noa/NS-RobotArm/robot_ws/install
+
+Name: tr2cpp
+Description: Description of tr2cpp
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ltr2cpp
+Requires: roscpp

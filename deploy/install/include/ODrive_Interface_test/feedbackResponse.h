@@ -24,16 +24,16 @@ struct feedbackResponse_
   typedef feedbackResponse_<ContainerAllocator> Type;
 
   feedbackResponse_()
-    : position(0)  {
+    : position(0.0)  {
     }
   feedbackResponse_(const ContainerAllocator& _alloc)
-    : position(0)  {
+    : position(0.0)  {
   (void)_alloc;
     }
 
 
 
-   typedef int32_t _position_type;
+   typedef float _position_type;
   _position_type position;
 
 
@@ -122,12 +122,12 @@ struct MD5Sum< ::ODrive_Interface_test::feedbackResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "ada70156e12e6e31948c64c60d8bb212";
+    return "e4e11b3af29ed247b2bd150d3f4540f9";
   }
 
   static const char* value(const ::ODrive_Interface_test::feedbackResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xada70156e12e6e31ULL;
-  static const uint64_t static_value2 = 0x948c64c60d8bb212ULL;
+  static const uint64_t static_value1 = 0xe4e11b3af29ed247ULL;
+  static const uint64_t static_value2 = 0xb2bd150d3f4540f9ULL;
 };
 
 template<class ContainerAllocator>
@@ -147,7 +147,7 @@ struct Definition< ::ODrive_Interface_test::feedbackResponse_<ContainerAllocator
   static const char* value()
   {
     return "\n"
-"int32 position\n"
+"float32 position\n"
 "\n"
 ;
   }
@@ -187,7 +187,7 @@ struct Printer< ::ODrive_Interface_test::feedbackResponse_<ContainerAllocator> >
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::ODrive_Interface_test::feedbackResponse_<ContainerAllocator>& v)
   {
     s << indent << "position: ";
-    Printer<int32_t>::stream(s, indent + "  ", v.position);
+    Printer<float>::stream(s, indent + "  ", v.position);
   }
 };
 

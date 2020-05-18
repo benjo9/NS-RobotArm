@@ -11,6 +11,8 @@ import math
 
 from ODrive_Interface_test.srv import *
 
+positions = [0, 0, 0, 0, 0, 0]
+
 print("Connecting...")
 odrv0 = odrive.find_any(serial_number="206E3590524B")
 print("Connected to ODrive 0")
@@ -38,26 +40,28 @@ def axis_velocity(req):
     return velocityResponse(True)
 
 def drive_axis(req):
-    print("Driving Axis")
+    print("Driving Axis " + str(req.axis) + ": " + str(req.value))
+    positions[req.axis - 1] = req.value
 
     if req.axis == 1:
-        odrv1.axis0.controller.input_pos = req.value
+        #odrv1.axis0.controller.input_pos = req.value
     if req.axis == 2:
-        odrv0.axis0.controller.input_pos = req.value
+        #odrv0.axis0.controller.input_pos = req.value
     if req.axis == 3:
-        odrv0.axis1.controller.input_pos = req.value
+        #odrv0.axis1.controller.input_pos = req.value
     if req.axis == 4:
-        odrv2.axis0.controller.input_pos = req.value
+        #odrv2.axis0.controller.input_pos = req.value
     if req.axis == 5:
-        odrv2.axis1.controller.input_pos = req.value
+        #odrv2.axis1.controller.input_pos = req.value
     if req.axis == 6:
         odrv1.axis1.controller.input_pos = req.value
 
     return driverResponse(True)
 
 def axis_position(req):
-    print("Axis Postition")
-
+    print("Axis Postition " + str(req.axis) + ": " + str(positions[req.axis - 1]))
+    return feedbackResponse(positions[req.axis - 1])
+    """
     if req.axis == 1:
         return feedbackResponse(int(round(odrv1.axis0.encoder.pos_estimate)))
     if req.axis == 2:
@@ -70,6 +74,7 @@ def axis_position(req):
         return feedbackResponse(int(round(odrv2.axis1.encoder.pos_estimate)))
     if req.axis == 6:
         return feedbackResponse(int(round(odrv1.axis1.encoder.pos_estimate)))
+    """
 
 def axis_requested_state(req):
     print("Axis requested_state")

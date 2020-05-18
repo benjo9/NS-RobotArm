@@ -15,8 +15,8 @@
    (value
     :reader value
     :initarg :value
-    :type cl:integer
-    :initform 0))
+    :type cl:float
+    :initform 0.0))
 )
 
 (cl:defclass driver-request (<driver-request>)
@@ -42,12 +42,11 @@
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
     )
-  (cl:let* ((signed (cl:slot-value msg 'value)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
-    )
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'value))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <driver-request>) istream)
   "Deserializes a message object of type '<driver-request>"
@@ -55,12 +54,12 @@
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
       (cl:setf (cl:slot-value msg 'axis) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536))))
-    (cl:let ((unsigned 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
-      (cl:setf (cl:slot-value msg 'value) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296))))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'value) (roslisp-utils:decode-single-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<driver-request>)))
@@ -71,16 +70,16 @@
   "ODrive_Interface_test/driverRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<driver-request>)))
   "Returns md5sum for a message object of type '<driver-request>"
-  "6f5723450e3c67d0d72065dca6e91464")
+  "6df2415227858f9be2d7131c3c0f5ed5")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'driver-request)))
   "Returns md5sum for a message object of type 'driver-request"
-  "6f5723450e3c67d0d72065dca6e91464")
+  "6df2415227858f9be2d7131c3c0f5ed5")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<driver-request>)))
   "Returns full string definition for message of type '<driver-request>"
-  (cl:format cl:nil "~%int16 axis~%int32 value~%~%~%"))
+  (cl:format cl:nil "~%int16 axis~%float32 value~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'driver-request)))
   "Returns full string definition for message of type 'driver-request"
-  (cl:format cl:nil "~%int16 axis~%int32 value~%~%~%"))
+  (cl:format cl:nil "~%int16 axis~%float32 value~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <driver-request>))
   (cl:+ 0
      2
@@ -131,10 +130,10 @@
   "ODrive_Interface_test/driverResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<driver-response>)))
   "Returns md5sum for a message object of type '<driver-response>"
-  "6f5723450e3c67d0d72065dca6e91464")
+  "6df2415227858f9be2d7131c3c0f5ed5")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'driver-response)))
   "Returns md5sum for a message object of type 'driver-response"
-  "6f5723450e3c67d0d72065dca6e91464")
+  "6df2415227858f9be2d7131c3c0f5ed5")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<driver-response>)))
   "Returns full string definition for message of type '<driver-response>"
   (cl:format cl:nil "~%bool result~%~%~%~%"))

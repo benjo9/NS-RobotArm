@@ -1,9 +1,9 @@
 controller_list:
   - name: fake_manipulator_controller
     joints:
-      - Rev8
+      - Rev1
+      - Rev2
       - Rev3
       - Rev4
       - Rev5
       - Rev6
-      - Rev7

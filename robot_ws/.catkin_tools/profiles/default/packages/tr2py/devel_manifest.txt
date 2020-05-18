@@ -1,6 +1,0 @@
-tr2py
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr2py/cmake.lock /home/noa/NS-RobotArm/robot_ws/devel/./cmake.lock
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr2py/lib/python2.7/dist-packages/tr2py/__init__.py /home/noa/NS-RobotArm/robot_ws/devel/lib/python2.7/dist-packages/tr2py/__init__.py
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr2py/lib/pkgconfig/tr2py.pc /home/noa/NS-RobotArm/robot_ws/devel/lib/pkgconfig/tr2py.pc
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr2py/share/tr2py/cmake/tr2pyConfig-version.cmake /home/noa/NS-RobotArm/robot_ws/devel/share/tr2py/cmake/tr2pyConfig-version.cmake
-/home/noa/NS-RobotArm/robot_ws/devel/.private/tr2py/share/tr2py/cmake/tr2pyConfig.cmake /home/noa/NS-RobotArm/robot_ws/devel/share/tr2py/cmake/tr2pyConfig.cmake
