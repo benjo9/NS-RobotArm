@@ -1,6 +1,6 @@
 ros_control_namespace: /ROS_CONTROL_NODE
 controller_list:
-  - name: /RA/controller/trajectory/Position
+  - name: position_trajectory_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: true
