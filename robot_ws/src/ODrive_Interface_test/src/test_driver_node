@@ -11,12 +11,12 @@ from ODrive_Interface_test.srv import *
 positions = [0, 0, 0, 0, 0, 0]
 
 def drive_axis(req):
-    print("Driving Axis")
+    print("Driving Axis" + req.axis + ": " + req.value)
     positions[req.axis - 1] = req.value
     return driverResponse(True)
 
 def axis_position(req):
-    print("Axis Postition")
+    print("Axis Postition" + req.axis + ": " + feedbackResponse(positions[req.axis - 1]))
     return feedbackResponse(positions[req.axis - 1])
 
 
