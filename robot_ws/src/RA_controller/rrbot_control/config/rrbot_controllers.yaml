@@ -37,23 +37,23 @@ position_trajectory_controller:
       goal_time: 10
       #stopped_position_tolerance: 0.4 # Defaults to 0.01
       Rev1:
-          goal:       10
-          trajectory: 10
+          goal:       0.01
+          trajectory: 0.01
       Rev2:
-          goal:       10
-          trajectory: 10
+          goal:       0.01
+          trajectory: 0.01
       Rev3:
-          goal:       10
-          trajectory: 10
+          goal:       0.01
+          trajectory: 0.01
       Rev4:
-          goal:       10
-          trajectory: 10
+          goal:       0.01
+          trajectory: 0.01
       Rev5:
-          goal:       10
-          trajectory: 10
+          goal:       0.01
+          trajectory: 0.01
       Rev6:
-          goal:       10
-          trajectory: 10
+          goal:       0.01
+          trajectory: 0.01
    # gains:
    #     joint1: {p: 2.0,  i: 0.0, d: 0.01, i_clamp: 1}
    #     joint2: {p: 2.0,  i: 0.0, d: 0.01, i_clamp: 1}
