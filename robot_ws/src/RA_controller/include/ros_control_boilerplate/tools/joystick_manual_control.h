@@ -47,8 +47,6 @@
 #include <controller_manager_msgs/SwitchController.h>
 #include <controller_manager_msgs/LoadController.h>
 
-#include "ODrive_Interface_test/driver.h"
-#include "ODrive_Interface_test/feedback.h"
 namespace ros_control_boilerplate
 {
 class JoystickManualControl
@@ -189,9 +187,6 @@ protected:
   // Controller lists
   std::vector<std::string> manual_controllers_;
   std::vector<std::string> trajectory_controllers_;
-
-  ros::ServiceClient drive_axis;
-  ros::ServiceClient axis_position;
 
 };  // end class
 

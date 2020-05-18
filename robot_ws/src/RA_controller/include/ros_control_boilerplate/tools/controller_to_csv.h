@@ -45,9 +45,6 @@
 // ros_control
 #include <control_msgs/JointTrajectoryControllerState.h>
 
-#include "ODrive_Interface_test/driver.h"
-#include "ODrive_Interface_test/feedback.h"
-
 namespace ros_control_boilerplate
 {
 
@@ -71,9 +68,6 @@ public:
 
   /** \brief End recording */
   void stopRecording();
-
-  ros::ServiceClient drive_axis;
-  ros::ServiceClient axis_position;
 
 private:
 
