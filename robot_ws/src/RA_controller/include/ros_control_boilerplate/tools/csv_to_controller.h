@@ -50,6 +50,9 @@
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
 
+#include "ODrive_Interface_test/driver.h"
+#include "ODrive_Interface_test/feedback.h"
+
 namespace ros_control_boilerplate
 {
 static const double RECORD_RATE_HZ = 100.0;  // times per second to record
@@ -87,6 +90,9 @@ private:
 
   // Cache of last recieved state
   control_msgs::JointTrajectoryControllerState current_state_;
+
+  ros::ServiceClient drive_axis;
+  ros::ServiceClient axis_position;
 
 };  // end class
 

@@ -39,6 +39,8 @@
 
 #include <time.h>
 #include <ros_control_boilerplate/generic_hw_interface.h>
+#include "ODrive_Interface_test/driver.h"
+#include "ODrive_Interface_test/feedback.h"
 
 namespace ros_control_boilerplate
 {
@@ -98,6 +100,9 @@ protected:
 
   /** \brief Abstract Hardware Interface for your robot */
   boost::shared_ptr<ros_control_boilerplate::GenericHWInterface> hardware_interface_;
+
+  ros::ServiceClient drive_axis;
+  ros::ServiceClient axis_position;
 
 };  // end class
 

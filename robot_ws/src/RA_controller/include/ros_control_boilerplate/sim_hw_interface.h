@@ -41,6 +41,8 @@
 #define GENERIC_ROS_CONTROL__SIM_HW_INTERFACE_H
 
 #include <ros_control_boilerplate/generic_hw_interface.h>
+#include "ODrive_Interface_test/driver.h"
+#include "ODrive_Interface_test/feedback.h"
 
 namespace ros_control_boilerplate
 {
@@ -84,6 +86,9 @@ protected:
 
   // Send commands in different modes
   int sim_control_mode_ = 0;
+
+  ros::ServiceClient drive_axis;
+  ros::ServiceClient axis_position;
 
 };  // class
 
