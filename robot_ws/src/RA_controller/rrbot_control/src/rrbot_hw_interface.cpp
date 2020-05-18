@@ -99,7 +99,7 @@ void RRBotHWInterface::enforceLimits(ros::Duration &period)
   // Saturation Limits ---------------------------
   //
   // Enforces position and velocity
-  pos_jnt_sat_interface_.enforceLimits(period);
+  //pos_jnt_sat_interface_.enforceLimits(period);
   //
   // Enforces velocity and acceleration limits
   // vel_jnt_sat_interface_.enforceLimits(period);
