@@ -55,12 +55,12 @@ RRBotHWInterface::RRBotHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
 void RRBotHWInterface::read(ros::Duration &elapsed_time)
 {
   for (int i = 0; i < num_joints_; i++) {
-    ROS_INFO("read:1");
+    //ROS_INFO("read:1");
     ODrive_Interface_test::feedback feedback;
     feedback.request.axis = i + 1;
     joint_position_[i] = axis_position.call(feedback);
-    //ROS_INFO(joint_position_[i]);
-    ROS_INFO("read:2");
+    ROS_INFO(joint_position_[i]);
+    //ROS_INFO("read:2");
   }
 }
 
@@ -69,7 +69,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
   // Safety
   enforceLimits(elapsed_time);
   for (int i = 0; i < num_joints_; i++) {
-    ROS_INFO("write:1");
+    //ROS_INFO("write:1");
     ODrive_Interface_test::driver driver;
     driver.request.axis = i + 1;
     driver.request.value = joint_position_command_[i];
@@ -80,7 +80,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     {
     ROS_INFO("false");
     }
-    ROS_INFO("write:2");
+    //ROS_INFO("write:2");
   }
 }
 
