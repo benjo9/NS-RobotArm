@@ -59,7 +59,7 @@ void RRBotHWInterface::read(ros::Duration &elapsed_time)
     ODrive_Interface_test::feedback feedback;
     feedback.request.axis = i + 1;
     joint_position_[i] = axis_position.call(feedback);
-    ROS_INFO("read");
+    //ROS_INFO("read");
     //ROS_INFO("read:2");
   }
 }
@@ -75,10 +75,10 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     driver.request.value = joint_position_command_[i];
     if(drive_axis.call(driver))
     {
-    ROS_INFO("true");
+    //ROS_INFO("true");
     } else
     {
-    ROS_INFO("false");
+    //ROS_INFO("false");
     }
     //ROS_INFO("write:2");
   }
