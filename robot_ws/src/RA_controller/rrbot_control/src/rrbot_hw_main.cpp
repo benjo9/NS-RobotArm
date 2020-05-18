@@ -44,6 +44,8 @@ int main(int argc, char** argv)
   ros::init(argc, argv, "rrbot_hw_interface");
   ros::NodeHandle nh;
 
+  ROS_INFO_NAMED("rrbot_hw_main", "RRBotHWMain Ready.");
+
   // NOTE: We run the ROS loop in a separate thread as external calls such
   // as service callbacks to load controllers can block the (main) control loop
   ros::AsyncSpinner spinner(2);
