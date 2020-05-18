@@ -29,6 +29,13 @@ find_package(Gflags REQUIRED)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+add_service_files(DIRECTORY srv FILES driver.srv feedback.srv requested_state.srv velocity.srv)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs  # Or other packages containing msgs
+)
+
 catkin_package(
   INCLUDE_DIRS
     include
