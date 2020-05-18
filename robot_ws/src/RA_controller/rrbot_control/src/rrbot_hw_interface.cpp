@@ -77,7 +77,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
   // Safety
   enforceLimits(elapsed_time);
   for (int i = 0; i < num_joints_; i++) {
-    ROS_INFO(std::to_string(joint_position_command_[i]).c_str());
+    //ROS_INFO(std::to_string(joint_velocity_command_[i]).c_str());
     ODrive_Interface_test::driver driver;
     driver.request.axis = i + 1;
     driver.request.value = joint_position_command_[i];
