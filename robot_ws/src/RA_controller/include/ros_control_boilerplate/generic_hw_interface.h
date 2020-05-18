@@ -56,6 +56,8 @@
 #include <joint_limits_interface/joint_limits_interface.h>
 #include <joint_limits_interface/joint_limits_rosparam.h>
 #include <joint_limits_interface/joint_limits_urdf.h>
+#include "ODrive_Interface_test/driver.h"
+#include "ODrive_Interface_test/feedback.h"
 
 namespace ros_control_boilerplate
 {
@@ -180,6 +182,9 @@ protected:
   std::vector<double> joint_position_upper_limits_;
   std::vector<double> joint_velocity_limits_;
   std::vector<double> joint_effort_limits_;
+
+  ros::ServiceClient drive_axis;
+  ros::ServiceClient axis_position;
 
 };  // class
 

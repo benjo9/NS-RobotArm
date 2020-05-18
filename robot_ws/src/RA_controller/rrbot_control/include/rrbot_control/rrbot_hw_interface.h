@@ -41,8 +41,6 @@
 #define RRBOT_CONTROL__RRBOT_HW_INTERFACE_H
 
 #include <ros_control_boilerplate/generic_hw_interface.h>
-#include "ODrive_Interface_test/driver.h"
-#include "ODrive_Interface_test/feedback.h"
 
 namespace rrbot_control
 {
@@ -65,9 +63,6 @@ public:
 
   /** \breif Enforce limits for all values before writing */
   virtual void enforceLimits(ros::Duration &period);
-  
-  ros::ServiceClient drive_axis;
-  ros::ServiceClient axis_position;
 
 };  // class
 

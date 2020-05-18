@@ -20,13 +20,6 @@ target_link_libraries(rrbot_hw_main
   ${catkin_LIBRARIES}
 )
 
-add_service_files(DIRECTORY srv FILES driver.srv feedback.srv requested_state.srv velocity.srv)
-
-generate_messages(
-  DEPENDENCIES
-  std_msgs  # Or other packages containing msgs
-)
-
 ## Install ------------------------------------------------------------
 
 # Install libraries
