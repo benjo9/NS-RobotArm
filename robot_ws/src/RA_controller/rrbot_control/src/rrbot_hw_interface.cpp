@@ -60,11 +60,11 @@ void RRBotHWInterface::read(ros::Duration &elapsed_time)
     feedback.request.axis = i + 1;
     axis_position.call(feedback);
     double p = feedback.response.position;
-    ROS_INFO("Service position:");
-    ROS_INFO(std::to_string(p).c_str());
+    //ROS_INFO("Service position:");
+    //ROS_INFO(std::to_string(p).c_str());
     joint_position_[i] = p;
-    ROS_INFO("Joint position:");
-    ROS_INFO(std::to_string(joint_position_[i]).c_str());
+    //ROS_INFO("Joint position:");
+    //ROS_INFO(std::to_string(joint_position_[i]).c_str());
     
     //std::string s = std::to_string(p);
     //ROS_INFO(s);
@@ -77,7 +77,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
   // Safety
   enforceLimits(elapsed_time);
   for (int i = 0; i < num_joints_; i++) {
-    //ROS_INFO("write:1");
+    ROS_INFO(std::to_string(joint_velocity_command_[i]).c_str());
     ODrive_Interface_test::driver driver;
     driver.request.axis = i + 1;
     driver.request.value = joint_position_command_[i];

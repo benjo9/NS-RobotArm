@@ -54,6 +54,7 @@ position_trajectory_controller:
       Rev6:
           goal:       0.5
           trajectory: 0.5
+          
    # gains:
    #     joint1: {p: 2.0,  i: 0.0, d: 0.01, i_clamp: 1}
    #     joint2: {p: 2.0,  i: 0.0, d: 0.01, i_clamp: 1}
