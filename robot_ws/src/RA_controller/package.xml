@@ -51,6 +51,22 @@
   <run_depend>message_runtime</run_depend>
   <run_depend>ODrive_Interface_test</run_depend>
 
+  <exec_depend>hardware_interface</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>control_msgs</exec_depend>
+  <exec_depend>trajectory_msgs</exec_depend>
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>joint_limits_interface</exec_depend>
+  <exec_depend>transmission_interface</exec_depend>
+  <exec_depend>control_toolbox</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>rosparam_shortcuts</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>ODrive_Interface_test</exec_depend>
+
   <export>
   </export>
 </package>
