@@ -46,9 +46,9 @@ def drive_axis(req):
     if req.axis == 1:
         odrv1.axis0.controller.input_pos = req.value*1024000/math.pi
     if req.axis == 2:
-        odrv0.axis0.controller.input_pos = req.value*1024000/math.pi
+        odrv0.axis0.controller.input_pos = req.value*(-1024000)/math.pi
     if req.axis == 3:
-        odrv0.axis1.controller.input_pos = req.value*204800/math.pi
+        odrv0.axis1.controller.input_pos = req.value*(-204800)/math.pi
     if req.axis == 4:
         odrv2.axis0.controller.input_pos = req.value*204800/math.pi
     if req.axis == 5:
