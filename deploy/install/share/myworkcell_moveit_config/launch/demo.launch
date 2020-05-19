@@ -23,7 +23,7 @@
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
 			<param name="/use_gui" value="false"/>
-			<rosparam param="/source_list">[/RA/state]</rosparam>
+			<rosparam param="/source_list">[/rrbot/position_trajectory_controller/state]</rosparam>
 		</node>
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
