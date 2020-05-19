@@ -12,6 +12,8 @@ sudo rosdep init
 rosdep update
 sudo apt-get install ros-melodic-moveit
 sudo apt-get install python-catkin-tools
+sudo apt-get install libgflags-dev
+sudo apt-get install ros-$ROS_DISTRO-rosparam-shortcuts
 cd ~/NS-RobotArm/robot_ws/src/
 git clone https://github.com/jmeyer1292/fake_ar_publisher.git
 cd ..
