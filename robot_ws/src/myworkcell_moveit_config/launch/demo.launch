@@ -21,10 +21,7 @@
   -->
   <arg name="use_gui" default="false" />
 
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-			<param name="/use_gui" value="false"/>
-			<rosparam param="/source_list">[/rrbot/position_trajectory_controller/state]</rosparam>
-		</node>
+
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
   <include file="$(find myworkcell_moveit_config)/launch/planning_context.launch">
