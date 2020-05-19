@@ -155,28 +155,12 @@
     </geometry>
   </collision>
 </link>
-<joint name="Rev1" type="continuous">
+<joint name="Rev2" type="continuous">
   <origin rpy="0 0 0" xyz="0.04741 0.151 0.0"/>
   <parent link="Component1_1"/>
   <child link="Component2_1"/>
   <axis xyz="0.01 -0.0 -0.0"/>
   <limit effort="30" velocity="1.0" lower="-2" upper="1" />
-</joint>
-<transmission name="Rev1_tran">
-  <type>transmission_interface/SimpleTransmission</type>
-  <joint name="Rev1">
-    <hardwareInterface>PositionJointInterface</hardwareInterface>
-  </joint>
-  <actuator name="Rev1_actr">
-    <hardwareInterface>PositionJointInterface</hardwareInterface>
-    <mechanicalReduction>1</mechanicalReduction>
-  </actuator>
-</transmission>
-<joint name="Rev2" type="continuous">
-  <origin rpy="0 0 0" xyz="-0.09391 0.46 0.0"/>
-  <parent link="Component2_1"/>
-  <child link="Component3_1"/>
-  <axis xyz="-0.01 0.0 -0.0"/>
 </joint>
 <transmission name="Rev2_tran">
   <type>transmission_interface/SimpleTransmission</type>
@@ -189,10 +173,10 @@
   </actuator>
 </transmission>
 <joint name="Rev3" type="continuous">
-  <origin rpy="0 0 0" xyz="0.0465 0.106 0.015"/>
-  <parent link="Component3_1"/>
-  <child link="Component4_1"/>
-  <axis xyz="-0.0 -0.0 0.01"/>
+  <origin rpy="0 0 0" xyz="-0.09391 0.46 0.0"/>
+  <parent link="Component2_1"/>
+  <child link="Component3_1"/>
+  <axis xyz="-0.01 0.0 -0.0"/>
 </joint>
 <transmission name="Rev3_tran">
   <type>transmission_interface/SimpleTransmission</type>
@@ -205,10 +189,10 @@
   </actuator>
 </transmission>
 <joint name="Rev4" type="continuous">
-  <origin rpy="0 0 0" xyz="-0.04 0.0 0.481"/>
-  <parent link="Component4_1"/>
-  <child link="Component5_1"/>
-  <axis xyz="-0.01 0.0 0.0"/>
+  <origin rpy="0 0 0" xyz="0.0465 0.106 0.015"/>
+  <parent link="Component3_1"/>
+  <child link="Component4_1"/>
+  <axis xyz="-0.0 -0.0 0.01"/>
 </joint>
 <transmission name="Rev4_tran">
   <type>transmission_interface/SimpleTransmission</type>
@@ -221,10 +205,10 @@
   </actuator>
 </transmission>
 <joint name="Rev5" type="continuous">
-  <origin rpy="0 0 0" xyz="0.04 0.0 0.052"/>
-  <parent link="Component5_1"/>
-  <child link="Component6_1"/>
-  <axis xyz="0.0 -0.0 0.01"/>
+  <origin rpy="0 0 0" xyz="-0.04 0.0 0.481"/>
+  <parent link="Component4_1"/>
+  <child link="Component5_1"/>
+  <axis xyz="-0.01 0.0 0.0"/>
 </joint>
 <transmission name="Rev5_tran">
   <type>transmission_interface/SimpleTransmission</type>
@@ -237,10 +221,10 @@
   </actuator>
 </transmission>
 <joint name="Rev6" type="continuous">
-  <origin rpy="0 0 0" xyz="0.2 -0.691257 0.0"/>
-  <parent link="base_link"/>
-  <child link="Component1_1"/>
-  <axis xyz="0.0 0.01 0.0"/>
+  <origin rpy="0 0 0" xyz="0.04 0.0 0.052"/>
+  <parent link="Component5_1"/>
+  <child link="Component6_1"/>
+  <axis xyz="0.0 -0.0 0.01"/>
 </joint>
 <transmission name="Rev6_tran">
   <type>transmission_interface/SimpleTransmission</type>
@@ -248,6 +232,22 @@
     <hardwareInterface>PositionJointInterface</hardwareInterface>
   </joint>
   <actuator name="Rev6_actr">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+<joint name="Rev1" type="continuous">
+  <origin rpy="0 0 0" xyz="0.2 -0.691257 0.0"/>
+  <parent link="base_link"/>
+  <child link="Component1_1"/>
+  <axis xyz="0.0 0.01 0.0"/>
+</joint>
+<transmission name="Rev1_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Rev1">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Rev1_actr">
     <hardwareInterface>PositionJointInterface</hardwareInterface>
     <mechanicalReduction>1</mechanicalReduction>
   </actuator>
