@@ -54,7 +54,7 @@ def drive_axis(req):
     #if req.axis == 5:
         #odrv2.axis1.controller.input_pos = req.value
     if req.axis == 6:
-        odrv1.axis1.controller.input_pos = req.value
+        odrv1.axis1.controller.input_pos = req.value*204800/math.pi
 
     return driverResponse(True)
 
