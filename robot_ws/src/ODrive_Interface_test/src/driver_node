@@ -44,6 +44,7 @@ def drive_axis(req):
     positions[req.axis - 1] = req.value
 
     if req.axis == 1:
+        odrv1.axis0.controller.config.vel_limit = abs(req.value-positions[0])*1024000/math.pi*50
         odrv1.axis0.controller.input_pos = req.value*1024000/math.pi
     if req.axis == 2:
         odrv0.axis0.controller.input_pos = req.value*(-1024000)/math.pi
