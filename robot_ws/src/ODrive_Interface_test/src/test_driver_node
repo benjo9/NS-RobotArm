@@ -15,9 +15,9 @@ def drive_axis(req):
     if req.axis == 1:
         print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[0])*1024000/math.pi*50))
     if req.axis == 2:
-        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[1])*(-1024000)/math.pi*50))
+        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[1])*1024000/math.pi*50))
     if req.axis == 3:
-        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[2])*(-204800)/math.pi*50))
+        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[2])*204800/math.pi*50))
     if req.axis == 4:
         print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[3])*204800/math.pi*50))
     if req.axis == 5:
