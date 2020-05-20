@@ -41,22 +41,27 @@ def axis_velocity(req):
 
 def drive_axis(req):
     print("Driving Axis " + str(req.axis) + ": " + str(req.value))
-    positions[req.axis - 1] = req.value
-
+    
     if req.axis == 1:
         odrv1.axis0.controller.config.vel_limit = abs(req.value-positions[0])*1024000/math.pi*50
         odrv1.axis0.controller.input_pos = req.value*1024000/math.pi
     if req.axis == 2:
+        odrv0.axis0.controller.config.vel_limit = abs(req.value-positions[1])*1024000/math.pi*50
         odrv0.axis0.controller.input_pos = req.value*(-1024000)/math.pi
     if req.axis == 3:
+        odrv0.axis1.controller.config.vel_limit = abs(req.value-positions[2])*204800/math.pi*50
         odrv0.axis1.controller.input_pos = req.value*(-204800)/math.pi
     if req.axis == 4:
+        odrv2.axis0.controller.config.vel_limit = abs(req.value-positions[3])*204800/math.pi*50
         odrv2.axis0.controller.input_pos = req.value*204800/math.pi
     if req.axis == 5:
+        odrv2.axis1.controller.config.vel_limit = abs(req.value-positions[4])*204800/math.pi*50
         odrv2.axis1.controller.input_pos = req.value*204800/math.pi
     if req.axis == 6:
+        odrv1.axis1.controller.config.vel_limit = abs(req.value-positions[5])*204800/math.pi*50
         odrv1.axis1.controller.input_pos = req.value*204800/math.pi
 
+    positions[req.axis - 1] = req.value
     return driverResponse(True)
 
 def axis_position(req):
