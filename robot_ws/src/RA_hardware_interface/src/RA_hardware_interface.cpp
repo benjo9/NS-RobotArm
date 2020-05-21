@@ -85,7 +85,7 @@ namespace RA_hardware_interface
     }
 
     void RAHardwareInterface::read() {
-        for (int i = 0; i < num_joints_; i++) {
+        for (size_t i = 0; i < num_joints_; i++) {
             ROS_INFO("read:1");
             ODrive_Interface_test::feedback feedback;
             feedback.request.axis = i + 1;
@@ -97,12 +97,12 @@ namespace RA_hardware_interface
 
     void RAHardwareInterface::write(ros::Duration elapsed_time) {
         positionJointSoftLimitsInterface.enforceLimits(elapsed_time);
-        for (int i = 0; i < num_joints_; i++) {
+        for (size_t i = 0; i < num_joints_; i++) {
             ROS_INFO("write:1");
             ODrive_Interface_test::driver driver;
             driver.request.axis = i + 1;
             driver.request.value = joint_position_command_[i];
-            driver.request.timestamp = elapsed_time;
+            driver.request.timestamp = elapsed_time.toSec();
             if(drive_axis.call(driver))
             {
               ROS_INFO("true");
