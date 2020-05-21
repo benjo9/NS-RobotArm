@@ -43,7 +43,7 @@ def drive_axis(req):
     print("Driving Axis " + str(req.axis) + ": " + str(req.value))
     
     if req.axis == 1:
-        if abs(req.value-positions[0])*1024000/math.pi*50 > 10000:
+        if abs(req.value-positions[0])*1024000/math.pi*50 > 20000:
             odrv1.axis0.controller.config.vel_limit = abs(req.value-positions[0])*1024000/math.pi*50-1000
         else:
             odrv1.axis0.controller.config.vel_limit = 10000
