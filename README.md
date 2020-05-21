@@ -1,4 +1,4 @@
-![logo](images/robot_icon_and_logo)
+![logo](images/robot_icon_and_logo.jpg)
 
 install:
 
