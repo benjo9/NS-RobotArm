@@ -177,6 +177,7 @@
   <parent link="Component2_1"/>
   <child link="Component3_1"/>
   <axis xyz="-0.01 0.0 -0.0"/>
+  <limit effort="30" velocity="1.0" lower="-2.2" upper="0.7" />
 </joint>
 <transmission name="Rev3_tran">
   <type>transmission_interface/SimpleTransmission</type>
