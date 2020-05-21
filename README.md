@@ -1,4 +1,4 @@
-# NS-RobotArm
+![logo](images/robot_icon_and_logo)
 
 install:
 
