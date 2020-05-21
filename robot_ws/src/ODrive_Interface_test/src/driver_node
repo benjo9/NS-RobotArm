@@ -44,39 +44,39 @@ def drive_axis(req):
     
     if req.axis == 1:
         if abs(req.value-positions[0])*1024000/math.pi*50 > 20000:
-            odrv1.axis0.controller.config.vel_limit = abs(req.value-positions[0])*1024000/math.pi*50-1000
+            odrv1.axis0.controller.config.vel_limit = abs(req.value-positions[0])*1024000/math.pi*50-2000
         else:
             odrv1.axis0.controller.config.vel_limit = 20000
         odrv1.axis0.controller.input_pos = req.value*1024000/math.pi
     if req.axis == 2:
         if abs(req.value-positions[1])*1024000/math.pi*50 > 20000:
-            odrv0.axis0.controller.config.vel_limit = abs(req.value-positions[1])*1024000/math.pi*50-1000
+            odrv0.axis0.controller.config.vel_limit = abs(req.value-positions[1])*1024000/math.pi*50-2000
         else:
             odrv0.axis0.controller.config.vel_limit = 20000
         odrv0.axis0.controller.input_pos = req.value*(-1024000)/math.pi
     if req.axis == 3:
         if abs(req.value-positions[2])*204800/math.pi*50 > 20000:
-            odrv0.axis1.controller.config.vel_limit = abs(req.value-positions[2])*204800/math.pi*50-1000
+            odrv0.axis1.controller.config.vel_limit = abs(req.value-positions[2])*204800/math.pi*50-2000
         else:
             odrv0.axis1.controller.config.vel_limit = 20000
         odrv0.axis1.controller.input_pos = req.value*(-204800)/math.pi
     if req.axis == 4:
-        if abs(req.value-positions[3])*204800/math.pi*50 > 10000:
-            odrv2.axis0.controller.config.vel_limit = abs(req.value-positions[3])*204800/math.pi*50-1000
+        if abs(req.value-positions[3])*204800/math.pi*50 > 20000:
+            odrv2.axis0.controller.config.vel_limit = abs(req.value-positions[3])*204800/math.pi*50-2000
         else:
-            odrv2.axis0.controller.config.vel_limit = 10000
+            odrv2.axis0.controller.config.vel_limit = 20000
         odrv2.axis0.controller.input_pos = req.value*204800/math.pi
     if req.axis == 5:
-        if abs(req.value-positions[4])*204800/math.pi*50 > 10000:
-            odrv2.axis1.controller.config.vel_limit = abs(req.value-positions[4])*204800/math.pi*50-1000
+        if abs(req.value-positions[4])*204800/math.pi*50 > 20000:
+            odrv2.axis1.controller.config.vel_limit = abs(req.value-positions[4])*204800/math.pi*50-2000
         else:
-            odrv2.axis1.controller.config.vel_limit = 10000
+            odrv2.axis1.controller.config.vel_limit = 20000
         odrv2.axis1.controller.input_pos = req.value*204800/math.pi
     if req.axis == 6:
-        if abs(req.value-positions[5])*204800/math.pi*50 > 10000:
-            odrv1.axis1.controller.config.vel_limit = abs(req.value-positions[5])*204800/math.pi*50-1000
+        if abs(req.value-positions[5])*204800/math.pi*50 > 20000:
+            odrv1.axis1.controller.config.vel_limit = abs(req.value-positions[5])*204800/math.pi*50-2000
         else:
-            odrv1.axis1.controller.config.vel_limit = 10000
+            odrv1.axis1.controller.config.vel_limit = 20000
         odrv1.axis1.controller.input_pos = req.value*204800/math.pi
 
     positions[req.axis - 1] = req.value
