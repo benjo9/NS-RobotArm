@@ -11,7 +11,7 @@ from ODrive_Interface_test.srv import *
 
 positions = [0, 0, 0, 0, 0, 0]
 
-plot = rospy.Publisher('plot', std_msgs.msg.Int32, queue_size=10)
+plot = rospy.Publisher('plot', Int32, queue_size=10)
 
 def drive_axis(req):
     #print("Driving Axis " + str(req.axis) + ": " + str(req.value*204800/math.pi))
