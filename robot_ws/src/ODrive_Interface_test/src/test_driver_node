@@ -17,7 +17,7 @@ def drive_axis(req):
     #print("Driving Axis " + str(req.axis) + ": " + str(req.value*204800/math.pi))
     if req.axis == 1:
         print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[0])*1024000/math.pi*50) + " -- " + str(req.timestamp))
-        plot.publish(abs(req.value-positions[0])*1024000/math.pi*50)
+        plot.publish(req.value*(-1024000)/math.pi)
     if req.axis == 2:
         print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[1])*1024000/math.pi*50) + " -- " + str(req.timestamp))
     if req.axis == 3:
