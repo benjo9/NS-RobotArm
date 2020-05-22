@@ -4,16 +4,20 @@ from __future__ import print_function
 
 import rospy
 from std_msgs.msg import String
+from std_msgs.msg import Int32
 import time
 import math
 from ODrive_Interface_test.srv import *
 
 positions = [0, 0, 0, 0, 0, 0]
 
+plot = rospy.Publisher('plot', std_msgs.msg.Int32, queue_size=10)
+
 def drive_axis(req):
     #print("Driving Axis " + str(req.axis) + ": " + str(req.value*204800/math.pi))
     if req.axis == 1:
         print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[0])*1024000/math.pi*50) + " -- " + str(req.timestamp))
+        plot.publish(req.value)
     if req.axis == 2:
         print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[1])*1024000/math.pi*50) + " -- " + str(req.timestamp))
     if req.axis == 3:
