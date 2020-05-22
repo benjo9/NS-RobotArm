@@ -4,6 +4,8 @@ from __future__ import print_function
 import time
 import math
 import rospy
+import odrive
+from odrive.enums import *
 from std_msgs.msg import Int32
 
 plot = rospy.Publisher('plot7', Int32, queue_size=10)
