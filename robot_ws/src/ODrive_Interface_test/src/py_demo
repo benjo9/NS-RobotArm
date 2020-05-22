@@ -1,0 +1,18 @@
+from __future__ import print_function
+import time
+import math
+import rospy
+from std_msgs.msg import Int32
+
+plot = rospy.Publisher('plot7', Int32, queue_size=10)
+
+t0 = time.monotonic()
+while True:
+    setpoint = 10000.0 * math.sin((time.monotonic() - t0)*2)
+    print("goto " + str(int(setpoint)))
+    plot.publish(setpoint)
+    time.sleep(0.01)
+
+rospy.init_node('py_demo')
+
+rospy.spin()

@@ -155,6 +155,7 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 install(PROGRAMS
+  src/py_demo
   src/driver_node
   src/test_service
   src/test_driver_node
