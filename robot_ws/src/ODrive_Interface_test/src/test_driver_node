@@ -10,12 +10,12 @@ import math
 from ODrive_Interface_test.srv import *
 positions = [0, 0, 0, 0, 0, 0]
 
-plot1 = rospy.Publisher('plot', Int32, queue_size=10)
-plot2 = rospy.Publisher('plot', Int32, queue_size=10)
-plot3 = rospy.Publisher('plot', Int32, queue_size=10)
-plot4 = rospy.Publisher('plot', Int32, queue_size=10)
-plot5 = rospy.Publisher('plot', Int32, queue_size=10)
-plot6 = rospy.Publisher('plot', Int32, queue_size=10)
+plot1 = rospy.Publisher('plot1', Int32, queue_size=10)
+plot2 = rospy.Publisher('plot2', Int32, queue_size=10)
+plot3 = rospy.Publisher('plot3', Int32, queue_size=10)
+plot4 = rospy.Publisher('plot4', Int32, queue_size=10)
+plot5 = rospy.Publisher('plot5', Int32, queue_size=10)
+plot6 = rospy.Publisher('plot6', Int32, queue_size=10)
 
 
 def drive_axis(req):
