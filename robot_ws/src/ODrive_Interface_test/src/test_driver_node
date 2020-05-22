@@ -8,7 +8,7 @@ from std_msgs.msg import Int32
 import time
 import math
 from ODrive_Interface_test.srv import *
-
+f
 positions = [0, 0, 0, 0, 0, 0]
 
 plot1 = rospy.Publisher('plot', Int32, queue_size=10)
