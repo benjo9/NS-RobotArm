@@ -1,6 +1,5 @@
 ![logo](images/robot_icon_and_logo.jpg)
 
-**install:**
 ```
 sudo apt-get install git
 
