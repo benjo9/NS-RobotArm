@@ -15,10 +15,12 @@ sudo apt-get install python-catkin-tools
 sudo apt-get install libgflags-dev
 sudo apt-get install ros-$ROS_DISTRO-rosparam-shortcuts
 sudo apt-get install ros-melodic-ros-control ros-melodic-ros-controllers
+sudo apt install python3 python3-pip
+sudo apt install ros-kinetic-rosparam-shortcuts
+pip3 install odrive
 cd ~/NS-RobotArm/robot_ws/src/
 git clone https://github.com/jmeyer1292/fake_ar_publisher.git
 cd ..
 catkin init
 catkin build
 source install/setup.bash
-roslaunch myworkcell_moveit_config demo.launch
