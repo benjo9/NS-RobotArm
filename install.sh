@@ -18,6 +18,7 @@ sudo apt-get install ros-melodic-ros-control ros-melodic-ros-controllers
 sudo apt install python3 python3-pip
 sudo apt install ros-kinetic-rosparam-shortcuts
 pip3 install odrive
+pip3 install rospkg
 cd ~/NS-RobotArm/robot_ws/src/
 git clone https://github.com/jmeyer1292/fake_ar_publisher.git
 cd ..
