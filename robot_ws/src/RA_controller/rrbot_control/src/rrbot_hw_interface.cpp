@@ -98,7 +98,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     //ROS_INFO("false");
     }
     //ROS_INFO("write:2");
-
+    /*
     std_msgs::Int32 msg;
 
     if(i == 0)
@@ -126,6 +126,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub6.publish(msg);
     }
+    */
   }
 }
 
