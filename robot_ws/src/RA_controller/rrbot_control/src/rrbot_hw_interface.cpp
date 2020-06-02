@@ -87,6 +87,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
   for (int i = 0; i < num_joints_; i++) {
     //ROS_INFO(std::to_string(joint_velocity_command_[i]).c_str());
     double pi = 2*acos(0.0);
+    /*
     ODrive_Interface_test::driver driver;
     driver.request.axis = i + 1;
     driver.request.value = joint_position_command_[i];
@@ -98,7 +99,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     //ROS_INFO("false");
     }
     //ROS_INFO("write:2");
-
+    */
     if(i == 0)
     {
       std_msgs::Int32 msg;
