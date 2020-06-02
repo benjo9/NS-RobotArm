@@ -85,9 +85,9 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     ODrive_Interface_test::driver driver;
     driver.request.axis = i + 1;
     driver.request.value = joint_position_command_[i];
-    int i = 25;
-    drive_pub.publish(i);
-    //round(joint_position_command_[i]*204800/pi)
+    std_msgs::Int32 msg;
+    msg.data = round(joint_position_command_[i]*204800/pi);
+    drive_pub.publish(msg);
     if(drive_axis.call(driver))
     {
     //ROS_INFO("true");
