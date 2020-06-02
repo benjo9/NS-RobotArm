@@ -22,7 +22,7 @@ drive6 = rospy.Publisher('drive6', Int32, queue_size=10)
 p1 = [0, 0, 0, 0, 0, 0]
 p2 = [0, 0, 0, 0, 0, 0]
 
-hz = 50
+hz = 20
 """
 def drive_axis1(req):
     if p1[req.axis - 1] == 0:
@@ -40,22 +40,22 @@ def drive_axis1(req):
 def drive_axis(req):
     #print("Driving Axis " + str(req.axis) + ": " + str(req.value*204800/math.pi))
     if req.axis == 1:
-        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[0])*1024000/math.pi*50))
+        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[0])*1024000/math.pi*hz))
         drive1.publish(int(req.value*(1024000)/math.pi))
     if req.axis == 2:
-        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[1])*1024000/math.pi*50))
+        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[1])*1024000/math.pi*hz))
         drive2.publish(int(req.value*(1024000)/math.pi))
     if req.axis == 3:
-        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[2])*204800/math.pi*50))
+        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[2])*204800/math.pi*hz))
         drive3.publish(int(req.value*(204800)/math.pi))
     if req.axis == 4:
-        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[3])*204800/math.pi*50))
+        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[3])*204800/math.pi*hz))
         drive4.publish(int(req.value*(204800)/math.pi))
     if req.axis == 5:
-        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[4])*204800/math.pi*50))
+        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[4])*204800/math.pi*hz))
         drive5.publish(int(req.value*(204800)/math.pi))
     if req.axis == 6:
-        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[5])*204800/math.pi*50))
+        print("Axis " + str(req.axis) + ": " + str(abs(req.value-positions[5])*204800/math.pi*hz))
         drive6.publish(int(req.value*(204800)/math.pi))
     positions[req.axis - 1] = req.value
     return driverResponse(True)
