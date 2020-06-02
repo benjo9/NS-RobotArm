@@ -49,6 +49,7 @@ RRBotHWInterface::RRBotHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
   : ros_control_boilerplate::GenericHWInterface(nh, urdf_model)
 {
   ROS_INFO_NAMED("rrbot_hw_interface", "RRBotHWInterface Ready.");
+
   drive_axis = nh_.serviceClient<ODrive_Interface_test::driver>("/drive_axis");
   axis_position = nh_.serviceClient<ODrive_Interface_test::feedback>("/axis_position");
   drive_pub = nh_.advertise<std_msgs::Int32>("drive_pub", 5);
@@ -83,7 +84,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     ODrive_Interface_test::driver driver;
     driver.request.axis = i + 1;
     driver.request.value = joint_position_command_[i];
-    drive_pub.publish(joint_position_command_[i]);
+    drive_pub.publish(round(joint_position_command_[i]*204800/math.pi));
     if(drive_axis.call(driver))
     {
     //ROS_INFO("true");
