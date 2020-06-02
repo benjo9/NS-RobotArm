@@ -98,35 +98,39 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     //ROS_INFO("false");
     }
     //ROS_INFO("write:2");
-    /*
-    std_msgs::Int32 msg;
 
     if(i == 0)
     {
+      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub1.publish(msg);
     } else if(i == 1)
     {
+      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub2.publish(msg);
     } else if(i == 2)
     {
+      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub3.publish(msg);
     } else if(i == 3)
     {
+      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub4.publish(msg);
     } else if(i == 4)
     {
+      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub5.publish(msg);
     } else if(i == 5)
     {
+      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub6.publish(msg);
     }
-    */
+    
   }
 }
 
