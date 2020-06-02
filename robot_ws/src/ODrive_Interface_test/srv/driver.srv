@@ -1,6 +1,7 @@
 #request
 int16 axis
 float32 value
+int32 timestamp
 ---
 #response
 bool result

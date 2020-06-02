@@ -91,6 +91,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     ODrive_Interface_test::driver driver;
     driver.request.axis = i + 1;
     driver.request.value = joint_position_command_[i];
+    driver.request.timestamp = elapsed_time.toSec();
     if(drive_axis.call(driver))
     {
     //ROS_INFO("true");
