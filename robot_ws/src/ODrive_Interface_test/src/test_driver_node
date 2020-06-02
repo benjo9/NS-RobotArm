@@ -22,7 +22,7 @@ drive6 = rospy.Publisher('drive6', Int32, queue_size=10)
 p1 = [0, 0, 0, 0, 0, 0]
 p2 = [0, 0, 0, 0, 0, 0]
 
-hz = 100
+hz = 20
 """
 def drive_axis1(req):
     if p1[req.axis - 1] == 0:
