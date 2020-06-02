@@ -68,6 +68,7 @@ public:
 
   ros::ServiceClient drive_axis;
   ros::ServiceClient axis_position;
+  ros::Publisher drive_pub;
 
 };  // class
 
