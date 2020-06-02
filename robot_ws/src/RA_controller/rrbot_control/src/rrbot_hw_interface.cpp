@@ -107,12 +107,12 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     } else if(i == 1)
     {
       std_msgs::Int32 msg;
-      msg.data = round(joint_position_command_[i]*(-1024000)/pi);
+      msg.data = round(joint_position_command_[i]*1024000/pi);
       drive_pub2.publish(msg);
     } else if(i == 2)
     {
       std_msgs::Int32 msg;
-      msg.data = round(joint_position_command_[i]*(-204800)/pi);
+      msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub3.publish(msg);
     } else if(i == 3)
     {
