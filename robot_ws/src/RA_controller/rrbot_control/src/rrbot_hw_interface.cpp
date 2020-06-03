@@ -71,7 +71,7 @@ void RRBotHWInterface::read(ros::Duration &elapsed_time)
     double p = feedback.response.position;
     joint_position_[i] = p;
     */
-    joint_position_[i] = saved_pos[i];
+    //joint_position_[i] = saved_pos[i];
   }
 }
 
