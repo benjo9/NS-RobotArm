@@ -71,7 +71,7 @@ void RRBotHWInterface::read(ros::Duration &elapsed_time)
     double p = feedback.response.position;
     joint_position_[i] = p;
     */
-    joint_position_[i] = axis_position[i];
+    joint_position_[i] = saved_pos[i];
   }
 }
 
@@ -96,7 +96,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     }
     //ROS_INFO("write:2");
     */
-    axis_position[i] = joint_position_command_[i];
+    saved_pos[i] = joint_position_command_[i];
     std_msgs::Int32 msg;
     if(i == 0)
     {
