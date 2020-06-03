@@ -61,6 +61,7 @@ def drive_axis(req):
     return driverResponse(True)
 
 def drive_pub1(data):
+    print("lol")
     print("Axis 1: " + str(abs(data.data-positions[0])*1024000/math.pi*hz))
     drive1.publish(int(data.data*(1024000)/math.pi))
     positions[0] = data.data
