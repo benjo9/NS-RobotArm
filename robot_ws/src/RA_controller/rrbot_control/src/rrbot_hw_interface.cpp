@@ -97,7 +97,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     //ROS_INFO("write:2");
     */
     axis_position[i] = joint_position_command_[i];
-
+    std_msgs::Int32 msg;
     if(i == 0)
     {
       msg.data = round(joint_position_command_[i]*1024000/pi);

@@ -77,8 +77,6 @@ public:
 
   std::vector<float> axis_position;
 
-  std_msgs::Int32 msg;
-
 };  // class
 
 }  // namespace
