@@ -51,26 +51,29 @@ RRBotHWInterface::RRBotHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
   ROS_INFO_NAMED("rrbot_hw_interface", "RRBotHWInterface Ready.");
 
   //drive_axis = nh_.serviceClient<ODrive_Interface_test::driver>("/drive_axis");
-  //axis_position = nh_.serviceClient<ODrive_Interface_test::feedback>("/axis_position");
+  axis_position = nh_.serviceClient<ODrive_Interface_test::feedback>("/axis_position");
   drive_pub1 = nh_.advertise<std_msgs::Int32>("drive_pub1", 5);
   drive_pub2 = nh_.advertise<std_msgs::Int32>("drive_pub2", 5);
   drive_pub3 = nh_.advertise<std_msgs::Int32>("drive_pub3", 5);
   drive_pub4 = nh_.advertise<std_msgs::Int32>("drive_pub4", 5);
   drive_pub5 = nh_.advertise<std_msgs::Int32>("drive_pub5", 5);
   drive_pub6 = nh_.advertise<std_msgs::Int32>("drive_pub6", 5);
+  for(int i = 0; i <= 5; i++) {
+    saved_pos[i] = 0;
+  }
 }
 
 void RRBotHWInterface::read(ros::Duration &elapsed_time)
 {
-  for (int i = 0; i < num_joints_; i++) {
+  for (size_t i = 0; i < num_joints_; i++) {
     //ROS_INFO("read:1");
-    /*
+    
     ODrive_Interface_test::feedback feedback;
     feedback.request.axis = i + 1;
     axis_position.call(feedback);
     double p = feedback.response.position;
     joint_position_[i] = p;
-    */
+    
     //joint_position_[i] = saved_pos[i];
   }
 }
@@ -79,7 +82,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
 {
   // Safety
   enforceLimits(elapsed_time);
-  for (int i = 0; i < num_joints_; i++) {
+  for (size_t i = 0; i < num_joints_; i++) {
     //ROS_INFO(std::to_string(joint_velocity_command_[i]).c_str());
     double pi = 2*acos(0.0);
     /*
