@@ -64,19 +64,14 @@ void RRBotHWInterface::read(ros::Duration &elapsed_time)
 {
   for (int i = 0; i < num_joints_; i++) {
     //ROS_INFO("read:1");
+    /*
     ODrive_Interface_test::feedback feedback;
     feedback.request.axis = i + 1;
     axis_position.call(feedback);
     double p = feedback.response.position;
-    //ROS_INFO("Service position:");
-    //ROS_INFO(std::to_string(p).c_str());
     joint_position_[i] = p;
-    //ROS_INFO("Joint position:");
-    //ROS_INFO(std::to_string(joint_position_[i]).c_str());
-    
-    //std::string s = std::to_string(p);
-    //ROS_INFO(s);
-    //ROS_INFO("read:2");
+    */
+    joint_position_[i] = axis_position[i];
   }
 }
 
@@ -101,34 +96,30 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     }
     //ROS_INFO("write:2");
     */
+    axis_position[i] = joint_position_command_[i];
+
     if(i == 0)
     {
-      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*1024000/pi);
       drive_pub1.publish(msg);
     } else if(i == 1)
     {
-      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*1024000/pi);
       drive_pub2.publish(msg);
     } else if(i == 2)
     {
-      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub3.publish(msg);
     } else if(i == 3)
     {
-      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub4.publish(msg);
     } else if(i == 4)
     {
-      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub5.publish(msg);
     } else if(i == 5)
     {
-      std_msgs::Int32 msg;
       msg.data = round(joint_position_command_[i]*204800/pi);
       drive_pub6.publish(msg);
     }

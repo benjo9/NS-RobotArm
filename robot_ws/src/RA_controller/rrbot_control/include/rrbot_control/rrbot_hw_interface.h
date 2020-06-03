@@ -75,6 +75,10 @@ public:
   ros::Publisher drive_pub5;
   ros::Publisher drive_pub6;
 
+  std::vector<float> axis_position;
+
+  std_msgs::Int32 msg;
+
 };  // class
 
 }  // namespace
