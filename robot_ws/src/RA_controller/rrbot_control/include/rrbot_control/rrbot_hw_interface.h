@@ -43,6 +43,7 @@
 #include <ros_control_boilerplate/generic_hw_interface.h>
 #include "ODrive_Interface_test/driver.h"
 #include "ODrive_Interface_test/feedback.h"
+#include <vector>
 
 namespace rrbot_control
 {

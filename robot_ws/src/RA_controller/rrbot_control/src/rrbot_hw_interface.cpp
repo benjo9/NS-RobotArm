@@ -41,6 +41,7 @@
 #include "ODrive_Interface_test/driver.h"
 #include "ODrive_Interface_test/feedback.h"
 #include "std_msgs/Int32.h"
+#include <vector>
 
 namespace rrbot_control
 {
