@@ -75,7 +75,7 @@ public:
   ros::Publisher drive_pub5;
   ros::Publisher drive_pub6;
 
-  std::vector<float> saved_pos;
+  //std::vector<float> saved_pos;
 
 };  // class
 

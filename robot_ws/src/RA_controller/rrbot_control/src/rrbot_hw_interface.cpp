@@ -58,9 +58,11 @@ RRBotHWInterface::RRBotHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
   drive_pub4 = nh_.advertise<std_msgs::Int32>("drive_pub4", 5);
   drive_pub5 = nh_.advertise<std_msgs::Int32>("drive_pub5", 5);
   drive_pub6 = nh_.advertise<std_msgs::Int32>("drive_pub6", 5);
+  /*
   for(int i = 0; i <= 5; i++) {
     saved_pos[i] = 0;
   }
+  */
 }
 
 void RRBotHWInterface::read(ros::Duration &elapsed_time)
@@ -99,7 +101,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     }
     //ROS_INFO("write:2");
     */
-    saved_pos[i] = joint_position_command_[i];
+    //saved_pos[i] = joint_position_command_[i];
     std_msgs::Int32 msg;
     if(i == 0)
     {
