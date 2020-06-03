@@ -195,11 +195,11 @@ def axis_requested_state(req):
 
 def dump_errors(data):
     if data.data == 0:
-        print(str(dump_errors(odrv0, True)))
+        print(str(dump_errors(odrv0)))
     if data.data == 1:
-        print(str(dump_errors(odrv1, True)))
+        print(str(dump_errors(odrv1)))
     if data.data == 2:
-        print(str(dump_errors(odrv2, True)))
+        print(str(dump_errors(odrv2)))
 
 rospy.init_node('driver')
 
