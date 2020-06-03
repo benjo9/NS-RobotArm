@@ -12,12 +12,14 @@ from odrive.enums import *
 from ODrive_Interface_test.srv import *
 positions = [0, 0, 0, 0, 0, 0]
 
+"""
 drive1 = rospy.Publisher('drive1', Int32, queue_size=10)
 drive2 = rospy.Publisher('drive2', Int32, queue_size=10)
 drive3 = rospy.Publisher('drive3', Int32, queue_size=10)
 drive4 = rospy.Publisher('drive4', Int32, queue_size=10)
 drive5 = rospy.Publisher('drive5', Int32, queue_size=10)
 drive6 = rospy.Publisher('drive6', Int32, queue_size=10)
+"""
 
 p1 = [0, 0, 0, 0, 0, 0]
 p2 = [0, 0, 0, 0, 0, 0]
@@ -62,32 +64,32 @@ def drive_axis(req):
 
 def drive_pub1(data):
     print("Axis 1: " + str(abs(data.data-positions[0])*1024000/math.pi*hz))
-    drive1.publish(int(data.data*(1024000)/math.pi))
+    #drive1.publish(int(data.data*(1024000)/math.pi))
     positions[0] = data.data
 
 def drive_pub2(data):
     print("Axis 2: " + str(abs(data.data-positions[1])*1024000/math.pi*hz))
-    drive2.publish(int(data.data*(1024000)/math.pi))
+    #drive2.publish(int(data.data*(1024000)/math.pi))
     positions[1] = data.data
 
 def drive_pub3(data):
     print("Axis 3: " + str(abs(data.data-positions[2])*1024000/math.pi*hz))
-    drive3.publish(int(data.data*(1024000)/math.pi))
+    #drive3.publish(int(data.data*(1024000)/math.pi))
     positions[2] = data.data
 
 def drive_pub4(data):
     print("Axis 4: " + str(abs(data.data-positions[3])*1024000/math.pi*hz))
-    drive4.publish(int(data.data*(1024000)/math.pi))
+    #drive4.publish(int(data.data*(1024000)/math.pi))
     positions[3] = data.data
 
 def drive_pub5(data):
     print("Axis 5: " + str(abs(data.data-positions[4])*1024000/math.pi*hz))
-    drive5.publish(int(data.data*(1024000)/math.pi))
+    #drive5.publish(int(data.data*(1024000)/math.pi))
     positions[4] = data.data
 
 def drive_pub6(data):
     print("Axis 6: " + str(abs(data.data-positions[5])*1024000/math.pi*hz))
-    drive6.publish(int(data.data*(1024000)/math.pi))
+    #drive6.publish(int(data.data*(1024000)/math.pi))
     positions[5] = data.data
 
 def axis_position(req):
