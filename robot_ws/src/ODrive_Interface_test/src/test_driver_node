@@ -61,7 +61,6 @@ def drive_axis(req):
     return driverResponse(True)
 
 def drive_pub1(data):
-    print("lol")
     print("Axis 1: " + str(abs(data.data-positions[0])*1024000/math.pi*hz))
     drive1.publish(int(data.data*(1024000)/math.pi))
     positions[0] = data.data
@@ -99,11 +98,11 @@ def axis_position(req):
 rospy.init_node('driver')
 
 feedback = rospy.Service('axis_position', feedback, axis_position)
-rospy.Subscriber("drive_pub1", Int32, drive_pub1)
-rospy.Subscriber("drive_pub2", Int32, drive_pub2)
-rospy.Subscriber("drive_pub3", Int32, drive_pub3)
-rospy.Subscriber("drive_pub4", Int32, drive_pub4)
-rospy.Subscriber("drive_pub5", Int32, drive_pub5)
-rospy.Subscriber("drive_pub6", Int32, drive_pub6)
+rospy.Subscriber("/rrbot/drive_pub1", Int32, drive_pub1)
+rospy.Subscriber("/rrbot/drive_pub2", Int32, drive_pub2)
+rospy.Subscriber("/rrbot/drive_pub3", Int32, drive_pub3)
+rospy.Subscriber("/rrbot/drive_pub4", Int32, drive_pub4)
+rospy.Subscriber("/rrbot/drive_pub5", Int32, drive_pub5)
+rospy.Subscriber("/rrbot/drive_pub6", Int32, drive_pub6)
 
 rospy.spin()
