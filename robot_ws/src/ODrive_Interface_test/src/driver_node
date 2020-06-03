@@ -86,34 +86,35 @@ def drive_axis(req):
     return driverResponse(True)
 
 def drive_pub1(data):
-    print("Axis 1: " + str(data.data)
+    print("Axis 1: " + str(data.data))
     #odrv1.axis0.controller.input_pos = data.data
     #drive1.publish(int(data.data*(1024000)/math.pi))
     #positions[0] = data.data
 
 def drive_pub2(data):
-    print("Axis 2: " + str(data.data)
+    print("Axis 2: " + str(data.data))
     #odrv0.axis0.controller.input_pos = data.data
     #drive2.publish(int(data.data*(1024000)/math.pi))
     #positions[1] = data.data
 
 def drive_pub3(data):
-    print("Axis 3: " + str(data.data)
+    print("Axis 3: " + str(data.data))
     #odrv0.axis1.controller.input_pos = data.data
     #drive3.publish(int(data.data*(1024000)/math.pi))
     #positions[2] = data.data
 
 def drive_pub4(data):
-    print("Axis 4: " + str(data.data)
+    print("Axis 4: " + str(data.data))
     #odrv2.axis0.controller.input_pos = data.data
     #drive4.publish(int(data.data*(1024000)/math.pi))
     #positions[3] = data.data
 
 def drive_pub5(data):
-    print("Axis 5: " + str(data.data)
+    print("Axis 5: " + str(data.data))
     #odrv2.axis1.controller.input_pos = data.data
     #drive5.publish(int(data.data*(1024000)/math.pi))
     #positions[4] = data.data
+
 
 def drive_pub6(data):
     print("Axis 6: " + str(data.data))
