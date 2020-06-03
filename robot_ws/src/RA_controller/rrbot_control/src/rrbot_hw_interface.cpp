@@ -50,7 +50,7 @@ RRBotHWInterface::RRBotHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
 {
   ROS_INFO_NAMED("rrbot_hw_interface", "RRBotHWInterface Ready.");
 
-  drive_axis = nh_.serviceClient<ODrive_Interface_test::driver>("/drive_axis");
+  //drive_axis = nh_.serviceClient<ODrive_Interface_test::driver>("/drive_axis");
   axis_position = nh_.serviceClient<ODrive_Interface_test::feedback>("/axis_position");
   drive_pub1 = nh_.advertise<std_msgs::Int32>("drive_pub1", 5);
   drive_pub2 = nh_.advertise<std_msgs::Int32>("drive_pub2", 5);
@@ -87,7 +87,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
   for (int i = 0; i < num_joints_; i++) {
     //ROS_INFO(std::to_string(joint_velocity_command_[i]).c_str());
     double pi = 2*acos(0.0);
-    
+    /*
     ODrive_Interface_test::driver driver;
     driver.request.axis = i + 1;
     driver.request.value = joint_position_command_[i];
@@ -100,7 +100,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
     //ROS_INFO("false");
     }
     //ROS_INFO("write:2");
-    
+    */
     if(i == 0)
     {
       std_msgs::Int32 msg;
