@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot name="myworkcell" xmlns:xacro="http://wiki.ros.org/xacro">
+<robot name="nsra" xmlns:xacro="http://wiki.ros.org/xacro">
 <xacro:include filename="robot.xacro" />
 <xacro:robot />
 

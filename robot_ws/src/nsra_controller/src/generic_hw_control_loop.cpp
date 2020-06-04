@@ -37,15 +37,15 @@
    using MONOTOIC system time
 */
 
-#include <ros_control_boilerplate/generic_hw_control_loop.h>
+#include <nsra_controller/generic_hw_control_loop.h>
 
 // ROS parameter loading
 #include <rosparam_shortcuts/rosparam_shortcuts.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 GenericHWControlLoop::GenericHWControlLoop(
-    ros::NodeHandle& nh, boost::shared_ptr<ros_control_boilerplate::GenericHWInterface> hardware_interface)
+    ros::NodeHandle& nh, boost::shared_ptr<rnsra_controller::GenericHWInterface> hardware_interface)
   : nh_(nh), hardware_interface_(hardware_interface)
 {
   // Create the controller manager

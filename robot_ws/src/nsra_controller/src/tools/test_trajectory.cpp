@@ -43,7 +43,7 @@
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 static const double SEC_PER_TRAJ_POINT = 5.0;  // time between points
 static const std::size_t TRAJ_POINTS = 10;     // number of points to generate
@@ -175,7 +175,7 @@ int main(int argc, char** argv)
   ros::AsyncSpinner spinner(2);
   spinner.start();
 
-  ros_control_boilerplate::TestTrajectory server;
+  nsra_controller::TestTrajectory server;
 
   ROS_INFO_STREAM_NAMED("test_trajectory", "Shutting down.");
   ros::shutdown();

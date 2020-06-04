@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ODrive_Interface_test)
+project(nsra_odrive_interface)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)

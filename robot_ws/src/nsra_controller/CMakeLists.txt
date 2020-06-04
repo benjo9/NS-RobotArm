@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ros_control_boilerplate)
+project(nsra_controller)
 
 # C++ 11
 set(CMAKE_CXX_FLAGS "-std=c++11 -Wall ${CMAKE_CXX_FLAGS}")
 
 find_package(catkin REQUIRED COMPONENTS
-  ODrive_Interface_test
+  nsra_odrive_interface
   cmake_modules
   hardware_interface
   controller_manager
@@ -41,7 +41,7 @@ catkin_package(
     include
   CATKIN_DEPENDS
     message_runtime
-    ODrive_Interface_test
+    nsra_odrive_interface
     hardware_interface
     controller_manager
     roscpp
@@ -144,7 +144,7 @@ target_link_libraries(${PROJECT_NAME}_keyboard_teleop
   ${catkin_LIBRARIES}
 )
 
-add_subdirectory(rrbot_control)
+add_subdirectory(nsra_control)
 
 ## Install ------------------------------------------------------------
 

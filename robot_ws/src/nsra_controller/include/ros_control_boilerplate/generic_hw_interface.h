@@ -57,7 +57,7 @@
 #include <joint_limits_interface/joint_limits_rosparam.h>
 #include <joint_limits_interface/joint_limits_urdf.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 
 /// \brief Hardware interface for a robot

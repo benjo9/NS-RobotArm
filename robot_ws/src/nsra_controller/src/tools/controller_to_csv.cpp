@@ -36,7 +36,7 @@
    Desc:   Records a ros_control ControllerState data to CSV for Matlab/etc analysis
 */
 
-#include <ros_control_boilerplate/tools/controller_to_csv.h>
+#include <nsra_controller/tools/controller_to_csv.h>
 
 // Basic file operations
 #include <iostream>
@@ -45,7 +45,7 @@
 // ROS parameter loading
 #include <rosparam_shortcuts/rosparam_shortcuts.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 
 ControllerToCSV::ControllerToCSV(const std::string& topic)

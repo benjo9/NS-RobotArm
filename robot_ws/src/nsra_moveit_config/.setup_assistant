@@ -1,10 +1,10 @@
 moveit_setup_assistant_config:
   URDF:
-    package: myworkcell_support
-    relative_path: urdf/workcell.xacro
+    package: nsra_support
+    relative_path: urdf/nsra.xacro
     xacro_args: ""
   SRDF:
-    relative_path: config/myworkcell.srdf
+    relative_path: config/nsra.srdf
   CONFIG:
     author_name: Noa Sendlhofer
     author_email: noa.sendlhofer@gmail.com

@@ -37,12 +37,12 @@
    simulation
 */
 
-#include <ros_control_boilerplate/sim_hw_interface.h>
+#include <nsra_controller/sim_hw_interface.h>
 
 // ROS parameter loading
 #include <rosparam_shortcuts/rosparam_shortcuts.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 SimHWInterface::SimHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
   : GenericHWInterface(nh, urdf_model)

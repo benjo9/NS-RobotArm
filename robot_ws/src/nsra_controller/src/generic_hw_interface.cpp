@@ -36,13 +36,13 @@
    Desc:   Helper ros_control hardware interface that loads configurations
 */
 
-#include <ros_control_boilerplate/generic_hw_interface.h>
+#include <nsra_controller/generic_hw_interface.h>
 #include <limits>
 
 // ROS parameter loading
 #include <rosparam_shortcuts/rosparam_shortcuts.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 GenericHWInterface::GenericHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
   : name_("generic_hw_interface")

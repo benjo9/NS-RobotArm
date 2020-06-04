@@ -37,19 +37,19 @@
            For a more detailed simulation example, see sim_hw_interface.cpp
 */
 
-#include <rrbot_control/rrbot_hw_interface.h>
+#include <nsra_control/nsra_hw_interface.h>
 //#include "ODrive_Interface_test/driver.h"
 //#include "ODrive_Interface_test/feedback.h"
 #include "std_msgs/Int32.h"
 #include <vector>
 
-namespace rrbot_control
+namespace nsra_control
 {
 
-RRBotHWInterface::RRBotHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
-  : ros_control_boilerplate::GenericHWInterface(nh, urdf_model)
+NSRAHWInterface::NSRAHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
+  : nsra_controller::GenericHWInterface(nh, urdf_model)
 {
-  ROS_INFO_NAMED("rrbot_hw_interface", "RRBotHWInterface Ready.");
+  ROS_INFO_NAMED("nsra_hardware_interface", "NSRAHWInterface Ready.");
 
   //drive_axis = nh_.serviceClient<ODrive_Interface_test::driver>("/drive_axis");
   //axis_position = nh_.serviceClient<ODrive_Interface_test::feedback>("/axis_position");
@@ -64,7 +64,7 @@ RRBotHWInterface::RRBotHWInterface(ros::NodeHandle &nh, urdf::Model *urdf_model)
   }
 }
 
-void RRBotHWInterface::read(ros::Duration &elapsed_time)
+void NSRAHWInterface::read(ros::Duration &elapsed_time)
 {
   for (size_t i = 0; i < num_joints_; i++) {
     //ROS_INFO("read:1");
@@ -79,7 +79,7 @@ void RRBotHWInterface::read(ros::Duration &elapsed_time)
   }
 }
 
-void RRBotHWInterface::write(ros::Duration &elapsed_time)
+void NSRAHWInterface::write(ros::Duration &elapsed_time)
 {
   // Safety
   enforceLimits(elapsed_time);
@@ -131,7 +131,7 @@ void RRBotHWInterface::write(ros::Duration &elapsed_time)
   }
 }
 
-void RRBotHWInterface::enforceLimits(ros::Duration &period)
+void NSRAHWInterface::enforceLimits(ros::Duration &period)
 {
   // ----------------------------------------------------
   // ----------------------------------------------------

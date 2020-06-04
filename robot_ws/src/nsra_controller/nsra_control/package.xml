@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <package>
-  <name>rrbot_control</name>
+  <name>nsra_control</name>
   <version>0.0.1</version>
-  <description>Simple simulation interface and template for setting up a hardware interface for rrbot</description>
+  <description>nsra_control</description>
 
-  <maintainer email="someone@someone.com">Someone</maintainer>
+  <maintainer email="noa.sendlhofer@gmail.com">Someone</maintainer>
 
   <license>BSD</license>
 
@@ -16,9 +16,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>ros_control_boilerplate</build_depend>
+  <build_depend>nsra_controller</build_depend>
   
-  <run_depend>ros_control_boilerplate</run_depend>
+  <run_depend>nsra_controller</run_depend>
   
 
   <export>

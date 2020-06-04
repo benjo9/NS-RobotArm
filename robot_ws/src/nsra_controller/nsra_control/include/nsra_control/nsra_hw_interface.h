@@ -37,26 +37,26 @@
            For a more detailed simulation example, see sim_hw_interface.h
 */
 
-#ifndef RRBOT_CONTROL__RRBOT_HW_INTERFACE_H
-#define RRBOT_CONTROL__RRBOT_HW_INTERFACE_H
+#ifndef NSRA_CONTROL__NSRA_HW_INTERFACE_H
+#define NSRA_CONTROL__NSRA_HW_INTERFACE_H
 
-#include <ros_control_boilerplate/generic_hw_interface.h>
+#include <nsra_controller/generic_hw_interface.h>
 //#include "ODrive_Interface_test/driver.h"
 //#include "ODrive_Interface_test/feedback.h"
 #include <vector>
 
-namespace rrbot_control
+namespace nsra_control
 {
 
 /// \brief Hardware interface for a robot
-class RRBotHWInterface : public ros_control_boilerplate::GenericHWInterface
+class NSRAHWInterface : public nsra_controller::GenericHWInterface
 {
 public:
   /**
    * \brief Constructor
    * \param nh - Node handle for topics.
    */
-  RRBotHWInterface(ros::NodeHandle& nh, urdf::Model* urdf_model = NULL);
+  NSRAHWInterface(ros::NodeHandle& nh, urdf::Model* urdf_model = NULL);
 
   /** \brief Read the state from the robot hardware. */
   virtual void read(ros::Duration &elapsed_time);

@@ -36,7 +36,7 @@
    Desc:   Records ros_control ControllerState data to CSV for Matlab/etc analysis
 */
 
-#include <ros_control_boilerplate/tools/controller_to_csv.h>
+#include <nsra_controller/tools/controller_to_csv.h>
 
 // Command line arguments
 #include <gflags/gflags.h>
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
 
   const std::string topic = FLAGS_topic;
   const std::string csv_path = FLAGS_csv_path;
-  ros_control_boilerplate::ControllerToCSV converter(topic);
+  nsra_controller::ControllerToCSV converter(topic);
   converter.startRecording(csv_path);
 
   ROS_INFO_STREAM_NAMED("main","Type Ctrl-C to end and save");

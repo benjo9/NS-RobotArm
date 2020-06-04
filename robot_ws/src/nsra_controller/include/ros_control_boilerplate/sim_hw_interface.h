@@ -40,9 +40,9 @@
 #ifndef GENERIC_ROS_CONTROL__SIM_HW_INTERFACE_H
 #define GENERIC_ROS_CONTROL__SIM_HW_INTERFACE_H
 
-#include <ros_control_boilerplate/generic_hw_interface.h>
+#include <nsra_controller/generic_hw_interface.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 
 /** \brief Hardware interface for a robot */
