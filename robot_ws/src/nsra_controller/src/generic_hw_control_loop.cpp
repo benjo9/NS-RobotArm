@@ -45,7 +45,7 @@
 namespace nsra_controller
 {
 GenericHWControlLoop::GenericHWControlLoop(
-    ros::NodeHandle& nh, boost::shared_ptr<rnsra_controller::GenericHWInterface> hardware_interface)
+    ros::NodeHandle& nh, boost::shared_ptr<nsra_controller::GenericHWInterface> hardware_interface)
   : nh_(nh), hardware_interface_(hardware_interface)
 {
   // Create the controller manager
