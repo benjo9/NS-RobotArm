@@ -92,9 +92,8 @@ def drive_pub1(data):
     else:
         odrv1.axis0.controller.config.vel_limit = 20000
     odrv1.axis0.controller.input_pos = data.data
-    #positions[0] = data.data
     #drive1.publish(int(data.data*(1024000)/math.pi))
-    #positions[0] = data.data
+    positions[0] = data.data
 
 def drive_pub2(data):
     print("Axis 2: " + str(data.data))
