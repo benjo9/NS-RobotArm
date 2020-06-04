@@ -16,7 +16,7 @@ sudo apt-get install libgflags-dev
 sudo apt-get install ros-$ROS_DISTRO-rosparam-shortcuts
 sudo apt-get install ros-melodic-ros-control ros-melodic-ros-controllers
 sudo apt install python3 python3-pip
-sudo apt install ros-kinetic-rosparam-shortcuts
+sudo apt install ros-melodic-rosparam-shortcuts
 pip3 install odrive
 pip3 install rospkg
 cd ~/NS-RobotArm/robot_ws/src/
