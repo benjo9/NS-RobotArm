@@ -9,7 +9,7 @@ from odrive.enums import *
 import time
 import math
 
-from ODrive_Interface_test.srv import *
+from nsra_odrive_interface.srv import *
 
 print("Waiting for services")
 rospy.wait_for_service('drive_axis')

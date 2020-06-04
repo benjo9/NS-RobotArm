@@ -10,7 +10,7 @@ from odrive.enums import *
 import time
 import math
 
-from ODrive_Interface_test.srv import *
+from nsra_odrive_interface.srv import *
 
 positions = [0, 0, 0, 0, 0, 0]
 
