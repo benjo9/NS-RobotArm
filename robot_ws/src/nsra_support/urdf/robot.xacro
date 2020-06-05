@@ -10,7 +10,7 @@
   <visual>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver">
       <color rgba="1 0 0 1"/>
@@ -19,7 +19,7 @@
   <collision>
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/base_link.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/base_link.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -32,7 +32,7 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.24741 0.540257 -0.0"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver">
       <color rgba="1 0 0 1"/>
@@ -41,7 +41,7 @@
   <collision>
     <origin rpy="0 0 0" xyz="-0.24741 0.540257 -0.0"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component2_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component2_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -54,7 +54,7 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.1535 0.080257 -0.0"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver">
       <color rgba="1 0 0 1"/>
@@ -63,7 +63,7 @@
   <collision>
     <origin rpy="0 0 0" xyz="-0.1535 0.080257 -0.0"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component3_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component3_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -76,7 +76,7 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.2 -0.025743 -0.015"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver">
       <color rgba="1 0 0 1"/>
@@ -85,7 +85,7 @@
   <collision>
     <origin rpy="0 0 0" xyz="-0.2 -0.025743 -0.015"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component4_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component4_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -98,7 +98,7 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.16 -0.025743 -0.496"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver">
       <color rgba="1 0 0 1"/>
@@ -107,7 +107,7 @@
   <collision>
     <origin rpy="0 0 0" xyz="-0.16 -0.025743 -0.496"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component5_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component5_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -120,7 +120,7 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.2 -0.025743 -0.548"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver">
       <color rgba="1 0 0 1"/>
@@ -129,7 +129,7 @@
   <collision>
     <origin rpy="0 0 0" xyz="-0.2 -0.025743 -0.548"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component6_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component6_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
@@ -142,7 +142,7 @@
   <visual>
     <origin rpy="0 0 0" xyz="-0.2 0.691257 0.0"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
     <material name="silver">
       <color rgba="1 0 0 1"/>
@@ -151,7 +151,7 @@
   <collision>
     <origin rpy="0 0 0" xyz="-0.2 0.691257 0.0"/>
     <geometry>
-      <mesh filename="package://myworkcell_support/urdf/mm_stl/Component1_1.stl" scale="0.001 0.001 0.001"/>
+      <mesh filename="package://nsra_support/urdf/mm_stl/Component1_1.stl" scale="0.001 0.001 0.001"/>
     </geometry>
   </collision>
 </link>
