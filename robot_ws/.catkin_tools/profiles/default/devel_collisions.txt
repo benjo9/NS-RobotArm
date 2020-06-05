@@ -5,6 +5,7 @@
 /home/noa/Desktop/NS-RobotArm/robot_ws/devel/./cmake.lock 7
 /home/noa/Desktop/Robot_Repo/catkin_ws/devel/lib/pkgconfig/myworkcell_core.pc 4
 /home/noa/Desktop/Robot_Repo/catkin_ws/devel/include/myworkcell_core/LocalizePart.h 4
+/home/noa/release/NS-RobotArm/robot_ws/devel/./cmake.lock 35
 /home/noa/Desktop/Robot_Repo/catkin_ws/devel/share/gennodejs/ros/myworkcell_core/srv/LocalizePart.js 4
 /home/noa/NS-RobotArm/robot_ws/devel/./cmake.lock 2521
 /home/noa/Desktop/Robot_Repo/catkin_ws/devel/share/gennodejs/ros/myworkcell_core/_index.js 4
@@ -29,6 +30,6 @@
 /home/noa/Desktop/catkin_ws/devel/./cmake.lock 21
 /home/noa/Desktop/Robot_Repo/catkin_ws/devel/lib/python2.7/dist-packages/myworkcell_core/srv/_LocalizePart.py 4
 /home/noa/Desktop/Robot_Repo/catkin_ws/devel/share/common-lisp/ros/myworkcell_core/srv/_package.lisp 4
-/home/jetson/NS-RobotArm/robot_ws/devel/./cmake.lock 56
+/home/jetson/NS-RobotArm/robot_ws/devel/./cmake.lock 55
 /home/noa/Desktop/Robot_Repo/catkin_ws/devel/./cmake.lock 12
 /home/noa/Desktop/Robot_Repo/catkin_ws/devel/share/myworkcell_core/cmake/myworkcell_core-msg-extras.cmake 4
