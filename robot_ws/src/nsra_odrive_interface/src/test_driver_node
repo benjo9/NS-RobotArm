@@ -100,11 +100,11 @@ def axis_position(req):
 rospy.init_node('driver')
 
 #feedback = rospy.Service('axis_position', feedback, axis_position)
-rospy.Subscriber("/rrbot/drive_pub1", Int32, drive_pub1)
-rospy.Subscriber("/rrbot/drive_pub2", Int32, drive_pub2)
-rospy.Subscriber("/rrbot/drive_pub3", Int32, drive_pub3)
-rospy.Subscriber("/rrbot/drive_pub4", Int32, drive_pub4)
-rospy.Subscriber("/rrbot/drive_pub5", Int32, drive_pub5)
-rospy.Subscriber("/rrbot/drive_pub6", Int32, drive_pub6)
+rospy.Subscriber("/nsra/drive_pub1", Int32, drive_pub1)
+rospy.Subscriber("/nsra/drive_pub2", Int32, drive_pub2)
+rospy.Subscriber("/nsra/drive_pub3", Int32, drive_pub3)
+rospy.Subscriber("/nsra/drive_pub4", Int32, drive_pub4)
+rospy.Subscriber("/nsra/drive_pub5", Int32, drive_pub5)
+rospy.Subscriber("/nsra/drive_pub6", Int32, drive_pub6)
 
 rospy.spin()
