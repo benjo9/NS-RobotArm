@@ -45,7 +45,7 @@
 // ros_control
 #include <control_msgs/JointTrajectoryControllerState.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 
 class ControllerToCSV

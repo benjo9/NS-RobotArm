@@ -36,8 +36,8 @@
    Desc:   Inherit from this file to enable joystick mode switching of your robot
 */
 
-#ifndef ROS_CONTROL_BOILERPLATE__JOYSTICK_MANUAL_CONTROL
-#define ROS_CONTROL_BOILERPLATE__JOYSTICK_MANUAL_CONTROL
+#ifndef NSRA_CONTROLLER__JOYSTICK_MANUAL_CONTROL
+#define NSRA_CONTROLLER__JOYSTICK_MANUAL_CONTROL
 
 // ROS
 #include <ros/ros.h>
@@ -47,7 +47,7 @@
 #include <controller_manager_msgs/SwitchController.h>
 #include <controller_manager_msgs/LoadController.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 class JoystickManualControl
 {
