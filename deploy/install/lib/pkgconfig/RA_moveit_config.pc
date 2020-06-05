@@ -1,8 +1,0 @@
-prefix=/home/noa/NS-RobotArm/robot_ws/install
-
-Name: RA_moveit_config
-Description: Description of RA_moveit_config
-Version: 0.3.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/noa/NS-RobotArm/robot_ws/install
-
-Name: ra_tools
-Description: Description of ra_tools
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
