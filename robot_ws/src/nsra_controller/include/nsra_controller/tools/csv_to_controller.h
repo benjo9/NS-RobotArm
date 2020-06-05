@@ -50,7 +50,7 @@
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
 
-namespace ros_control_boilerplate
+namespace nsra_controller
 {
 static const double RECORD_RATE_HZ = 100.0;  // times per second to record
 
