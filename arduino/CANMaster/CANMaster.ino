@@ -23,7 +23,7 @@ ros::NodeHandle  nh;
 
 void gripper_command( const std_msgs::Int32& msg){
   char data = msg;
-  CAN0.sendMsgBuf(0xF1, 0, 1, data);
+  CAN0.sendMsgBuf(0xF1, 0, 1, data
 }
 
 ros::Subscriber<std_msgs::Int32> gripper_command("/nsra/gripper_command", &gripper_command );
