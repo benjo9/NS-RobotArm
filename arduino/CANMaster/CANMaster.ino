@@ -22,14 +22,9 @@ unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 ros::NodeHandle  nh;
 
 void gripper_command( const std_msgs::Int32& msg){
-<<<<<<< HEAD
-  char data = msg;
-  CAN0.sendMsgBuf(0xF1, 0, 1, data
-=======
   data[0] = msg.data;
   CAN0.sendMsgBuf(0xF2, 0, 8, data);
   
->>>>>>> 6054723e318ec7b1c56de777bbdcb9fc60cfaced
 }
 
 ros::Subscriber<std_msgs::Int32> gc("/nsra/gripper_command", &gripper_command );
