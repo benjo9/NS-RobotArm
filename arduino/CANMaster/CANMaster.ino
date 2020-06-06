@@ -22,11 +22,17 @@ unsigned char data[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 ros::NodeHandle  nh;
 
 void gripper_command( const std_msgs::Int32& msg){
+<<<<<<< HEAD
   char data = msg;
   CAN0.sendMsgBuf(0xF1, 0, 1, data
+=======
+  data[0] = msg.data;
+  CAN0.sendMsgBuf(0xF2, 0, 8, data);
+  
+>>>>>>> 6054723e318ec7b1c56de777bbdcb9fc60cfaced
 }
 
-ros::Subscriber<std_msgs::Int32> gripper_command("/nsra/gripper_command", &gripper_command );
+ros::Subscriber<std_msgs::Int32> gc("/nsra/gripper_command", &gripper_command );
 
 //-------------------------
 
@@ -40,10 +46,10 @@ void setup()
   //-----------------------
 
   //ROS -------------------
-
+  
   nh.initNode();
-  nh.subscribe(gripper_command);
-
+  nh.subscribe(gc);
+  
   //-----------------------
 }
 
@@ -51,6 +57,11 @@ void loop()
 {
   nh.spinOnce();
   delay(1);
+  /*
+  data[0] = 90;
+  CAN0.sendMsgBuf(0xF2, 0, 8, data);
+  delay(2000);
+  */
 }
 
 //CAN ---------------------
