@@ -1,6 +1,6 @@
 #! /bin/bash
 
-git pull origin release
+git pull origin master
 cd ~/NS-RobotArm/robot_ws/
 catkin build
 cd ~/NS-RobotArm/
@@ -10,5 +10,5 @@ cp -r ~/NS-RobotArm/robot_ws/install/ ~/NS-RobotArm/deploy/
 cp -r ~/NS-RobotArm/arduino/ ~/NS-RobotArm/deploy/
 git add .
 git commit -m "deploy"
-git push -u origin release
-git push -u origin release:deploy
+git push -u origin master
+git push -u origin master:deploy
