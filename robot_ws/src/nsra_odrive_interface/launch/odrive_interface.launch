@@ -1,0 +1,5 @@
+<launch>
+  <node name="odrive0" pkg="nsra_odrive_interface" type="odrive0" />
+  <node name="odrive0" pkg="nsra_odrive_interface" type="odrive0" />
+  <node name="odrive0" pkg="nsra_odrive_interface" type="odrive0" />
+</launch>
