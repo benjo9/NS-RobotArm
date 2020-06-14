@@ -156,7 +156,6 @@ include_directories(
 ## in contrast to setup.py, you can choose the destination
 install(PROGRAMS
   src/driver_node
-  src/test_service
   src/test_driver_node
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
