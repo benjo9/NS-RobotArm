@@ -84,22 +84,7 @@ void NSRAHWInterface::write(ros::Duration &elapsed_time)
   // Safety
   enforceLimits(elapsed_time);
   for (size_t i = 0; i < num_joints_; i++) {
-    //ROS_INFO(std::to_string(joint_velocity_command_[i]).c_str());
     double pi = 2*acos(0.0);
-    /*
-    ODrive_Interface_test::driver driver;
-    driver.request.axis = i + 1;
-    driver.request.value = joint_position_command_[i];
-    driver.request.timestamp = elapsed_time.toSec();
-    if(drive_axis.call(driver))
-    {
-    //ROS_INFO("true");
-    } else
-    {
-    //ROS_INFO("false");
-    }
-    //ROS_INFO("write:2");
-    */
     saved_pos[i] = joint_position_command_[i];
     std_msgs::Int32 msg;
     if(i == 0)

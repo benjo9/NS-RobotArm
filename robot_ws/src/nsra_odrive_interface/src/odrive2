@@ -20,6 +20,8 @@ print("Connecting...")
 odrv2 = odrive.find_any(serial_number="20843881304E")
 print("Connected to ODrive 2")
 
+rospy.set_param('odrive2', True)
+
 def drive_pub4(data):
     print("Axis 4: " + str(data.data))
     if abs(data.data-positions[3])*hz > 20000:
