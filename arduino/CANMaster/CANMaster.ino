@@ -1,6 +1,6 @@
 /*
  * CAN Bus Interface for rosserial
- * Noothless, 23/02/2020
+ * Noa Sendlhofer, 23/02/2020
  */
 
 #include <ros.h>
