@@ -56,6 +56,18 @@ int main(int argc, char** argv)
     (new nsra_control::NSRAHWInterface(nh));
   nsra_hw_interface->init();
 
+  // Wait for the ODrive nodes to connect
+  bool odrv0;
+  bool odrv1;
+  bool odrv2;
+  nh.getParam('odrive0', odrv0);
+  nh.getParam('odrive0', odrv1);
+  nh.getParam('odrive0', odrv2);
+  while (!odrv0 && !odrv1 && !odrv2)
+  {
+    sleep(1);
+  }
+
   // Start the control loop
   nsra_controller::GenericHWControlLoop control_loop(nh, nsra_hw_interface);
   control_loop.run(); // Blocks until shutdown signal recieved
