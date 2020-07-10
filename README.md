@@ -1,6 +1,6 @@
 ![logo](images/robot_icon_and_logo.jpg)
 
-System preferences:
+System requirements:
 Ubuntu 18.04 LTS
 
 ```
