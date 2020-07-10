@@ -26,7 +26,7 @@ cd ~/NS-RobotArm
 
 ## CAD
 
-CAD Designs: https://github.com/Noothless/NS-RobotArm_CAD
+CAD designs: https://github.com/Noothless/NS-RobotArm_CAD
 
 ## EDA
 
