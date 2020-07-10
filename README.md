@@ -6,7 +6,7 @@ Ubuntu 18.04 LTS
 
 Recommended:
 
-Linux Realtime kernel see: https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/
+Linux Realtime kernel: https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/
 
 ```
 sudo apt-get install git
