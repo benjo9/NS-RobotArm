@@ -1,8 +1,8 @@
-#NS-RobotArm
+# NS-RobotArm Main Repository
 
 ![logo](images/robot_icon_and_logo.jpg)
 
-Software
+> Software
 
 System requirements:
 
