@@ -1,5 +1,13 @@
 ![logo](images/robot_icon_and_logo.jpg)
 
+System requirements:
+
+Ubuntu 18.04 LTS
+
+Recommended:
+
+Realtime kernel: https://mirrors.edge.kernel.org/pub/linux/kernel/projects/rt/
+
 ```
 sudo apt-get install git
 
