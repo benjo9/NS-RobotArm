@@ -1,5 +1,8 @@
 ![logo](images/robot_icon_and_logo.jpg)
 
+System preferences:
+Ubuntu 18.04 LTS
+
 ```
 sudo apt-get install git
 
