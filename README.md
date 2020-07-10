@@ -1,8 +1,8 @@
-# NS-RobotArm Main Repository
-
 ![logo](images/robot_icon_and_logo.jpg)
 
-> Software
+# NS-RobotArm Main Repository
+
+## Software
 
 **System requirements:**
 
@@ -24,11 +24,11 @@ cd ~/NS-RobotArm
 ./install.sh
 ```
 
-> CAD
+## CAD
 
 CAD Designs: https://github.com/Noothless/NS-RobotArm_CAD
 
-> EDA
+## EDA
 
 EDA files: https://github.com/Noothless/NS-RobotArm_EDA
 
